@@ -11,7 +11,7 @@ title: Integratie van systemen
   
   De kunst is dit ordelijk te onderhouden, alleen gebruik maken van de externe interface van het andere domein, op de juiste momenten te laten draaien, als de juiste invoer aanwezig is, automatisch te herstellen na problemen en dan ook zorgen dat het allemaal veilig gebeurt. 
 
-## Welke problemen kan je voorkomen
+## Welke problemen kunnen voorkomen
   
   Denk aan mutaties die niet worden uitgevoerd, mails die niet verstuurd worden, boekingen die niet gedaan worden of erger: dubbel worden uitgevoerd.  
 
