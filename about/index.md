@@ -22,20 +22,11 @@ title: Over mij
 
   Daardoor is er meer mogelijk, maar door al mogelijkheden lijkt het allemaal complexer te worden.  
 
-  Soms zie je door de bomen het bos niet meer. Mijn uitgangspunt is het doel niet uit het oog verliezen en de hulpmiddelen gebruiken die het doel ondersteunen. Maar ook inzien dat betere hulpmiddelen ambitieuzere doelen mogelijk maken. 
+  Soms zie je door de bomen het bos niet. Mijn uitgangspunt is het doel niet uit het oog verliezen en de hulpmiddelen gebruiken die het doel ondersteunen. Maar ook inzien dat betere hulpmiddelen ambitieuze doelen mogelijk maken. 
 
   Door voor ogen te houden wat je graag wil, en wat je zeker niet wil, kan je oplossingen maken die gebruik maken van de huidige krachtige bouwstenen die (gratis) aanwezig zijn en waarmee je als lego-blokjes de oplossing kan bouwen. 
 
 ## Expertise
-
-  Mijn expertise is integratie van systemen, door een [_domain driven_](https://en.wikipedia.org/wiki/Domain-driven_design) aanpak worden gegevens tussen de verschillende domainen uitgewisseld. Bij die uitwisseling zijn vaak heel verschillende soft- en hardware technieken betrokken.  
-  Dit resulteert in veel verschillende programmaatjes, scripts e.d.  
-  
-  De kunst is dit ordelijk te onderhouden, op de juiste momenten te laten draaien, als de juiste invoer aanwezig is, automatisch te herstellen na problemen en dan ook zorgen dat het allemaal veilig gebeurt.  
-
-  Ik weet dat je naast het script/programma meer moet vastleggen zoals bijvoorbeeld de _opstart conditie_ en de _variatie_ per (test)omgeving.  Hoe je deze sources moet groeperen om ze automatisch op de bestemming te krijgen waar ze hun werk gaan doen.  
-
-  Het gaat allemaal om foutloos werkende en daarom goed geteste oplossingen, door de aanwezigheid van test-omgevingen([DTAP](https://en.wikipedia.org/wiki/Development,_testing,_acceptance_and_production)). Traceerbaar door goede _niet_ overbodige logging, die van het script maar ook die van de trigger conditie, ook of juist in geval dat die niet afgaat. Maar ook traceerbaar naar de juiste source. 
-
+  [Zie hier een beschrijving van mijn expertise](/expertise)
   
 
