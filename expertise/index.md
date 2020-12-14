@@ -9,7 +9,7 @@ title: Integratie van systemen
   Mijn expertise is integratie van systemen, door een [_domain driven_](https://en.wikipedia.org/wiki/Domain-driven_design) aanpak worden gegevens tussen de verschillende domeinen uitgewisseld. Bij die uitwisseling zijn vaak heel verschillende soft- en hardware technieken betrokken.  
   Dit resulteert in veel verschillende programma's, scripts e.d.  
   
-  De kunst is dit ordelijk te onderhouden, op de juiste momenten te laten draaien, als de juiste invoer aanwezig is, automatisch te herstellen na problemen en dan ook zorgen dat het allemaal veilig gebeurt. 
+  De kunst is dit ordelijk te onderhouden, alleen gebruik maken van de externe interface van het andere domein, op de juiste momenten te laten draaien, als de juiste invoer aanwezig is, automatisch te herstellen na problemen en dan ook zorgen dat het allemaal veilig gebeurt. 
 
 ## Welke problemen kan je voorkomen
   
