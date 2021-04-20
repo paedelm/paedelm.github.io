@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Peter Edelman, Eindelijk zelfstandig"
+title: "Eindelijk zelfstandig"
 date: 2020-04-19
 ---
 
