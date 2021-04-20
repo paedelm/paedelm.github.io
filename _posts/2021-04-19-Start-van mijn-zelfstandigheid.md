@@ -8,7 +8,9 @@ Het is zover, de startdatum is bekend, maandag 3 mei.
 
 Ik heb nog heel wat uitgezocht en uitgewerkt, als laatste heb ik een cursus voor het ontwikkelen van oplossingen op Azure gedaan. Dat past goed in het rijtje betrouwbaar en veilig, want wil je op het computer systeem geen zichtbare geheimen zoals sleutels en wachtwoorden opslaan en wil je daar ook geen zichtbare data hebben, dan kan opslaan in de cloud een oplossing zijn. 
 
-Een voorbeeld: jouw systeem heeft gegevens nodig van een (externe) klant. Dagelijks verwacht jij een mutatiebestand. Jij maakt een container aan voor deze klant in de cloud en geeft daarvoor een schrijfsleutel. Onder water zorg jij dat je notificaties krijgt als er een bestand wordt neergezet. Jij gebruikt de bestanden uit de container om te verwerken. Het is veilig, de bestanden in de container zijn standaard versleuteld, het transport van en naar de container is versleuteld en zou jouw klant slordig zijn: de sleutel geeft alleen schrijf mogelijkheden. De container kan ook direct geblokkeerd worden. 
+Een voorbeeld: jouw systeem heeft gegevens nodig van een (externe) klant. Dagelijks verwacht jij een mutatiebestand. Jij maakt een container aan in de cloud en geeft jouw klant een schrijfsleutel. Via een notificatie weet jij dat de klant een bestand heeft in de container heeft gezet en kan je die verwerken. 
+
+Het is veilig, het transport naar en het bestand in de container is versleuteld. En verliest jouw klant de sleutel: die geeft alleen schrijfrechten op een minimaal stukje van de bestanden. De container kan ook direct geblokkeerd worden. 
 
 Voor de uitleg aan de klant kan je de documentatie van de cloud leverancier gebruiken, die heeft veel mogelijkheden om een bestand te uploaden zoals API, CLI,  GUI etc... Er is monitoring, er zijn events en het wordt allemaal voor je onderhouden. 
 
