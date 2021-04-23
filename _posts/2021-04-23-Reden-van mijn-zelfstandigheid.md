@@ -4,16 +4,16 @@ title: "Wat ga ik doen als zelfstandige"
 date: 2020-04-22
 ---
 
-### Probleem
+## Probleem
 
  Alom in het nieuws: storing in een systeem van de overheid, cijfers niet op tijd, bedrijf in de problemen door een hack op een essentieel systeem, gegevens gelekt en aangeboden op het dark net, en dat bijna iedere dag. Ik ben bang dat er nog heel wat systemen zijn die bij gerichte criminele aandacht flink door de mand vallen. Ze zijn daar vroeger meestal niet op ontworpen en het werd ook niet afgestraft maar dat is tegenwoordig wel anders. 
 
-### Mijn drijfveer
+## Mijn drijfveer
  
   Systemen betrouwbaar maken, dat betekent ook veilig maken want onveilig is onbetrouwbaar maar onbetrouwbaar is onveilig. Om dat laatste toe te lichten:
   > Problemen leiden vaak tot handmatige aanpassingen waarvoor medewerkers ter plekke, op het systeem zelf, aanpassingen maken, dat kan vaak ongecontroleerd en kan leiden tot onbedoelde fouten of gelegenheid geven aan indringers om gebruik te maken van de mogelijkheden die dan ontstaan.
 
-### Hoe zou ik het dan doen?
+## Hoe zou ik het dan doen?
 
  * Het beheer moet als allereerste van de server af.
  
@@ -49,17 +49,17 @@ date: 2020-04-22
    Er is geen verschil in handelingen om vooruit of weer achteruit te gaan als blijkt dat er iets over het hoofd is gezien. Het idee om dit vanuit Git te doen is de traceerbaarheid.
 
 
-### Beveiligd uitvoeren:
+## Beveiligd uitvoeren:
 > Weet jij hoelang het duurt voordat je erachter komt dat er een script (shell, python nodejs etc..) is aangepast? Daar moest ik aan denken, toevallig is het ook kort geleden [**gebeurd**] (https://tweakers.net/nieuws/180646/criminelen-stalen-inloggegevens-van-ontwikkelaars-via-devtool-bash-uploader.html)
 
 
 Hoe mooi ook zo'n "Beheer vanuit Git" systeem als je zo de scripts kan aanpassen, werkt het niet. Mijn antwoord daarop is: versleutel de configuratie en zorg ervoor dat je het script nergens opslaat, indien toch nodig, kan het er vlak van te voren opgezet worden en na draaien worden verwijderd, telkens weer. 
 
-### Geheimen ontdekken in de configuratie:
+## Geheimen ontdekken in de configuratie:
 
 Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kluis op te halen of je scripts zo inrichten dat ze op run-time uit de kluis worden gehaald.
 
-### Opslag en privacy van gegevens
+## Opslag en privacy van gegevens
 
 > Daar mee kom je liever niet in het nieuws, **_jouw gegevens aangeboden op het dark net._**
 
@@ -74,7 +74,7 @@ Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kl
 * Log informatie kan gevoelig zijn en behoort niet op het runtime zelf te worden opgeslagen. En uiteraard is ook hier versleuteling de norm. 
 
 
-### Isoleren van het systeem
+## Isoleren van het systeem
 
 * Geen interactieve shell, dat zou niet meer nodig moeten zijn. 
 * Zet nergens poorten open, dus ook geen software installeren die luistert op een poort, check het systeem niet live maar doe het als je het aanmaakt en wijzig dan niks meer.
@@ -85,10 +85,10 @@ Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kl
   Als je zelf geen beveiligingsexpert bent en dat ook niet wil worden vertrouw dan op een leverancier die wel specialist is.
 
 
-### Samenvatting
+## Samenvatting
 
 Samenvattend kan je stellen dat traceerbare wijzigingen in een smart configuratie systeem en waardoor je geautomatiseerd kan beheren en door de tussenlaag je eenvoudiger over kan gaan naar versleutelde data eventueel buiten de server. Je minder (geen) noodzaak hebt om op de server te komen, en wie op de server komt, niks kan vinden van waarde. Daardoor ben je ook minder interessant voor de crimineel, het kost te veel moeite met weinig zicht op crimineel-resultaat. Voor de betrouwbaarheid heb je het voordeel dat alles terug te vinden is in Git, er getest naar de volgende omgeving wordt gegaan, en door de koppeling van een versie van de configuratie aan een change, de rollforward en rollback van de change de juiste versies raken. 
 
-### Mijn rol
+## Mijn rol
  zie ik in bewust maken van deze manier van werken, het gezond verstand stuk, en bij de implementatie fase, het opzetten van het smart configuratie systeem en het omgaan en beschrijven van flows voor de tussenlaag die van jouw scripts en programma's processen maakt die continue draaien en jouw flow op het juiste moment aanroepen. Mijn uitgangspunt is dat je (het scrum team) het uiteindelijk zelf moet kunnen onderhouden, en gezien alle informatie over het systeem terug te vinden is in Git, en bewezen actueel is, moet dat geen probleem zijn. 
 
