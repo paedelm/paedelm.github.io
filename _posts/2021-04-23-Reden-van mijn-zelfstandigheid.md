@@ -1,19 +1,19 @@
 ---
 layout: post
-title: "Wat ga ik doen als zelfstandige"
+title: "Waarvoor ga ik me inzetten als zelfstandige"
 date: 2020-04-22
 ---
 
-## Probleem
+## Actuele problemen
 
  Alom in het nieuws: storing in een systeem van de overheid, cijfers niet op tijd, bedrijf in de problemen door een hack op een essentieel systeem, gegevens gelekt en aangeboden op het dark net, en dat bijna iedere dag. Ik ben bang dat er nog heel wat systemen zijn die bij gerichte criminele aandacht flink door de mand vallen. Ze zijn daar vroeger meestal niet op ontworpen en het werd ook niet afgestraft maar dat is tegenwoordig wel anders. 
 
-## Mijn drijfveer
+## Mijn expertise
  
   Systemen betrouwbaar maken, dat betekent ook veilig maken want onveilig is onbetrouwbaar maar onbetrouwbaar is onveilig. Om dat laatste toe te lichten:
-  > Problemen leiden vaak tot handmatige aanpassingen waarvoor medewerkers ter plekke, op het systeem zelf, aanpassingen maken, dat kan vaak ongecontroleerd en kan leiden tot onbedoelde fouten of gelegenheid geven aan indringers om gebruik te maken van de mogelijkheden die dan ontstaan.
+  > Problemen leiden vaak tot handmatige aanpassingen waarvoor medewerkers ter plekke, op het systeem zelf, aanpassingen maken, dat kan vaak ongecontroleerd en kan leiden tot onbedoelde fouten of gelegenheid geven aan indringers om gebruik te maken van de reparatie mogelijkheden om iets crimineels te doen.
 
-## Hoe zou ik het dan doen?
+## Wat is mijn systeem, hoe zou ik het dan doen?
 
  * Het beheer moet als allereerste van de server af.
  
@@ -21,11 +21,11 @@ date: 2020-04-22
    
  * Opdelen in domeinen.
    
-   Je deelt het systeem op in stukken die een logische eenheid vormen. Binnen zo'n domein zijn er geen beveiligings drempels. Naar buiten toe is het domein een bastion niemand mag er bij. Deze filosofie geldt voor de bronnen in Git en voor de runtime omgeving.
+   Je deelt het systeem op in stukken die een logische eenheid vormen. Binnen zo'n domein zijn er geen beveiligings drempels. Naar buiten toe is het domein een bastion waar niemand bij mag. Dit geldt voor de bronnen in Git en ook voor de runtime omgeving.
    
  * Het domein volledig beschrijven.
 
-   Omdat alles vanuit git moet doen, moet de domein configuratie alles bevatten wat nodig is om probleemloos te draaien en te beheren. 
+   Omdat alles vanuit git moet doen, moet de domein configuratie alles bevatten wat nodig is om probleemloos te draaien en te beheren en worden er speciale eisen aan gesteld. 
    * Dus niet alleen de sources van programma's of scripts,
    * maar ook hun manier en hun moment van starten,
    * de gegevens om externe resources zoals databases, kluizen, externe sites, etc te benaderen.
@@ -33,10 +33,10 @@ date: 2020-04-22
    * Overige gegevens die nodig zijn om te gebruiken in de runtime omgeving. Er is een formele beschrijving voor de aanlevering van de configuratie export, daar zit een blob property bij waar je de content van een directory tree kan opnemen.
    * Heel belangrijk is dat geheimen zoals passwords en sleutels niet in Git worden opgenomen maar vanuit een kluis worden ingebracht.
    * Test scripts om controles uit te voeren
-   * Verschillende versies bijhouden, als er aanpassingen gedaan worden
-   * Aanpassingen bijhouden.
+   * Aanpassingen (changes) registreren. 
+   * Verschillende versies bijhouden, en die koppelen aan hun change.
    * Eventuele dockerfile voor de configuratie van het runtime systeem.
-   * Actief maken van het sourcesysteem, denk daarbij aan genereren voor verschillende (test) omgevingen, automatisch testen voor genereren en juiste versie generen op basis van de status van een change. Zo'n change zit natuurlijk niet direct in productie maar doorloopt waarschijnlijk de cyclus van Development via eventuele extra test omgevingen naar Productie.
+   * Actief maken van het sourcesysteem: vanuit de sources wordt de domein configuratie gegenereerd. Denk daarbij aan genereren voor verschillende (test) omgevingen. De juiste versie wordt bepaald op basis van de status van een change. Ter verduidelijking: zo'n change zit natuurlijk niet direct in productie maar doorloopt waarschijnlijk de cyclus van Development via eventuele extra test omgevingen naar Productie.
 
  * Genereren van een versleutelde versie van een export in Json formaat voor iedere omgeving in het domein.
   
