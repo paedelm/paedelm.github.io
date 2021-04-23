@@ -40,7 +40,7 @@ date: 2020-04-22
 
  * Genereren van een versleutelde versie van een export in Json formaat voor iedere omgeving in het domein.
   
-   Het generatie proces roept jouw configuratie items aan met de environment parameter, het zorgt voor de juiste combinatie van versie en environment op basis van de status van de change. Het doet allerlei algemene controles en jij kan voor ieder item je eigen controles programmeren. De laatste controle is jouw test, en als die goed gaat worden de versleutelde Json-files geproduceerd.  
+   Het generatie proces roept jouw configuratie items aan met de environment parameter, het zorgt voor de juiste combinatie van versie en environment op basis van de status van de change. Het doet allerlei algemene controles en jij kan voor ieder item je eigen controles programmeren. De laatste controle is jouw test, en als die goed gaat, worden de versleutelde Json-files geproduceerd.  
 
  * Changes vooruit rollen of terug rollen.
 
@@ -53,15 +53,15 @@ date: 2020-04-22
 > Weet jij hoelang het duurt voordat je erachter komt dat er een script (shell, python nodejs etc..) is aangepast? Daar moest ik aan denken, toevallig is het ook kort geleden [**gebeurd**] (https://tweakers.net/nieuws/180646/criminelen-stalen-inloggegevens-van-ontwikkelaars-via-devtool-bash-uploader.html)
 
 
-Hoe mooi ook zo'n "Beheer vanuit Git" systeem als je zo de scripts kan aanpassen, werkt het niet. Mijn antwoord daarop is: versleutel de configuratie en zorg ervoor dat je het script nergens opslaat, en indien dat toch nodig mocht blijken kan het er vlak van te voren opgezet worden en na draaien worden verwijderd, telkens weer. 
+Hoe mooi ook zo'n "Beheer vanuit Git" systeem als je zo de scripts kan aanpassen, werkt het niet. Mijn antwoord daarop is: versleutel de configuratie en zorg ervoor dat je het script nergens opslaat, indien toch nodig, kan het er vlak van te voren opgezet worden en na draaien worden verwijderd, telkens weer. 
 
 ### Geheimen ontdekken in de configuratie:
 
-Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kluis op te halen of je scripts zo inrichten dat ze het op run-time uit de kluis halen als je het onvoldoende vindt dat het in een versleutelde configuratie zit.
+Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kluis op te halen of je scripts zo inrichten dat ze op run-time uit de kluis worden gehaald.
 
 ### Opslag en privacy van gegevens
 
-> Daar mee kom je liever niet in het nieuws, al je gegevens aangeboden op het dark net.
+> Daar mee kom je liever niet in het nieuws, **_jouw gegevens aangeboden op het dark net._**
 
 * Extern en versleuteld opslaan.
   
@@ -69,7 +69,7 @@ Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kl
 
 * Handige oplossingen voor het (**niet**)aanpassen van bestaande software voor het gebruik van versleutelde bestanden.
 
-  Voor het beveilgd uitvoeren is er al een tussenlaag die jouw script of programma uitvoert. Deze tussen laag heeft ook faciliteiten om jouw script aan te roepen en via stdin stream het ontcijferde bestand te geven of vlak van te voren het bestand ontcijferd neer te zetten en na afloop te verwijderen. De uitvoer kan via de stream, stdout of via de persistente variant versleuteld worden en de leesbare versie wordt dan verwijderd. Het maakt voor de tussenlaag niet zoveel uit of het versleutelde bestand op schijf of vanuit een datakluis komt. 
+  Voor het beveiligd uitvoeren is er al een tussenlaag die jouw script of programma uitvoert. Deze tussen laag heeft ook faciliteiten om jouw script aan te roepen en via stdin stream het ontcijferde bestand te geven of vlak van te voren het bestand ontcijferd neer te zetten en na afloop te verwijderen. De uitvoer kan via de stream, stdout of via de persistente variant versleuteld worden en de leesbare versie wordt dan verwijderd. Het maakt voor de tussenlaag niet zoveel uit of het versleutelde bestand op schijf of vanuit een datakluis komt. 
 
 * Log informatie kan gevoelig zijn en behoort niet op het runtime zelf te worden opgeslagen. En uiteraard is ook hier versleuteling de norm. 
 
