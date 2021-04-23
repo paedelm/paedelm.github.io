@@ -75,14 +75,14 @@ Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kl
 
 
 ## Isoleren van het systeem
+* Gebruik geen interactieve shell meer.
 
-* Geen interactieve shell, dat zou niet meer nodig moeten zijn. 
-* Zet nergens poorten open, dus ook geen software installeren die luistert op een poort, check het systeem niet live maar doe het als je het aanmaakt en wijzig dan niks meer.
-* Import gegevens van buiten het domein.
+* Zet geen poorten open, alle software die toch luistert op een poort, moet kritisch bekeken worden.
+
+* Import gegevens van buiten het domein, een veilige oplossing.
  
-  Als je gegevens nodig hebt van anderen maak dan een aparte locatie, bijvoorbeeld in de cloud, geef jouw dataprovider een schrijfsleutel en haal de gegevens vanuit die locatie naar jouw systeem om te verwerken. Vanwege de beveiliging, versleuteling, de hulpmiddelen en de documentatie lijkt dat een makkelijke manier.  
-* Draai in de cloud
-  Als je zelf geen beveiligingsexpert bent en dat ook niet wil worden vertrouw dan op een leverancier die wel specialist is.
+  Als je gegevens krijgt van buiten het domein, maak dan een aparte locatie, bijvoorbeeld in de cloud, geef de eigenaar van de gegevens een schrijfsleutel en haal de gegevens vanuit die locatie naar jouw systeem om te verwerken. Vanwege de beveiliging, versleuteling, de hulpmiddelen en de documentatie is dat een makkelijke manier.
+
 
 
 ## Samenvatting
