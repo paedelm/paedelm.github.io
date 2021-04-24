@@ -18,7 +18,7 @@ date: 2020-04-22
 
 > **De fabriekshal nu**: Een afgesloten fabriekshal, aan de buitenkant verschillende kluizen voor het deponeren van grondstoffen en kluizen voor afnemers van het eindproduct. Het productie proces is geautomatiseerd, specialisten werken nu op de research afdeling, zij ontwikkelen en testen aanpassingen in het productie proces voordat het in de fabriek wordt toegepast.
 
-Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden beschermd tegen sabotage, spionage en diefstal, er blijft ook niks van waarde achter op de plaats van produceren. Ontwikkelen van het proces gebeurt ergens anders, het bestaande proces wordt in zijn geheel vervangen door een geteste nieuwe versie. De productie plaats is afgesloten, maar zou iemand toch doordringen dan is er nog steeds niks van waarde te vinden. En die glimmende apparaten? Die geven hun geheimen niet prijs!
+Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden beschermd tegen sabotage, spionage en diefstal, er blijft ook niks van waarde achter op de plaats van produceren. Ontwikkelen van het proces gebeurt ergens anders, het bestaande proces wordt in zijn geheel vervangen door een geteste nieuwe versie. De productie plaats is afgesloten, maar zou iemand toch doordringen dan is er nog steeds niks van waarde te vinden. _En die glimmende apparaten? Die geven hun geheimen niet prijs!_
 ## Leuk verhaal maar nu concreet, wat is mijn methodiek in het echt?
 
  * Het beheer moet als allereerste van de server af.
