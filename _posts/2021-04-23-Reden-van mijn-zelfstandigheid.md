@@ -21,6 +21,28 @@ date: 2020-04-22
 Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden beschermd tegen sabotage, spionage en diefstal, er blijft ook niks van waarde achter op de plaats van produceren. Ontwikkelen van het proces gebeurt ergens anders, het bestaande proces wordt in zijn geheel vervangen door een geteste nieuwe versie. De productie plaats is afgesloten, maar zou iemand toch doordringen dan is er nog steeds niks van waarde te vinden. _En die glimmende apparaten? Die geven hun geheimen niet prijs!_
 ## Leuk verhaal maar nu concreet, wat is mijn methodiek in het echt?
 
+* De eisen
+
+  * Het proces moet betrouwbaar verlopen en niet te saboteren zijn. De programma's van het proces moeten altijd uit betrouwbare bron komen en dat moet controleerbaar of zelf herstellend zijn. 
+
+  * Voor de gegevens die het proces ingaan geldt dat ze van buiten het runtime systeem komen en uit betrouwbare bron zijn en dat natuurlijk controleerbaar.
+
+  * Voor de gegevens die het resultaat zijn van de verwerking geldt dat ze veilig worden opgeslagen buiten het runtime systeem.
+
+  * Het runtime systeem mag geen permanente data bevatten buiten de data die het tijdelijk nodig heeft voor de verwerking.
+
+* Mijn invulling
+  
+  * Het beheer van de software gebeurt op een andere plek dan waar de verwerking plaats vindt. Die software bestaat uit programma's en scripts voor het runtime systeem maar ook uit functies die nodig zijn voor het controleren, testen en uiteindelijk publiceren van een versleutelde export file voor het gebruik op het runtime systeem.
+
+  * Het software beheer systeem registreert functionele aanpassingen en koppelt dat aan versies van de software. De levensloop van de aanpassing bepaalt dan welke versie in welke omgeving (Ontwikkeling -> TEST->..->Productie) komt te staan. Uiteindelijk publiceert dit systeem een export file per omgeving.
+
+  * Er is een runtime systeem wat op basis van de versleutelde export file de juiste versie van de software kan garanderen en gaat runnen. Dit systeem faciliteert onder andere ontcijferen en versleuteling van gegevens voor scripts en programma's die dat niet zelf kunnen.
+
+
+
+## Beheren.
+
  * Het beheer moet als allereerste van de server af.
  
    Alle aanpassingen moeten vanuit Git (sourcecontrol) plaats vinden om traceerbaar en controleerbaar te zijn. Vanuit Git ontstaat de configuratie die in zijn geheel op de runtime omgeving wordt gezet.
