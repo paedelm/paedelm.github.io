@@ -11,7 +11,7 @@ date: 2020-04-22
 ## Mijn expertise
  
   Systemen betrouwbaar maken, dat betekent ook veilig maken want onveilig is onbetrouwbaar maar onbetrouwbaar is onveilig. Om dat laatste toe te lichten:
-  > Problemen leiden vaak tot handmatige aanpassingen waarvoor medewerkers ter plekke, op het systeem zelf, aanpassingen maken, dat kan vaak ongecontroleerd en kan leiden tot onbedoelde fouten of gelegenheid geven aan indringers om gebruik te maken van de reparatie mogelijkheden om iets crimineels te doen.
+  > Problemen leiden vaak tot handmatige aanpassingen waarvoor medewerkers ter plekke, op het systeem zelf, aanpassingen maken, dat gebeurt vaak ongecontroleerd en kan leiden tot onbedoelde fouten of gelegenheid geven aan indringers om gebruik te maken van de reparatie mogelijkheden om iets crimineels te doen.
 
 ## Mijn methodiek toegepast op een denkbeeldige fabriek.
 > **Een fabriekshal van 40 jaar terug**: er gaan grondstoffen in en na verwerking komen er eindproducten uit. Door de open deuren worden grondstoffen binnen gebracht en neergezet naast de eindproducten die wachten op de verschillende vervoerders. Verderop worden de producten gemaakt door specialisten die verschillende handelingen uitvoeren en dat in de juiste volgorde moeten doen. Er liggen gedetailleerde instructies. 
@@ -78,7 +78,7 @@ Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden bescherm
 
 
 ## Beveiligd uitvoeren:
-> Weet jij hoelang het duurt voordat je erachter komt dat er een script (shell, python nodejs etc..) is aangepast? Daar moest ik aan denken, toevallig is het ook kort geleden [**gebeurd**] (https://tweakers.net/nieuws/180646/criminelen-stalen-inloggegevens-van-ontwikkelaars-via-devtool-bash-uploader.html)
+> Weet jij hoelang het duurt voordat je erachter komt dat er een script (shell, python nodejs etc..) is aangepast? Daar moest ik aan denken, toevallig is het ook kort geleden [**gebeurd**](https://tweakers.net/nieuws/180646/criminelen-stalen-inloggegevens-van-ontwikkelaars-via-devtool-bash-uploader.html)
 
 
 Hoe mooi ook zo'n "Beheer vanuit Git" systeem als je zo de scripts kan aanpassen, werkt het niet. Mijn antwoord daarop is: versleutel de configuratie en zorg ervoor dat je het script nergens opslaat, indien toch nodig, kan het er vlak van te voren opgezet worden en na draaien worden verwijderd, telkens weer. 
