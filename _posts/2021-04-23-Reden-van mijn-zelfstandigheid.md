@@ -78,7 +78,7 @@ Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden bescherm
 
 
 ## Beveiligd uitvoeren:
-> Weet jij hoelang het duurt voordat je erachter komt dat er een script (shell, python nodejs etc..) is aangepast? Daar moest ik aan denken, toevallig is het ook kort geleden [**gebeurd**](https://tweakers.net/nieuws/180646/criminelen-stalen-inloggegevens-van-ontwikkelaars-via-devtool-bash-uploader.html)
+> Weet jij hoelang het duurt voordat je erachter komt dat er een script (shell, python nodejs etc..) is aangepast? Daar moest ik aan denken, toevallig is het kort geleden [**gebeurd!**](https://tweakers.net/nieuws/180646/criminelen-stalen-inloggegevens-van-ontwikkelaars-via-devtool-bash-uploader.html)
 
 
 Hoe mooi ook zo'n "Beheer vanuit Git" systeem als je zo de scripts kan aanpassen, werkt het niet. Mijn antwoord daarop is: versleutel de configuratie en zorg ervoor dat je het script nergens opslaat, indien toch nodig, kan het er vlak van te voren opgezet worden en na draaien worden verwijderd, telkens weer. 
