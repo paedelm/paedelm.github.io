@@ -53,7 +53,7 @@ Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden bescherm
    
  * Het domein volledig beschrijven.
 
-   Omdat alles vanuit git moet doen, moet de domein configuratie alles bevatten wat nodig is om probleemloos te draaien en te beheren en worden er speciale eisen aan gesteld. 
+   Omdat alles vanuit Git gedaan wordt, moet de domein configuratie alles bevatten wat nodig is om probleemloos te draaien en te beheren en worden er speciale eisen aan gesteld. 
    * Dus niet alleen de sources van programma's of scripts,
    * maar ook hun manier en hun moment van starten,
    * de gegevens om externe resources zoals databases, kluizen, externe sites, etc te benaderen.
