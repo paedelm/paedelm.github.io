@@ -13,13 +13,13 @@ date: 2020-04-22
   Systemen betrouwbaar maken, dat betekent ook veilig maken want onveilig is onbetrouwbaar maar onbetrouwbaar is onveilig. Om dat laatste toe te lichten:
   > Problemen leiden vaak tot handmatige aanpassingen waarvoor medewerkers ter plekke, op het systeem zelf, aanpassingen maken, dat kan vaak ongecontroleerd en kan leiden tot onbedoelde fouten of gelegenheid geven aan indringers om gebruik te maken van de reparatie mogelijkheden om iets crimineels te doen.
 
-## Mijn methodiek in het kort vanuit een ander perspectief.
-> **Een fabriekshal van 20 jaar terug**: er gaan grondstoffen in en na verwerking komen er eindproducten uit. Door de open deuren worden grondstoffen binnen gebracht en neergezet naast de eindproducten die wachten op de verschillende vervoerders. Verderop worden de producten gemaakt door specialisten die verschillende handelingen uitvoeren en dat in de juiste volgorde moeten doen. Er liggen gedetailleerde instructies. 
+## Mijn methodiek toegepast op een denkbeeldige fabriek.
+> **Een fabriekshal van 40 jaar terug**: er gaan grondstoffen in en na verwerking komen er eindproducten uit. Door de open deuren worden grondstoffen binnen gebracht en neergezet naast de eindproducten die wachten op de verschillende vervoerders. Verderop worden de producten gemaakt door specialisten die verschillende handelingen uitvoeren en dat in de juiste volgorde moeten doen. Er liggen gedetailleerde instructies. 
 
 > **De fabriekshal nu**: Een afgesloten fabriekshal, aan de buitenkant verschillende kluizen voor het deponeren van grondstoffen en kluizen voor afnemers van het eindproduct. Het productie proces is geautomatiseerd, specialisten werken nu op de research afdeling, zij ontwikkelen en testen aanpassingen in het productie proces voordat het in de fabriek wordt toegepast.
 
 Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden beschermd tegen sabotage, spionage en diefstal, er blijft ook niks van waarde achter op de plaats van produceren. Ontwikkelen van het proces gebeurt ergens anders, het bestaande proces wordt in zijn geheel vervangen door een geteste nieuwe versie. De productie plaats is afgesloten, maar zou iemand toch doordringen dan is er nog steeds niks van waarde te vinden. _En die glimmende apparaten? Die geven hun geheimen niet prijs!_
-## Leuk verhaal maar nu concreet, wat is mijn methodiek in het echt?
+## Leuk verhaal maar nu concreet, wat betekent de methodiek vertaald naar een IT systeem?
 
 * De eisen
 
@@ -31,7 +31,7 @@ Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden bescherm
 
   * Het runtime systeem mag geen permanente data bevatten buiten de data die het tijdelijk nodig heeft voor de verwerking.
 
-* Mijn invulling
+* De invulling
   
   * Het beheer van de software gebeurt op een andere plek dan waar de verwerking plaats vindt. Die software bestaat uit programma's en scripts voor het runtime systeem maar ook uit functies die nodig zijn voor het controleren, testen en uiteindelijk publiceren van een versleutelde export file voor het gebruik op het runtime systeem.
 
