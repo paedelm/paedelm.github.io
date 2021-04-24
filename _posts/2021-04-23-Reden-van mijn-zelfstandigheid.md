@@ -13,7 +13,14 @@ date: 2020-04-22
   Systemen betrouwbaar maken, dat betekent ook veilig maken want onveilig is onbetrouwbaar maar onbetrouwbaar is onveilig. Om dat laatste toe te lichten:
   > Problemen leiden vaak tot handmatige aanpassingen waarvoor medewerkers ter plekke, op het systeem zelf, aanpassingen maken, dat kan vaak ongecontroleerd en kan leiden tot onbedoelde fouten of gelegenheid geven aan indringers om gebruik te maken van de reparatie mogelijkheden om iets crimineels te doen.
 
-## Wat is mijn systeem, hoe zou ik het dan doen?
+## Mijn methodiek in het kort vanuit een ander perspectief.
+Een metafoor:
+> **Een fabriekshal van 20 jaar terug**: er gaan grondstoffen in en na verwerking komen er eindproducten uit. Door de open deuren worden grondstoffen binnen gebracht en neergezet naast de eindproducten die wachten op de verschillende vervoerders. Verderop worden de producten gemaakt door specialisten die verschillende handelingen uitvoeren en dat in de juiste volgorde moeten doen. Er liggen gedetailleerde instructies. 
+
+> **De fabriekshal nu**: Een afgesloten fabriekshal, aan de buitenkant verschillende toeleveranciers kluizen voor het deponeren van grondstoffen, en afhaal kluizen voor afnemers van het eindproduct. Het productie proces is geautomatiseerd, specialisten werken nu op de research afdeling zij ontwikkelen en testen aanpassingen in het productie proces voordat het in de fabriek wordt toegepast.
+
+Er mag niks mis gaan, invoer, uitvoer en het proces worden beschermd tegen sabotage, spionage en diefstal, er blijft ook niks van waarde achter op de plaats van produceren. Ontwikkelen van het proces gebeurt ergens anders, het bestaande proces wordt in zijn geheel vervangen door een geteste nieuwe versie. De productie plaats is afgesloten, maar zou iemand toch doordringen dan is er nog steeds niks van waarde te vinden. En die glimmende apparaten? Die geven hun geheimen niet prijs!
+## Leuk verhaal maar nu concreet, wat is mijn methodiek in het echt?
 
  * Het beheer moet als allereerste van de server af.
  
@@ -38,7 +45,7 @@ date: 2020-04-22
    * Eventuele dockerfile voor de configuratie van het runtime systeem.
    * Actief maken van het sourcesysteem: vanuit de sources wordt de domein configuratie gegenereerd. Denk daarbij aan genereren voor verschillende (test) omgevingen. De juiste versie wordt bepaald op basis van de status van een change. Ter verduidelijking: zo'n change zit natuurlijk niet direct in productie maar doorloopt waarschijnlijk de cyclus van Development via eventuele extra test omgevingen naar Productie.
 
- * Genereren van een versleutelde versie van een export in Json formaat voor iedere omgeving in het domein.
+ * Genereren van een omgeving specifieke versleutelde export.
   
    Het generatie proces roept jouw configuratie items aan met de environment parameter, het zorgt voor de juiste combinatie van versie en environment op basis van de status van de change. Het doet allerlei algemene controles en jij kan voor ieder item je eigen controles programmeren. De laatste controle is jouw test, en als die goed gaat, worden de versleutelde Json-files geproduceerd.  
 
@@ -90,5 +97,5 @@ Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kl
 Samenvattend kan je stellen dat traceerbare wijzigingen in een smart configuratie systeem en waardoor je geautomatiseerd kan beheren en door de tussenlaag je eenvoudiger over kan gaan naar versleutelde data eventueel buiten de server. Je minder (geen) noodzaak hebt om op de server te komen, en wie op de server komt, niks kan vinden van waarde. Daardoor ben je ook minder interessant voor de crimineel, het kost te veel moeite met weinig zicht op crimineel-resultaat. Voor de betrouwbaarheid heb je het voordeel dat alles terug te vinden is in Git, er getest naar de volgende omgeving wordt gegaan, en door de koppeling van een versie van de configuratie aan een change, de rollforward en rollback van de change de juiste versies raken. 
 
 ## Mijn rol
- zie ik in bewust maken van deze manier van werken, het gezond verstand stuk, en bij de implementatie fase, het opzetten van het smart configuratie systeem en het omgaan en beschrijven van flows voor de tussenlaag die van jouw scripts en programma's processen maakt die continue draaien en jouw flow op het juiste moment aanroepen. Mijn uitgangspunt is dat je (het scrum team) het uiteindelijk zelf moet kunnen onderhouden, en gezien alle informatie over het systeem terug te vinden is in Git, en bewezen actueel is, moet dat geen probleem zijn. 
+ Het bewust maken van deze manier van werken, het gezond verstand stuk, en bij de implementatie fase, het opzetten van het smart configuratie systeem en het omgaan en beschrijven van flows voor de tussenlaag die van jouw scripts en programma's processen maakt die continue draaien en jouw flow op het juiste moment aanroepen. Mijn uitgangspunt is dat je (het scrum team) het uiteindelijk zelf moet kunnen onderhouden, en gezien alle informatie over het systeem terug te vinden is in Git, en bewezen actueel is, moet dat geen probleem zijn. 
 
