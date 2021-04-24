@@ -14,7 +14,6 @@ date: 2020-04-22
   > Problemen leiden vaak tot handmatige aanpassingen waarvoor medewerkers ter plekke, op het systeem zelf, aanpassingen maken, dat kan vaak ongecontroleerd en kan leiden tot onbedoelde fouten of gelegenheid geven aan indringers om gebruik te maken van de reparatie mogelijkheden om iets crimineels te doen.
 
 ## Mijn methodiek in het kort vanuit een ander perspectief.
-Een metafoor:
 > **Een fabriekshal van 20 jaar terug**: er gaan grondstoffen in en na verwerking komen er eindproducten uit. Door de open deuren worden grondstoffen binnen gebracht en neergezet naast de eindproducten die wachten op de verschillende vervoerders. Verderop worden de producten gemaakt door specialisten die verschillende handelingen uitvoeren en dat in de juiste volgorde moeten doen. Er liggen gedetailleerde instructies. 
 
 > **De fabriekshal nu**: Een afgesloten fabriekshal, aan de buitenkant verschillende kluizen voor het deponeren van grondstoffen en kluizen voor afnemers van het eindproduct. Het productie proces is geautomatiseerd, specialisten werken nu op de research afdeling, zij ontwikkelen en testen aanpassingen in het productie proces voordat het in de fabriek wordt toegepast.
@@ -45,11 +44,11 @@ Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden bescherm
    * Eventuele dockerfile voor de configuratie van het runtime systeem.
    * Actief maken van het sourcesysteem: vanuit de sources wordt de domein configuratie gegenereerd. Denk daarbij aan genereren voor verschillende (test) omgevingen. De juiste versie wordt bepaald op basis van de status van een change. Ter verduidelijking: zo'n change zit natuurlijk niet direct in productie maar doorloopt waarschijnlijk de cyclus van Development via eventuele extra test omgevingen naar Productie.
 
- * Genereren van een omgeving specifieke versleutelde export.
+  * Genereren van een omgeving specifieke versleutelde export.
   
    Het generatie proces roept jouw configuratie items aan met de environment parameter, het zorgt voor de juiste combinatie van versie en environment op basis van de status van de change. Het doet allerlei algemene controles en jij kan voor ieder item je eigen controles programmeren. De laatste controle is jouw test, en als die goed gaat, worden de versleutelde Json-files geproduceerd.  
 
- * Changes vooruit rollen of terug rollen.
+  * Changes vooruit rollen of terug rollen.
 
    Soms wil je een aanpassing in productie nemen of naar een volgende test-omgeving laten gaan. Daarvoor verander je de status van de change naar die nieuwe omgeving en genereer je opnieuw de export files.
 
