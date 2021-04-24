@@ -46,13 +46,13 @@ Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden bescherm
 
   * Genereren van een omgeving specifieke versleutelde export.
   
-   Het generatie proces roept jouw configuratie items aan met de environment parameter, het zorgt voor de juiste combinatie van versie en environment op basis van de status van de change. Het doet allerlei algemene controles en jij kan voor ieder item je eigen controles programmeren. De laatste controle is jouw test, en als die goed gaat, worden de versleutelde Json-files geproduceerd.  
+    Het generatie proces roept jouw configuratie items aan met de environment parameter, het zorgt voor de juiste combinatie van versie en environment op basis van de status van de change. Het doet allerlei algemene controles en jij kan voor ieder item je eigen controles programmeren. De laatste controle is jouw test, en als die goed gaat, worden de versleutelde Json-files geproduceerd.  
 
   * Changes vooruit rollen of terug rollen.
 
-   Soms wil je een aanpassing in productie nemen of naar een volgende test-omgeving laten gaan. Daarvoor verander je de status van de change naar die nieuwe omgeving en genereer je opnieuw de export files.
+    Soms wil je een aanpassing in productie nemen of naar een volgende test-omgeving laten gaan. Daarvoor verander je de status van de change naar die nieuwe omgeving en genereer je opnieuw de export files.
 
-   Er is geen verschil in handelingen om vooruit of weer achteruit te gaan als blijkt dat er iets over het hoofd is gezien. Het idee om dit vanuit Git te doen is de traceerbaarheid.
+    Er is geen verschil in handelingen om vooruit of weer achteruit te gaan als blijkt dat er iets over het hoofd is gezien. Het idee om dit vanuit Git te doen is de traceerbaarheid.
 
 
 ## Beveiligd uitvoeren:
