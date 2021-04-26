@@ -50,7 +50,7 @@ type Process = {
 }
 
  ~~~
-Je bent vrij een flow samen te stellen van van verschillende programma's zoals je dat ook zou doen als je er een shell script van maakt. Het flowtype geeft aan of je de flow wil stoppen bij de eerste stap die fout gaat, dit zal je zeker gebruiken als je jouw proces voorwaardelijke start bijvoorbeeld bij de aanwezigheid van een bestand, is het niet aanwezig of nog niet oud genoeg dan stopt het proces voor deze periode. Met de watch parameter kan je de wacht periode bekorten om sneller te reageren op bijvoorbeeld de aanwezigheid van een bestand.
+Je bent vrij een flow samen te stellen van van verschillende programma's zoals je dat ook zou doen als je er een shell script van maakt. Het flowtype "UntilError" geeft aan of je de flow wil stoppen bij de eerste stap die fout gaat, dit zal je zeker gebruiken als je jouw proces voorwaardelijke start bijvoorbeeld bij de aanwezigheid van een bestand, is het niet aanwezig of nog niet oud genoeg dan stopt het proces voor deze periode. Met de watch parameter kan je de wacht periode bekorten om sneller te reageren op bijvoorbeeld de aanwezigheid van een bestand. Er zijn meerdere flowtypes.
 
 Hieronder staat de definitie van Program:
 ~~~
@@ -77,7 +77,7 @@ and Program =
     | FileProgram of FileProgram
 
 ~~~
-De essentie hiervan is dat ExternScript als child process wordt opgestart, met de mogelijkheid tot redirect van stdin en stdout en ook de mogelijkheid om een eigen directory tree door te geven. ExternProgram is een DLL aanroep dus geen redirects, deze mogelijkheid gemaakt voor snelle checks en gevaarlijk omdat het niet in een child process draait.
+De essentie hiervan is dat ExternScript als child process wordt opgestart, met de mogelijkheid tot redirect van stdin en stdout en ook de mogelijkheid om een eigen directory tree door te geven. ExternProgram is een DLL aanroep dus kent het ook geen redirects, deze mogelijkheid is gemaakt voor snelle checks en enigzins gevaarlijk omdat het niet in een child process draait.
 
 FileProgram is een koppeling van bestanden aan een Program, een pseudo Program, hiermee kan je binnen het proces toch een aantal bestanden parallel verwerken.
 
