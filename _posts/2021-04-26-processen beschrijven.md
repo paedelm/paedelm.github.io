@@ -10,7 +10,7 @@ date: 2021-04-26
  
  Mijn keuze is niet op een export beschrijving gevallen maar op een programmeertaal die bekende export formaten kan produceren. Een programmeertaal omdat daar alles inzit voor hergebruik, conditioneel genereren, indelen in sourcefiles, gebruik van intellisense, pre-processing zoals compileren, controleren zoals testen en nog veel meer. Uiteindelijk ben ik op F# terecht gekomen het heeft de voordelen van een dotnet omgeving met zijn uitgebreide library, het heeft een eenvoudige syntax, het heeft string interpolatie voor templates, condities zijn expressies en geen statements, en het allerbelangrijkste is de [Discriminated Union](https://fsharpforfunandprofit.com/posts/discriminated-unions/). C# kwam in de buurt maar heeft nog niet alles wat F# kan. Ik heb me beperkt tot DotNet en daarbinnen gericht op sterk getypeerde talen met mogelijkheid tot reflectie. 
 
- ## Wat moet je beschrijven van een proces?
+## Wat moet je beschrijven van een proces?
 
  Een proces bestaat uit een programma flow, de main Step, die periodiek wordt gestart om zijn werk te doen. Zo'n flow is een recursieve structuur: de flow bestaat uit 1 of meerdere stappen en een stap is een flow of een task. Zie de definitie in F#:
  ~~~
