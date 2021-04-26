@@ -8,18 +8,20 @@ date: 2021-04-23
 
  Alom in het nieuws: storing in een systeem van de overheid, cijfers niet op tijd, bedrijf in de problemen door een hack op een essentieel systeem, gegevens gelekt en aangeboden op het dark net, en dat bijna iedere dag. Ik ben bang dat er nog heel wat systemen zijn die bij gerichte criminele aandacht flink door de mand vallen. Ze zijn daar vroeger meestal niet op ontworpen en het werd ook niet afgestraft maar dat is tegenwoordig wel anders. 
 
-## Mijn expertise
+## Wat kunnen we er aan doen?
  
   Systemen betrouwbaar maken, dat betekent ook veilig maken want onveilig is onbetrouwbaar maar onbetrouwbaar is onveilig. Om dat laatste toe te lichten:
   > Problemen leiden vaak tot handmatige aanpassingen waarvoor medewerkers ter plekke, op het systeem zelf, aanpassingen maken, dat gebeurt vaak ongecontroleerd en kan leiden tot onbedoelde fouten of gelegenheid geven aan indringers om gebruik te maken van de reparatie mogelijkheden om iets crimineels te doen.
 
-## Mijn methodiek toegepast op een denkbeeldige fabriek.
+## Toegepast op een denkbeeldige fabriek.
 > **Een fabriekshal van 40 jaar terug**: er gaan grondstoffen in en na verwerking komen er eindproducten uit. Door de open deuren worden grondstoffen binnen gebracht en neergezet naast de eindproducten die wachten op de verschillende vervoerders. Verderop worden de producten gemaakt door specialisten die verschillende handelingen uitvoeren en dat in de juiste volgorde moeten doen. Er liggen gedetailleerde instructies. 
 
 > **De fabriekshal nu**: Een afgesloten fabriekshal, aan de buitenkant verschillende kluizen voor het deponeren van grondstoffen en kluizen voor afnemers van het eindproduct. Het productie proces is geautomatiseerd, specialisten werken nu op de research afdeling, zij ontwikkelen en testen aanpassingen in het productie proces voordat het in de fabriek wordt toegepast.
 
 Er mag tegenwoordig niks mis gaan, invoer, uitvoer en het proces worden beschermd tegen sabotage, spionage en diefstal, er blijft ook niks van waarde achter op de plaats van produceren. Ontwikkelen van het proces gebeurt ergens anders, het bestaande proces wordt in zijn geheel vervangen door een geteste nieuwe versie. De productie plaats is afgesloten, maar zou iemand toch doordringen dan is er nog steeds niks van waarde te vinden. _En die glimmende apparaten? Die geven hun geheimen niet prijs!_
-## Leuk verhaal maar nu concreet, wat betekent de methodiek vertaald naar een IT systeem?
+## En nu concreet, hoe vertaal je dit naar een IT systeem?
+
+De processen in een IT systeem worden uitvoerig getest voordat ze actief worden, ze mogen dus niet buiten om aangepast worden. Er worden gegevens verwerkt, het is duidelijk dat die onveranderd dus beveiligd het proces ingaan. Proces en data kunnen privacy of fraude gevoelige informatie bevatten en moeten daarom ook voor ongewenst lezen worden afgeschermd. Voor gegevens die buiten het proces om blijven bestaan, geldt dat ze ook buiten de proces omgeving worden opgeslagen.
 
 * De eisen
 
@@ -95,7 +97,7 @@ Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kl
   
   Dat heeft mijn voorkeur, in een soort datakluis, dat maakt het moeilijk voor een indringer van jouw runtime systeem iets te vinden van waarde en het betekent dat de server inwisselbaar wordt.
 
-* Handige oplossingen voor het (**niet**)aanpassen van bestaande software voor het gebruik van versleutelde bestanden.
+* Oplossingen om bestaande software **_ongewijzigd_** versleutelde bestanden te laten gebruiken.
 
   Voor het beveiligd uitvoeren is er al een tussenlaag die jouw script of programma uitvoert. Deze tussen laag heeft ook faciliteiten om jouw script aan te roepen en via stdin stream het ontcijferde bestand te geven of vlak van te voren het bestand ontcijferd neer te zetten en na afloop te verwijderen. De uitvoer kan via de stream, stdout of via de persistente variant versleuteld worden en de leesbare versie wordt dan verwijderd. Het maakt voor de tussenlaag niet zoveel uit of het versleutelde bestand op schijf of vanuit een datakluis komt. 
 
@@ -107,7 +109,7 @@ Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kl
 
 * Zet geen poorten open, alle software die toch luistert op een poort, moet kritisch bekeken worden.
 
-* Import gegevens van buiten het domein, een veilige oplossing.
+* Een veilige oplossing om gegevens van buiten het doemin te importeren.
  
   Als je gegevens krijgt van buiten het domein, maak dan een aparte locatie, bijvoorbeeld in de cloud, geef de eigenaar van de gegevens een schrijfsleutel en haal de gegevens vanuit die locatie naar jouw systeem om te verwerken. Vanwege de beveiliging, versleuteling, de hulpmiddelen en de documentatie is dat een makkelijke manier.
 
