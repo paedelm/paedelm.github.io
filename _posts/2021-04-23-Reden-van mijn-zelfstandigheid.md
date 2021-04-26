@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Waarvoor ga ik me inzetten als zelfstandige"
-date: 2020-04-22
+title: "Waarvoor ga ik me inzetten als zelfstandige?"
+date: 2021-04-23
 ---
 
 ## Actuele problemen

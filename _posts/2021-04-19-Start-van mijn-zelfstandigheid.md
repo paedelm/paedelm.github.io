@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eindelijk zelfstandig"
-date: 2020-04-19
+date: 2021-04-19
 ---
 
 Het is zover, de startdatum is bekend, maandag 3 mei. 
