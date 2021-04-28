@@ -122,15 +122,15 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
 
 * De beschrijving moet na import gelijk zijn aan wat het voor export was.
   
-  De beschrijving van het domein wordt in zijn geheel geëxporteerd en ter controle geïmporteerd, ze moeten dan gelijk zijn. Wat het export formaat is doet niet ter zake maar in de praktijk zal het versleutelde json zijn. Een eis is dat het onleesbaar is zonder sleutel.
+  De beschrijving van het domein wordt in zijn geheel geëxporteerd en ter controle geïmporteerd, ze moeten dan gelijk zijn. Wat het export formaat is doet niet ter zake maar in de praktijk zal het versleutelde json zijn. Een eis is dat het alleen met een sleutel te lezen is.
 
 * Je moet er alles in kwijt kunnen.
   
-  Voorlopig kan alles er in behalve functions. Waar het source systeem met functions meerdere omgevingen bediend, ligt bij het export formaat de omgeving vast. Het is dus een export voor die bewuste omgeving.Omdat je byte arrays kan exporteren is al het exotische mogelijk. Ik heb daar al op voor gesorteerd door een directorytree(_ContentZipOfProgDir_) als optie op te nemen bij een _ExternScript_. Als voorbeeld hiervoor gebruik ik een java programma die voor exporteren wordt gecompileerd en waarvan de gecompileerde jar-file via de _ContentZipOfProgDir_ property mee komt in de export. 
+  Voorlopig kan alles er in behalve functions. Waar het source systeem met functions meerdere omgevingen bedient, ligt bij het export formaat de omgeving vast. Het is dus een export voor die bewuste omgeving.Omdat je byte arrays kan exporteren is al het exotische mogelijk. Ik heb daar al op voor gesorteerd door een directorytree(_ContentZipOfProgDir_) als optie op te nemen bij een _ExternScript_. Als voorbeeld hiervoor gebruik ik een java programma die voor exporteren wordt gecompileerd en waarvan de gecompileerde jar-file via de _ContentZipOfProgDir_ property mee komt in de export. 
 
 * Optimaal gebruik maken van de Ide.
 
-  Ik gebruik VisualStudio Code, bij de code in F# voor het opbouwen van de beschrijving middels het Type systeem kan je intellisense gebruiken en wijst de Ide je op je fouten. Maar ook het python script, java programma of welke source dan ook, de Ide herkent het meestal wel of er is wel een plugin voor te krijgen en je hebt ondersteuning van de Ide bij het schrijven daarvan.
+  Ik gebruik VisualStudio Code met plugin Ionide voor F# om intellisense te activeren en op je fouten te wijzen. Maar ook het python script, java programma of welke source dan ook, de Ide herkent het meestal wel of er is wel een plugin voor te krijgen en je hebt ondersteuning van de Ide bij het schrijven daarvan.
 
   Soms moet je kiezen: de source van een script in een string constante met interpolatie of in een file met de juiste extensie. Gelukkig kan je beiden in F#, die aparte file geeft als voordeel dat de Ide je ondersteunt maar met de string constante (met interpolatie) kan je makkelijker templates programmeren.
 
@@ -255,7 +255,9 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
 
   Dat is iets wat niet anders is dan het veranderen van de omgeving van de _change_. Zette je hem van **_Acceptatie_** naar **_Productie_** en het blijkt toch niet naar wens te gaan, dan zet je hem terug van **_Productie_** naar **_Acceptatie_**. Allemaal traceerbaar in Git. Uiteraard moet je nog wel bedenken wat dat betekent voor de state in resources zoals een database of een message systeem.
 
-* Probeer alles van het domein binnen 1 directory tree te doen.
+* Makkelijk zoeken.
+
+  Probeer alles van het domein binnen 1 directory tree te doen.
 
   De Ide heeft goede zoek mogelijkheden binnen een directory tree, het geeft je voordelen, tenzij je het bewust anders doet, zou ik me hier aan houden. Voor de rest is een logische opbouw van de tree prettig voor wie het domein moet onderhouden. En doe je iets wat afwijkend lijkt met een speciale bedoeling, beschrijf die bedoeling dan en zorg ervoor dat iemand de beschrijving vindt. En alles wat je schrijft, moet je in die ene directory tree zetten, dan is alles traceerbaar.
 
