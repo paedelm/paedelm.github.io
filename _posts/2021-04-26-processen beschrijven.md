@@ -83,9 +83,13 @@ and Program =
     | FileProgram of FileProgram
 
 ~~~
-De essentie hiervan is dat type "ExternScript" als child process wordt opgestart, met de mogelijkheid tot redirect van stdin en stdout en ook de mogelijkheid om een eigen directory tree door te geven. Type "ExternProgram" is een DLL aanroep dus kent het ook geen redirects, deze mogelijkheid is gemaakt voor snelle checks en enigzins gevaarlijk omdat het niet in een child process draait.
+**_Program_** is zo'n generieke typering, het kan een **_ExternScript_**, **_ExternProgram_** of **_FileProgram_** zijn.
 
-Type "FileProgram" is een koppeling van bestanden aan een "Program", eigenlijk een _pseudo_ "Program", met property "InputFileSelect" geef je aan dat voor ieder bestand dat voldoet aan die conditie, het programma wordt opgestart. Hiermee kan je binnen de service toch bedoeld parallel verwerken.
+**_ExternScript_** wordt als child process opgestart, met de mogelijkheid tot redirect van stdin en stdout en ook de mogelijkheid om een eigen directory tree door te geven.
+
+**_ExternProgram_** is een DLL aanroep dus kent het ook geen redirects, deze mogelijkheid is gemaakt voor snelle checks en enigzins gevaarlijk omdat het niet in een child process draait.
+
+**_FileProgram_** is een koppeling van bestanden aan een **_Program_**, eigenlijk een _pseudo_ **_Program_**, met property "InputFileSelect" geef je aan dat voor ieder bestand dat voldoet aan die conditie, het programma wordt opgestart. Hiermee kan je binnen de service toch bedoeld parallel verwerken.
 
 Hieronder volgt een definitie voorbeeld:
 ~~~
@@ -109,9 +113,10 @@ let Service name env =
         }
     | _ -> None
 ~~~
-Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een functie die als parameter de omgeving mee krijgt en die als resultaat het item voor de bewuste omgeving terug geeft.  Als het source systeem gaat genereren, dat doet het als het runt, worden jouw functies aangeroepen met de juiste versie voor de juiste omgeving, en dat is gebaseerd op het _change_ systeem waar iedere versie van een service is gekoppeld aan een _change_. En de levensloop van de _change_ van Development tot Productie loopt. Als de _change_ wisselt van omgeving moet er opnieuw gegenereerd worden. Je hebt dus alle mogelijkheden om aanpassingen te doen aan de inhoud van alles wat zich in de Service bevindt. Daarnaast kan je aangeven of je wel een service hebt voor die omgeving. Dat heet een option, je geeft terug "Some Value" of "None"
 
- Als eerste wordt hier het pythonScript aangemaakt. Het bestaat uit environment variabelen en een python source die ingelezen wordt vanuit een file. Er wordt van het zo ontstane python script een Task aangemaakt met een Program van het type ExternScript met als runner python waaraan ons script doorgegeven. Dit Program wordt gebruikt in ons Process en dat wordt alleen gegenereerd als we in DEVL of TEST omgeving zitten. In de overige omgevingen wordt None geproduceerd.
+Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een functie die als parameter de omgeving mee krijgt en die als resultaat het item voor de bewuste omgeving terug geeft.  Als het source systeem gaat genereren, dat doet het als het runt, worden jouw functies aangeroepen met de juiste versie voor de juiste omgeving, en dat is gebaseerd op het _change_ systeem waar iedere versie van een service is gekoppeld aan een _change_. En de levensloop van de _change_ van Development tot Productie loopt. Als de _change_ wisselt van omgeving moet er opnieuw gegenereerd worden. Je hebt dus de mogelijkheid variatie aan te brengen op basis van de omgeving, of zelfs geen service te exporteren. Dat heet een option, je geeft terug "**_Some Service_**" of "**_None_**"
+
+ Als eerste wordt hier het pythonScript aangemaakt. Het bestaat uit environment variabelen en een python source die ingelezen wordt vanuit een file. Er wordt van het zo ontstane python script een Task aangemaakt met een Program van het type ExternScript met als runner python waaraan ons script doorgegeven. Dit Program wordt gebruikt in ons Process en dat wordt alleen gegenereerd als we in DEVL of TEST omgeving zitten. In de overige omgevingen wordt **_None_** geproduceerd.
 
 ## Waar is rekening mee gehouden bij het kiezen van het beschrijvings systeem?
 
