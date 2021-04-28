@@ -129,4 +129,107 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
 
 * Testen en controleren
 
-  Door te kiezen voor een actief systeem, jouw code wordt aangeroepen om iets te exporteren, is het ook makkelijk om controles in te bouwen, zeg maar unit tests. De eind controle probeer ik af te dwingen door jouw te vragen voor iedere versie van de service een script te leveren om test gegevens klaar te zetten, dat _test-initialisatie-script_ wordt gecombineerd in een UntilError flow met de service flow. Het resultaat is een eenmalige test van jouw service, als die fouten geeft, stopt de export. 
+  Door te kiezen voor een actief systeem, jouw code wordt aangeroepen om iets te exporteren, is het ook makkelijk om controles in te bouwen, zeg maar unit tests. De eind controle probeer ik af te dwingen door jouw te vragen voor iedere versie van de service een script te leveren om test gegevens klaar te zetten, dat _test-initialisatie-script_ wordt gecombineerd in een UntilError flow met de service flow. Het resultaat is een eenmalige test van jouw service, als die fouten geeft, stopt de export.
+
+* Meerdere versies van services bijhouden en die koppelen aan de juiste omgeving.
+  
+  Je hebt meerdere versies nodig want het starten van de ontwikkeling van een _change_ gebeurt niet direct in de productie omgeving, je mag pas getest in productie, dat betekent dat je in zo'n geval minimaal 2 versies onderhoudt.  
+
+  Op basis van een afgedwongen koppeling (door de compiler) tussen een versie van de service en een beschrijving van een _change_, zorgt het promoten van de _change_ naar een andere omgeving, bijvoorbeeld van **_Acceptatie_** naar **_Productie_** dat de versies van de services die daaraan gekoppeld zijn gebruikt worden voor de **_Productie_** export.
+
+* Afdwingen van correctheid gebeurt door het typeren van de gegevens.  
+ 
+  De compiler controleert jouw source systeem op de spelregels en de typering is een spelregel. Dat klinkt streng maar de Ide kan die spelregels juist gebruiken om je te helpen keuzes te maken.
+
+  Om aan je gegevens te komen mag je echter alles inzetten, je hebt een hele programmeeromgeving ter beschikking om er aan te komen. Je kan databases benaderen, de cloud voor  kluizen of wat dan ook, je kan compileren, docker imgages maken, allemaal geen probleem. 
+
+  Hou echter de traceerbaarheid in het oog. Gebruik daarom gegevens die in Git staan. Er is een uitzondering: **_Zet je geheimen niet zichtbaar in de sources_**. Haal ze uit een kluis, ik gebruik zelf een kluisjes in Azure, in F# kan je een functie schrijven en gebruiken die de geheimenen uit jouw kluis halen, met intellisense kan je jouw geheim kiezen en tikfouten zijn verleden tijd. Bedenk wel dat hier veiligheid boven traceerbaarheid gaat.
+
+  Voorbeeld gebruik Secrets:
+  ~~~
+    // zo moet het niet
+    let password = "EenGeheimWachtWoord"
+
+    // zo is het veiliger
+    let password = secret Secrets.DatHeleGeheimeWachtwoord
+  ~~~  
+
+* Inhoud van de servicebeschrijving afstemmen op de omgeving.
+
+  Omdat je meerdere omgevingen hebt, en je verschillen per omgeving kan hebben, denk aan een andere database benaderen, andere geheimen en meer, geef je geen vaste beschrijving van een service maar geef je een beschrijving op basis van de omgeving. 
+  
+  Dat betekent concreet dat je een functie schrijft met een parameter, de omgeving. Het resultaat is niet de beschrijving maar een optionele beschrijving, het kan namelijk ook zijn dat de service er niet is voor een omgeving. Dat is helemaal niet vreemd denk maar eens aan een nieuwe service die geïntroduceerd is bij een nieuwe _change_ die nog niet verder is dan de **_Ontwikkel_** omgeving, in **_Productie_** is die nog niet aanwezig.
+
+  Een simplistisch voorbeeld:
+
+  ~~~
+  // typering van de omgevingen
+  type Environment =
+  | DEVL
+  | TEST
+  | ACPT
+  | PROD
+
+  // niet een echte service typering, just an example
+  type Service = {
+    Content: string;
+    Secret: string
+  }
+  
+  // de functie die de service beschrijving teruggeeft op basis van de environment
+  let getService env =
+    let content = "omgeving onafhankelijke content"
+    match env with
+    | DEVL       -> Some { Content: content; Secret: secret Secrets.DevelopmentGeheim }
+    | TEST, ACPT -> None
+    | PROD       -> Some { Content: content; Secret: secret Secrets.ProductieGeheim }
+  ~~~
+
+* Uitbreiden beschrijving zonder aanpassing van oude beschrijvingen.
+
+  Het kan zomaar gebeuren dat er nieuwe beschrijvingen nodig zijn omdat voor nieuwe situaties bestaande beschrijvingen onvoldoende zijn.  Die nieuwe beschrijvingen moeten gewoon toegevoegd kunnen worden waarbij de bestaande beschrijvingen nog steeds als valide worden beschouwd. Stel dat er een nieuw type **_Program_** nodig is:
+
+  ~~~
+  type SpecialProgram = {
+    Id: string;
+    Env: Dtap;
+    SpecialProperty: Speciality;
+  }
+  type Program =
+    | ExternScript of ExternScript
+    | ExternProgram of ExternProgram
+    | FileProgram of FileProgram
+    // SpecialProgram wordt toegevoegd
+    | SpecialProgram of SpecialProgram
+  ~~~
+
+  Als een bestaande export file van een Domein zonder SpecialProgram wordt geïmporteerd dan voldoet het aan de F# specificatie van de nieuwste **_Program_** met SpecialProgram. Natuurlijk kan een oud runtime systeem zonder SpecialProgram geen import file met SpecialProgram verwerken, om dat van te voren te bepalen wordt bij iedere export opgenomen wat de modernste constructie is waar het (ook echt) gebruik van maakt, en bij import mag dat niet nieuwer zijn dan wat het runtime systeem aankan.
+
+* De mogelijkheid eigen templates te maken.
+
+  Soms is het een werk alle properties van een service telkens op te geven als ze voor een bepaald type service al vastliggen of automatisch te bepalen zijn. F# heeft heel handige features om vanaf een ingevuld record een nieuw record te maken met enkele aanpassingen.
+  
+  ~~~
+  let default ParallelProgramTest = {
+    Id = "defaultId";
+    Env = TEST;
+    SpecialProperty = RunParallel
+  }
+  let ParallelImportPogramTest = { ParallelProgramTest with Id = "Import" }
+  ~~~
+
+  String interpolation in dotnet kan gebruikt worden om strings op basis van programma logica samen te stellen. Omdat je hele sources in een string kwijt kan is dat ook een veel gebruikt iets:
+
+  ~~~
+  let b = true
+  let pythonScript env  =  $"""
+  {DemoScriptV1.envScript env}
+  {System.IO.File.ReadAllText "services/demoscript/demoscript.v2.py"}
+  {if b then "// b is waar"; else "// b is onwaar"}
+  // en dit is commentaar in het python script
+  // en dit ook
+  a = 12;
+  """ // einde functie pythonScript, door de 3 dubbele quotes worden linefeeds en opmaak behouden.
+  // testScript wordt een pythonScript voor omgeving TEST
+  let testScript = pythonScript TEST
+  ~~~
