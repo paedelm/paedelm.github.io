@@ -6,9 +6,11 @@ date: 2021-04-26
 
 ## Achtergrond
 
- In het kader van een betrouwbaar en veilig IT domein, is het idee om de processen in Git te beschrijven en met die beschrijving ze ergens anders geautomatiseerd en beheerst te laten draaien als zogenaamde **_services_**. Vanwege dat automatisme zal de beschrijving getypeerd moeten worden. Eenduidigheid is nodig, je hebt geen mogelijkheid meer om te vragen "wat bedoel je". Er zijn heel wat eisen te stellen aan de beschrijving, denk aan de mogelijkheid van uitbreiden van het schema zonder oude beschrijvingen te herschrijven, ondersteuning in een IDE zoals intellisense, maken van eigen templates voor bekende proces patronen, eenvoudige syntax en nog meer. 
+ In het kader van een betrouwbaar en veilig IT domein, is het idee om de processen in Git te beschrijven en met die beschrijving ze ergens anders geautomatiseerd en beheerst te laten draaien als zogenaamde **_services_**. Vanwege dat automatisme zal de beschrijving getypeerd moeten worden. Eenduidigheid is nodig, je hebt geen mogelijkheid meer om te vragen "wat bedoel je". Eenduidigheid is een eis maar er zijn ook wensen dat het makkelijk te onderhouden is, dat je ondersteuning krijgt bij het invoeren, dat uitbreiding of wijziging van de vast te leggen gegevens niet betekent dat alles wat je eerder hebt gedaan overnieuw moet en dat je mogelijkheid hebt eigen templates te maken waarmee je veel voorkomende patronen eenvoudiger maakt om maar een een aantal te noemen. Om niet het wiel uit te vinden is het verstandig om iets bestaands te kiezen waarvan je weet dat het goed wordt onderhouden. 
  
- Mijn keuze is niet op een export beschrijving gevallen maar op een programmeertaal die bekende export formaten kan produceren. Een programmeertaal omdat daar alles inzit voor hergebruik, conditioneel genereren, indelen in sourcefiles, gebruik van intellisense, pre-processing zoals compileren, controleren zoals testen en nog veel meer. Uiteindelijk ben ik op F# terecht gekomen het heeft de voordelen van een dotnet omgeving met zijn uitgebreide library, het heeft een eenvoudige syntax, het heeft string interpolatie voor templates, condities zijn expressies en geen statements, en het allerbelangrijkste is de [Discriminated Union](https://fsharpforfunandprofit.com/posts/discriminated-unions/). C# kwam in de buurt maar heeft nog niet alles wat F# kan. Ik heb me beperkt tot DotNet en daarbinnen gericht op sterk getypeerde talen met mogelijkheid tot reflectie. 
+ Ik heb gezocht naar een programmeertaal, met sterke typering en een eenvoudige syntax. Er moeten records getypeerd kunnen worden en de velden van de records moeten de bekende primitieven aan kunnen zoals string, integer, date, time, boolean en wat ik hier verder nog vergeet. Maar een record moet ook een record als veld kunnen hebben en ook zichzelf, en heel belangrijk is ook dat je generieke types kan gebruiken waarvoor je een specifiek type kan invullen. Natuurlijk moet de recordstructuur te exporteren zijn naar Json of Xml of iets anders, als de import maar hetzelfde oplevert als de recordstructuur voor de export. Die controle is belangrijk en moet altijd uitgevoerd worden. 
+ 
+Een programmeertaal dus en niet het handmatig onderhouden van het exportformaat. Omdat met een programma hergebruik, conditioneel genereren, indelen in sourcefiles, gebruik van intellisense, pre-processing zoals compileren, controleren zoals testen en nog veel meer, mogelijk is. Uiteindelijk ben ik op F# terecht gekomen het heeft de voordelen van een dotnet omgeving met zijn uitgebreide library, het heeft een eenvoudige syntax, het kan goed de types afleiden, het heeft string interpolatie voor templates, condities zijn expressies en geen statements, en het allerbelangrijkste is de [Discriminated Union](https://fsharpforfunandprofit.com/posts/discriminated-unions/). C# kwam in de buurt maar heeft nog niet alles wat F# kan. Ik heb me alleen beperkt tot DotNet en daarbinnen gericht op sterk getypeerde talen met mogelijkheid tot reflectie. 
 
 ## Wat moet je beschrijven?
 
@@ -133,7 +135,7 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
 
 * Meerdere versies van services bijhouden en die koppelen aan de juiste omgeving.
   
-  Je hebt meerdere versies nodig want het starten van de ontwikkeling van een _change_ gebeurt niet direct in de productie omgeving, je mag pas getest in productie, dat betekent dat je in zo'n geval minimaal 2 versies onderhoudt.  
+  Je hebt meerdere versies nodig dat wordt duidelijk als je start met de ontwikkeling van een _change_. Dat doe je natuurlijk niet direct in de productie omgeving, je mag pas naar productie als er getest is, dus tot je change in productie is, heb je minimaal 2 versies te onderhouden.  
 
   Op basis van een afgedwongen koppeling (door de compiler) tussen een versie van de service en een beschrijving van een _change_, zorgt het promoten van de _change_ naar een andere omgeving, bijvoorbeeld van **_Acceptatie_** naar **_Productie_** dat de versies van de services die daaraan gekoppeld zijn gebruikt worden voor de **_Productie_** export.
 
@@ -233,3 +235,25 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
   // testScript wordt een pythonScript voor omgeving TEST
   let testScript = pythonScript TEST
   ~~~
+
+* Controle op gegenereerde export file(s).
+
+  Soms pas je een concreet gegeven aan en soms een algoritme om iets te bewerkstelligen. Je hebt meestal wel een idee wat zo'n verandering teweeg zou moeten brengen. 
+
+  Zorg ervoor dat de gegenereerde export files ook in Git komen te staan. Het is dan duidelijk na generatie wat er veranderd is. Doe jij iets waarvan je verwacht dat het alleen invloed heeft op jouw development omgeving en je ziet ineens dat er een wijziging is ontstaan in de productie export file dan is er wat voor je uit te zoeken. 
+
+* Mogelijkheid tot rapportage(s)
+
+  Je onderhoudt meerdere versies van de services, versies die in geen enkele omgeving actief zijn, vervuilen jouw source systeem, daarom is het handig die te verwijderen of te archiveren (Git archiveert ook). Je kan allemaal handige functies schrijven om deze informatie boven tafel te krijgen, en direct op de bron zelf en niet op iets wat afgeleid is.
+
+* Terugdraaien van een _change_.
+
+  Dat is iets wat niet anders is dan het veranderen van de omgeving van de _change_. Zette je hem van **_Acceptatie_** naar **_Productie_** en het blijkt toch niet naar wens te gaan, dan zet je hem terug van **_Productie_** naar **_Acceptatie_**. Allemaal traceerbaar in Git. Uiteraard moet je nog wel bedenken wat dat betekent voor de state in resources zoals een database of een message systeem.
+
+* Probeer alles van het domein binnen 1 directory tree te doen.
+
+  De Ide heeft goede zoek mogelijkheden binnen een directory tree, het geeft je voordelen, tenzij je het bewust anders doet, zou ik me hier aan houden. Voor de rest is een logische opbouw van de tree prettig voor wie het domein moet onderhouden. En doe je iets wat afwijkend lijkt met een speciale bedoeling, beschrijf die bedoeling dan en zorg ervoor dat iemand de beschrijving vindt. En alles wat je schrijft, moet je in die ene directory tree zetten, dan is alles traceerbaar.
+
+* Versies van Tests en Test bestanden
+
+  De testen lopen met de versies mee. Het klinkt logisch want wil je een _change_ in productie zetten dan moet die getest zijn. Maar net als de service zelf, blijft de oude versie van de test aanwezig totdat de nieuwe versie in **_Productie_** gaat.
