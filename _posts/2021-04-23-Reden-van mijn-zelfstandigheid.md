@@ -113,12 +113,6 @@ Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kl
  
   Als je gegevens krijgt van buiten het domein, maak dan een aparte locatie, bijvoorbeeld in de cloud, geef de eigenaar van de gegevens een schrijfsleutel en haal de gegevens vanuit die locatie naar jouw systeem om te verwerken. Vanwege de beveiliging, versleuteling, de hulpmiddelen en de documentatie is dat een makkelijke manier.
 
-
-
-## Samenvatting
-
-Samenvattend kan je stellen dat traceerbare wijzigingen in een smart configuratie systeem en waardoor je geautomatiseerd kan beheren en door de tussenlaag je eenvoudiger over kan gaan naar versleutelde data eventueel buiten de server. Je minder (geen) noodzaak hebt om op de server te komen, en wie op de server komt, niks kan vinden van waarde. Daardoor ben je ook minder interessant voor de crimineel, het kost te veel moeite met weinig zicht op crimineel-resultaat. Voor de betrouwbaarheid heb je het voordeel dat alles terug te vinden is in Git, er getest naar de volgende omgeving wordt gegaan, en door de koppeling van een versie van de configuratie aan een change, de rollforward en rollback van de change de juiste versies raken. 
-
 ## Mijn rol
  Het bewust maken van deze manier van werken, het gezond verstand stuk, en bij de implementatie fase, het opzetten van het smart configuratie systeem en het omgaan en beschrijven van flows voor de tussenlaag die van jouw scripts en programma's processen maakt die continue draaien en jouw flow op het juiste moment aanroepen. Mijn uitgangspunt is dat je (het scrum team) het uiteindelijk zelf moet kunnen onderhouden, en gezien alle informatie over het systeem terug te vinden is in Git, en bewezen actueel is, moet dat geen probleem zijn. 
 
