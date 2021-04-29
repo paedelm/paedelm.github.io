@@ -15,7 +15,7 @@ title: Integratie van systemen
 
   Ik heb op basis van mijn ervaring een systeem ontwikkeld dat als blauwdruk kan dienen voor een willekeurig batch georiënteerd IT systeem wat de betrouwbaarheid en de veiligheid moet vergroten.
 
-  Zie mijn metafoor van de [fabrieks hal]({% link _posts/2021-04-23-Reden-van-mijn-zelfstandigheid.md %})   
+  Zie mijn metafoor van de [fabrieks hal]({{site.baseurl}}{% link /2021/04/23/Reden-van-mijn-zelfstandigheid %})   
 
 ## Welke problemen kunnen ontstaan?
   
