@@ -18,12 +18,13 @@ date: 2021-04-29
 
   * Serieel runnen
 
-    Ik heb het gekozen om zijn robuuste opzet maar vooral voor het afdwingen van het "single instance" runnen. Vooral met batch processen en trigger condities moet je niet perongeluk parallel draaien. Mijn ervaring leert dat het heel vervelende fouten kan opleveren die sporadisch voorkomen, nooit in test situaties maar juist in de productie omgeving.
-    Door de queue van de mailbox worden de signalen serieel gemaakt en is er ook sprake van serieel uitvoeren.
+    Ik heb het gekozen om zijn robuuste opzet en voor het afdwingen van het "single instance" runnen. Door gelijktijdig optreden van trigger events kunnen batch processen per ongeluk parallel draaien. Mijn ervaring leert dat het heel vervelende fouten kan opleveren die sporadisch voorkomen, nooit in test maar altijd in de productie situatie.
+
+    Door de queue van de mailbox worden de signalen serieel gemaakt en kan je serieel uitvoeren afdwingen.
 
   * Event handlers
     
-    Mijn Eventhandlers voor signals, watch en queues en timers ondersteunen dat model door een bericht op de queue te zetten en **_niet_** de verwerking te starten.
+    Mijn Eventhandlers voor signals, watch en queues en timers zetten een bericht op de mailbox queue en starten **_niet_** de verwerking.
 
 
   * Service verwerking
