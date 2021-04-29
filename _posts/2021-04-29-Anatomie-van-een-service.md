@@ -24,14 +24,14 @@ date: 2021-04-29
 
   * Event handlers
     
-    Mijn Eventhandlers voor signals, watch en queues en timers zetten een bericht op de mailbox queue en starten **_niet_** de verwerking.
+    Mijn Eventhandlers voor signals, watch events, queues en timers zetten **alleen** een bericht op de mailbox queue. Ze zullen **_nooit_** een verwerking starten.
 
 
   * Service verwerking
 
     Een service is een flow van programma's die iedere tijd interval, of via een ander event wordt gestart. Het starten gebeurt altijd via een bericht op de queue van de mailboxprocessor waar de service aangekoppeld is. Het is het veiligst om een child process te starten wat asynchroon wordt gestart maar op de uitkomst wordt gewacht voordat het volgende queue bericht wordt gelezen. 
 
-    Vaak kan de service pas starten als er bepaalde condities is voldaan, bijvoorbeeld bepaalde bestanden aanwezig of iets in een database. Dat kan in de service worden opgelost door een trigger stap te combineren met de werkelijke verwerking in een "UntilError" flow. Als de trigger stapt faalt, wordt de verwerking stap niet uitgevoerd. Het hoeft natuurlijk niet zo, die trigger conditie kan ook in de verwerking zijn opgenomen, maar het is een mogelijkheid als je het originele verwerking niet wil of kan aanpassen.
+    Vaak kan de service pas starten als er bepaalde condities is voldaan, bijvoorbeeld dat bepaalde bestanden aanwezig zijn of dat iets in een database staat. Dat kan in de service worden opgelost door een trigger stap te combineren met de werkelijke verwerking in een "UntilError" flow of een shell script te schrijven wat hetzelfde doet. Als de trigger stapt faalt, wordt de verwerkings stap niet uitgevoerd. Het hoeft natuurlijk niet zo, die trigger conditie kan ook in de verwerking zijn opgenomen, maar het is een mogelijkheid als je het originele verwerking niet wil of kan aanpassen.
 
     * Bewust parallel runnen
       
