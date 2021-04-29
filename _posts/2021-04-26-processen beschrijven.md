@@ -130,18 +130,18 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
 
 ### _Changes_
   
-   Bij iedere functionele wijziging wordt een _change_ aangemaakt. Als een service geraakt wordt door die _change_, wordt er een nieuwe versie van gemaakt en gekoppeld aan de _change_, ontstaat een nieuwe service dan wordt dat versie 1, en wordt een service overbodig dan komt er toch een nieuwe versie maar die geeft een **_None_** terug (zie boven).
+   Bij iedere functionele wijziging wordt een _change_ aangemaakt. Als een service geraakt wordt door die _change_, wordt er een nieuwe versie van gemaakt en gekoppeld aan de _change_. Ontstaat er een nieuwe service dan wordt dat versie 1 en gekoppeld aan de _change_, wordt een service overbodig dan komt er toch een nieuwe versie maar die geeft een **_None_** terug (zie boven).
    
-   Er zijn wat controles nodig, verschillende versies van een service mogen niet naar dezelfde _change_ verwijzen en iedere versies is gekoppeld aan een bestaande _change_ maar die controles worden automatisch en zelfs deels door de compiler en de Ide uitgevoerd.
+   Er zijn wat controles nodig, verschillende versies van een service mogen niet naar dezelfde _change_ verwijzen en iedere versie is gekoppeld aan een bestaande _change_, die controles worden automatisch en zelfs deels door de compiler en de Ide uitgevoerd.
    
-   Door de _change_ van omgeving te laten veranderen worden automatisch de juiste versies van de services voor hun omgevingen gegenereerd. Die omgevingen hebben een volgorde, bijvoorbeeld OTAP, van Ontwikkeling via Test, Acceptatie naar Productie. Daar is ook een regel dat de nieuwste versie begint bij O. Er mag geen nieuwere versie in een omgeving verder in de lijst staan. Als voorbeeld: **_niet_** toegestaan "versie 3 in P terwijl versie 2 in A staat".
+   Door de _change_ van omgeving te laten veranderen worden automatisch de juiste versies van de services voor hun omgevingen gegenereerd. Die omgevingen hebben een volgorde, bijvoorbeeld OTAP, van Ontwikkeling via Test, Acceptatie naar Productie. De nieuwste versie begint bij O. Er mag geen nieuwere versie in een omgeving verder in de lijst staan. Dus als versie 3 in P staat dan is versie 2 niet meer actief. 
 
    Als een _change_ uiteindelijk in **_Productie_** komt, kunnen oude versies verwijderd worden, ze worden nooit meer in een export meegenomen. Je wordt niet gedwongen maar het is wel verstandig om ze te verwijderen om zoek resultaten op je source tree niet te vertroebelen met resultaten uit files die er niet toedoen.
 
    Een _change_ hoeft niet altijd voorwaarts te gaan, je wilt soms terug bij problemen. Als van A naar P geen feest is, kan je de situatie redden door van P naar A te gaan.
 
 
-## Waar is rekening mee gehouden bij het kiezen van het beschrijvings systeem?
+## Waar ik rekening mee gehouden heb bij het beschrijven.
 
 * De beschrijving moet na import gelijk zijn aan wat het voor export was.
   
@@ -155,7 +155,7 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
 
   Ik gebruik VisualStudio Code met plugin Ionide voor F# om intellisense te activeren en op je fouten te wijzen. Maar ook het python script, java programma of welke source dan ook, de Ide herkent het meestal wel of er is wel een plugin voor te krijgen en je hebt ondersteuning van de Ide bij het schrijven daarvan.
 
-  Soms moet je kiezen: de source van een script in een string constante met interpolatie of in een file met de juiste extensie. Gelukkig kan je beiden in F#, die aparte file geeft als voordeel dat de Ide je ondersteunt maar met de string constante (met interpolatie) kan je makkelijker templates programmeren.
+  Soms moet je kiezen: de source van een script in een string constante met interpolatie of in een file met de juiste extensie met het voordeel van Ide ondersteuning. Gelukkig kan je beiden in F#, je kan het ook combineren het omgeving afhankelijke stuk in een string en het vaste stuk in de file.
 
 * Testen en controleren
 
