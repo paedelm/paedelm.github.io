@@ -24,15 +24,15 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 
 ## Structureel oplossen, het fabrieksmodel.
   
-  Dus door de sloten te verbeteren, en een goede sleutel administratie te voeren ben je nog niet veilig. |Eigenlijk wil je van dat onderhoud af in huis, geen vreemden over de vloer. Nu is een huis niet de beste vergelijking, omdat er ook gewoond wordt, een fabriek lijkt beter op een IT systeem.
+Dus door de sloten te verbeteren, en een goede sleutel administratie te voeren ben je nog niet veilig. Eigenlijk wil je van dat onderhoud af in huis, geen vreemden over de vloer. Nu is een huis niet de beste vergelijking, omdat er ook gewoond wordt, een fabriek lijkt beter op een IT systeem.
 
-  > Gesloten fabriekshal met gekoppelde kluizen voor toevoer van grondstoffen en afvoer van producten.
+> Gesloten fabriekshal met gekoppelde kluizen voor toevoer van grondstoffen en afvoer van producten.
 
-   In de gesloten fabriekshal staat een grote machine. Aan de buitenkant zijn kluizen waar toeleveranciers met hun sleutel grondstoffen kunnen deponeren, het kan er alleen in maar niet uit. Aan de fabriekszijde kan de machine de grondstoffen uit de kluizen halen en via een magisch proces worden de eindproducten gemaakt die door de machine in afhaalkluizen worden gezet. Deze afhaalkluizen zijn aan de buitenkant van de fabriek te openen door vervoerders met een speciale sleutel die de producten vanuit de kluis in de auto kunnen zetten.
+In de gesloten fabriekshal staat een grote machine. Aan de buitenkant zijn kluizen waar toeleveranciers met hun sleutel grondstoffen kunnen deponeren, het kan er alleen in maar niet uit. Aan de fabriekszijde kan de machine de grondstoffen uit de kluizen halen en via een magisch proces worden de eindproducten gemaakt die door de machine in afhaalkluizen worden gezet. Deze afhaalkluizen zijn aan de buitenkant van de fabriek te openen door vervoerders met een speciale sleutel die de producten vanuit de kluis in de auto kunnen zetten.
 
- > In het labaratorium wordt gewerkt aan een nieuwe versie van de machine.
+> In het labaratorium wordt gewerkt aan een nieuwe versie van de machine.
 
-  Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of gewijzigde producten, daar werken specialisten aan, zij testen de nieuwe machine totdat die goed bevonden is. Tot die tijd staan er op laboratorium 2 machines, de oude en de nieuwe. De oude gaat daar pas weg als er geen enkele oude machine in bedrijf is. Soms wordt de machine in een fabriekshal vervangen door een nieuwe, en soms wordt een nieuwe hal gebouwd met een nieuwe machine eventueel gekoppeld aan de oude kluizen of aan nieuw gemaakte kluizen, die dan de oude fabriekshal vervangt.
+Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of gewijzigde producten, daar werken specialisten aan, zij testen de nieuwe machine totdat die goed bevonden is. Tot die tijd staan er op laboratorium 2 machines, de oude en de nieuwe. De oude gaat daar pas weg als er geen enkele oude machine in bedrijf is. Soms wordt de machine in een fabriekshal vervangen door een nieuwe, en soms wordt een nieuwe hal gebouwd met een nieuwe machine eventueel gekoppeld aan de oude kluizen of aan nieuw gemaakte kluizen, die dan de oude fabriekshal vervangt.
 
 ## Wat los je ermee op?
 
@@ -54,19 +54,19 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 
 ## Is het zo makkelijk?
   Er is wel inspanning voor nodig, er is een goede beschrijving nodig waarmee de machine kan produceren, je moet versies beheren, goed kunnen testen om aan te tonen dat de machine werkt, je moet de geheimen bewaken die de machine nodig heeft om kluizen en databases en andere beschermde resources te benaderen.
-  ### formele beschrijving
+### formele beschrijving
 
   Het werk voor een volledig automatisch werkend systeem betekent volledig specificeren van alles wat nodig is om dat voor elkaar te krijgen. De specificatie moet je formeel maken, typeren of er een schema van maken, en moet je kunnen exporteren en weer importeren om jouw machine daarmee werkend te krijgen.
 
-  ### Een runtime systeem.
+### Een runtime systeem.
 
   Er moet dus nog iets zijn wat op basis van een geïmporteerde beschrijving een werkende machine maakt.
 
-  ### Versie beheer
+### Versie beheer
 
   Op basis van een aanpassing, een _change_, ga je een nieuwe versie van de machine ontwikkelen, sommige onderdelen worden vernieuwd, andere verwijderd en nieuwe ontstaan, van al die geraakte onderdelen maak je een nieuwe versie en die koppel je aan de _change_. De _change_ doorloopt een levensloop met als start de ontwikkelfase en als eind de productiefase. Met deze wetenschap kan je machines samenstellen vanuit de juiste versies van de onderdelen voor iedere fase. 
 
-  ### Bestaande programma's aanpassen aan de gewijzigde omstandigheden.
+### Bestaande programma's aanpassen aan de gewijzigde omstandigheden.
 
   De programma's zijn niet gewend om gegevens uit kluizen te halen of ze daar in te zetten. Je wilt natuurlijk het liefst geen aanpassingen aan bestaande programmatuur. 
 
