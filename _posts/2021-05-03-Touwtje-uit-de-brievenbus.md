@@ -50,27 +50,33 @@ Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of g
 
   Het laboratorium is het source control systeem, Git dus, waar de specialisten van het "DevOps team" de services bouwen en onderhouden die gezamenlijk de machine vormen. Zij zijn ook verantwoordelijk voor het bijhouden van de versies van de services en het uitrollen naar locatie. 
 
-  Behalve het eenmalig neerzetten van de machine, de services in dit geval, is er verder geen behoefte om nog op locatie te komen. Onderhoud, beheer dus, zit in Git, er wordt verder niks van waarde op locatie bewaard, dat zit in de kluizen en die hoeven in tegenstelling tot de fabriek niet letterlijk vast te zitten aan de server. Zie ze voor je als een (cloud)dienst, het maakt niet uit waar ze staan als je ze maar kan bereiken. Alleen het onderhanden product zit nog in de machine, jouw machine moet wel de opdracht krijgen te stoppen met produceren.
+  Behalve het eenmalig neerzetten van de machine, de services in dit geval, is er verder geen behoefte om nog op locatie te komen, de interactieve shell, een heel krachtig maar gevaarlijk hulpmiddel, kan verwijderd worden. Onderhoud, beheer dus, zit in Git, er wordt verder niks van waarde op locatie bewaard, dat zit in de kluizen en databases en die heb je niet op de server staan. Zie ze voor je als een (cloud)dienst, het maakt niet uit waar ze staan als je ze maar kan bereiken. 
 
-  Als je er niet meer hoeft te zijn behalve bij het opbouwen, dan kan je er een zogenaamde _immutable_ server van maken, aanpassen kan niet, las de deuren en ramen maar dicht, de software hoeft nergens poorten open te hebben staan, de kluizen worden puur op eigen initiatief benaderd, en de leverancier van de kluizen (cloud storage leverancier) zorgt met zijn of haar beveiligingsexperts voor versleuteld transport en opslag. De sleutels zijn slim, naast een mogelijke expiratie, geeft die bijvoorbeeld voor de toeleverancier alleen het recht iets in de kluis neer te zetten.
+  Als je zover bent, kan je de server ook eenmalig opbouwen en gebruiken. Als er iets in de software veranderd, gooi je de oude server weg en bouw je een nieuwe, op basis van de gewijzigde software, op. Bij het wisselen van server moet er wel duidelijkheid zijn wie het laatse ondehanden product gaat (af)maken.
+  
+  Het is een risico om software die naar netwerkpoorten luistert te combineren met de software die je verwerking doet.  
+  
+  Transport van gegevens gaat natuurlijk over het netwerk, dat besteed je uit aan een (externe) leverancier, gebruik bijvoorbeeld een Azure Storage Account , jij maakt die aan en je geeft een schrijf sleutel van een container aan de leverancier van input gegevens. Alles wat die daar schrijft, kan jij ophalen en verwerken. Je kan genotificeerd worden zonder dat jij als server op een netwerk poort luistert. Jouw storage leverancier zorgt voor alle tools, beveiliging en versleuteling en documentatie daarvan. Dat is handig en ook veilig. Je hoeft niet prijs te geven wat voor systeem je hebt, want de systemen wisselen nooit direct gegevens uit maar altijd via de storage leverancier.
+
+  De log bevat maar al te vaak gegevens die je niet graag openbaar wil hebben. Het is belangrijke informatie dus sla je die op in een datakluis, bijvoorbeeld bij een storage leverancier. Lezen van de log vanaf de server moet niet mogelijk zijn.
 
   Het productieproces, die machine die alles doet, draait in het IT systeem alle processen als services die periodiek controleren of alle seinen op groen staan (gegevens aanwezig en het tijdstip in orde) en dan hun werk doen, en dat telkens weer. De machine bestaat uit 2 delen, een **_uitvoer(execute)_** gedeelte gevoed door de versleutelde **_instructies_**. De instructies zijn beschermd tegen lezen en aanpassen. Je zult toegang tot Git moeten hebben en de gebruikelijke weg volgen om aan te passen en die aanpassing actief te krijgen. Vanaf de server is het niet mogelijk.
 
 
 
 ## Is het zo makkelijk?
-  Er is wel inspanning voor nodig, er is een goede beschrijving nodig waarmee de machine kan produceren, je moet versies beheren, goed kunnen testen om aan te tonen dat de machine werkt, je moet de geheimen bewaken die de machine nodig heeft om kluizen en databases en andere beschermde resources te benaderen.
+  Er is wel inspanning voor nodig, er is een goede beschrijving nodig waarmee de machine automatisch kan produceren, je moet versies beheren, goed kunnen testen om aan te tonen dat de machine werkt, je moet de geheimen bewaken die de machine nodig heeft om kluizen en databases en andere beschermde resources te benaderen.
 ### formele beschrijving
 
-  Het werk voor een volledig automatisch werkend systeem betekent volledig specificeren van alles wat nodig is om dat voor elkaar te krijgen. De specificatie moet je formeel maken, typeren of er een schema van maken, en moet je kunnen exporteren en weer importeren om jouw machine daarmee werkend te krijgen.
+  Het werk voor een volledig automatisch werkend systeem, betekent volledig specificeren van alles wat nodig is om dat voor elkaar te krijgen. De specificatie moet je formeel maken, typeren of er een schema van maken. Exporteren en weer kunnen importeren, en zorgen voor achterwaartse compatibiliteit.
 
 ### Een runtime systeem.
 
-  Er moet dus nog iets zijn wat op basis van een geïmporteerde beschrijving een werkende machine maakt.
+  Er moet dus nog iets zijn wat op basis van een geïmporteerde versleutelde beschrijving een werkende machine maakt. Het draait als een tussenlaag waardoor het bijvoorbeeld sources van scripts vorborgen kan houden. Het voorkomt ongewenst parallel draaien (bron van veel ellende) door al de (trigger) events op een interne queue te plaatsen, maar maakt gewenst parallel draaien mogelijk. Het gaat ook zorgen voor diensten die het mogelijk maken bestaande programma's en scripts zonder aanpassingen te laten werken met nieuwe technieken. 
 
 ### Versie beheer
 
-  Op basis van een aanpassing, een _change_, ga je een nieuwe versie van de machine ontwikkelen, sommige onderdelen worden vernieuwd, andere verwijderd en nieuwe ontstaan, van al die geraakte onderdelen maak je een nieuwe versie en die koppel je aan de _change_. De _change_ doorloopt een levensloop met als start de ontwikkelfase en als eind de productiefase. Met deze wetenschap kan je machines samenstellen vanuit de juiste versies van de onderdelen voor iedere fase. 
+  Op basis van een aanpassing, een _change_, ga je een nieuwe versie van de machine ontwikkelen, sommige onderdelen worden vernieuwd, andere verwijderd en nieuwe ontstaan, van al die geraakte onderdelen maak je een nieuwe versie en die koppel je aan de _change_. De _change_ doorloopt een levensloop met als start de ontwikkelfase en als eind de productiefase. Met deze wetenschap kan je automatisch machines samenstellen vanuit de juiste versies van de onderdelen, voor iedere fase. 
 
 ### Bestaande programma's aanpassen aan de gewijzigde omstandigheden.
 
@@ -84,7 +90,7 @@ Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of g
 
 ## Werk te doen.
 
-  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel systemen 1.0 die aangepast moeten worden op de bedreigingen van vandaag de dag. Het nieuws geeft een topje van de ijsberg want een ieder die slachtoffer is, probeert het stil te houden.
+  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel systemen 1.0. Wat wij horen in het nieuws is waarschijnlijk een topje van de ijsberg want iedere slachtoffer probeert het natuurlijk stil te houden.
 
-  [Ik](info@paedelman.net) ben er klaar voor. Wie durft?
+  Met mijn uitgewerkte methodiek, gericht op migratie en nieuwbouw, ben [ik](info@paedelman.net) er klaar voor. Wie durft?
 
