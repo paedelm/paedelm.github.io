@@ -8,7 +8,7 @@ date: 2021-05-03
 
 Dat is eigenlijk een gunstige eigenschap, kennelijk vertrouwen wij elkaar en zijn we verbaasd maar ook boos als iemand dat vertrouwen schaadt. Maar te goed van vertrouwen is een vorm van naïviteit die genadeloos kan worden afgestraft, sprookjes zijn soms wreed maar je kan er wat van leren.
 
->Wie is daar? Ik ben het Grootmoe, Roodkapje! Ik breng U appels en wijn; doe maar vlug open!  "Trek maar aan het touwtje, dan zal de deur wel open gaaan!" antwoordde Grootmoe. Nu sprong de deur vanzelf open...
+>Wie is daar? Ik ben het Grootmoe, Roodkapje! Ik breng U appels en wijn; doe maar vlug open!  "Trek maar aan het touwtje, dan zal de deur wel open gaan!" antwoordde Grootmoe. Nu sprong de deur vanzelf open...
 
 De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij sukkels? Nee, wij zijn hier in Nederland gewoon niet gewend aan zulke brutaliteit maar we worden er helaas mee geconfronteerd. Zie het als een wijze les, dat is ook de moraal van het sprookje. En trap er een tweede keer niet in.
 
@@ -32,7 +32,7 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 
 In de gesloten fabriekshal staat een grote machine. Aan de buitenkant zijn kluizen waar toeleveranciers met hun sleutel grondstoffen kunnen deponeren, het kan er alleen in maar niet uit. Aan de fabriekszijde kan de machine de grondstoffen uit de kluizen halen en via een magisch proces worden de eindproducten gemaakt die door de machine in afhaalkluizen worden gezet. Deze afhaalkluizen zijn aan de buitenkant van de fabriek te openen door vervoerders met een speciale sleutel die de producten vanuit de kluis in de auto kunnen zetten.
 
-> In het labaratorium wordt gewerkt aan een nieuwe versie van de machine.
+> In het laboratorium wordt gewerkt aan een nieuwe versie van de machine.
 
 Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of gewijzigde producten, daar werken specialisten aan, zij testen de nieuwe machine totdat die goed bevonden is. Tot die tijd staan er op laboratorium 2 machines, de oude en de nieuwe. De oude gaat daar pas weg als er geen enkele oude machine in bedrijf is. Soms wordt de machine in een fabriekshal vervangen door een nieuwe, en soms wordt een nieuwe hal gebouwd met een nieuwe machine eventueel gekoppeld aan de oude kluizen of aan nieuw gemaakte kluizen, die dan de oude fabriekshal vervangt.
 
@@ -40,19 +40,19 @@ Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of g
 
   De fabriek wilde constante kwaliteit op alle productie locaties, daarom wilde men op locatie een machine die ontwikkeld was in het laboratorium, daar helemaal getest, en waarvan een exacte kopie op locatie wordt gezet. De machine niet open te maken, is er wat mee, dan krijgt de locatie een nieuw gereviseerde versie uit het laboratorium. Er wordt niet gerommeld op locatie. 
   
-  De grondstoffen zijn natuurlijk van belang voor de kwaliteit, de toeleverancier is zorgvuldig gekozen, de kluis is zo gemaakt dat er van de buitenkant alleen iets ingezet kan worden (write only) en er alleen vanaf de machine iets uitgehaald kan worden. De machine controleert de kwaliteit voordat het de grondstof gebruikt.
+  De grondstoffen zijn natuurlijk van belang voor de kwaliteit, de toeleverancier is zorgvuldig gekozen, de kluis is zo gemaakt dat er van de buitenkant alleen iets ingezet kan worden (alleen schrijven) en er alleen vanaf de machine iets uitgehaald kan worden. De machine controleert de kwaliteit voordat het de grondstof gebruikt.
 
-  Het eindproduct wordt na controle van de machine, in een kluis voor de afnemer gezet. ook hier is het eenrichtings verkeer, de machine zet het erin en de vervoerder haalt het namens de afnemer middels zijn sleutel, uit de kluis.
+  Het eindproduct wordt na controle van de machine, in een kluis voor de afnemer gezet. ook hier is het eenrichtingsverkeer, de machine zet het erin en de vervoerder haalt het namens de afnemer middels zijn sleutel, uit de kluis.
 
   De kluizen kunnen snel geblokkeerd worden. De machine mag er altijd bij maar de toeleverancier en afnemer kunnen bij onraad niet meer bij de kluis.
 
 ## De relatie tot een IT systeem
 
-  Het laboratorium is het source control systeem, Git dus, waar de specialisten van het DevOps team de services bouwen en onderhouden die gezamenlijk de machine vormen. Zij zijn ook verantwoordelijk voor het bijhouden van de versies van de services en het uitrollen naar locatie. 
+  Het laboratorium is het source control systeem, Git dus, waar de specialisten van het "DevOps team" de services bouwen en onderhouden die gezamenlijk de machine vormen. Zij zijn ook verantwoordelijk voor het bijhouden van de versies van de services en het uitrollen naar locatie. 
 
   Behalve het eenmalig neerzetten van de machine, de services in dit geval, is er verder geen behoefte om nog op locatie te komen. Onderhoud, beheer dus, zit in Git, er wordt verder niks van waarde op locatie bewaard, dat zit in de kluizen en die hoeven in tegenstelling tot de fabriek niet letterlijk vast te zitten aan de server. Zie ze voor je als een (cloud)dienst, het maakt niet uit waar ze staan als je ze maar kan bereiken. Alleen het onderhanden product zit nog in de machine, jouw machine moet wel de opdracht krijgen te stoppen met produceren.
 
-  Als je er niet meer hoeft te zijn behalve bij het opbouwen, dan kan je er een zogenaamde _immutable_ server van maken, aanpassen kan niet, las de deuren en ramen maar dicht, de software hoeft nergens poorten open te hebben staan, de kluizen worden puur op eigen initiatief benaderd, en de leverancier van de kluizen (Coud storage leverancier) zorgt met zijn of haar beveiligings experts voor versleuteld transport en opslag. De sleutels zijn slim, naast een mogelijke expiratie, geeft die bijvoorbeeld voor de toeleverancier alleen het recht iets in de kluis neer te zetten.
+  Als je er niet meer hoeft te zijn behalve bij het opbouwen, dan kan je er een zogenaamde _immutable_ server van maken, aanpassen kan niet, las de deuren en ramen maar dicht, de software hoeft nergens poorten open te hebben staan, de kluizen worden puur op eigen initiatief benaderd, en de leverancier van de kluizen (cloud storage leverancier) zorgt met zijn of haar beveiligingsexperts voor versleuteld transport en opslag. De sleutels zijn slim, naast een mogelijke expiratie, geeft die bijvoorbeeld voor de toeleverancier alleen het recht iets in de kluis neer te zetten.
 
   Het productieproces, die machine die alles doet, draait in het IT systeem alle processen als services die periodiek controleren of alle seinen op groen staan (gegevens aanwezig en het tijdstip in orde) en dan hun werk doen, en dat telkens weer. De machine bestaat uit 2 delen, een **_uitvoer(execute)_** gedeelte gevoed door de versleutelde **_instructies_**. De instructies zijn beschermd tegen lezen en aanpassen. Je zult toegang tot Git moeten hebben en de gebruikelijke weg volgen om aan te passen en die aanpassing actief te krijgen. Vanaf de server is het niet mogelijk.
 
