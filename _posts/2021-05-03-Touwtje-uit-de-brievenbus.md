@@ -38,9 +38,9 @@ Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of g
 
 ## Wat los je ermee op?
 
-  De fabriek wilde constante kwaliteit op alle productie locaties, daarom wilde men op locatie een machine die ontwikkeld was in het laboratorium, daar helemaal getest, en waarvan een exacte kopie op locatie wordt gezet. De machine niet open te maken, is er wat mee, dan krijgt de locatie een nieuw gereviseerde versie uit het laboratorium. Er wordt niet gerommeld op locatie. 
+  De fabriek wilde constante kwaliteit op alle productie locaties, daarom wilde men op locatie een machine die ontwikkeld was in het laboratorium, daar helemaal getest is en waarvan een exacte kopie op locatie wordt gezet. De machine is niet open te maken, is er wat aan de hand dan krijgt de locatie een nieuw gereviseerde versie uit het laboratorium. Er wordt niet gerommeld op locatie. 
   
-  De grondstoffen zijn natuurlijk van belang voor de kwaliteit, de toeleverancier is zorgvuldig gekozen, de kluis is zo gemaakt dat er van de buitenkant alleen iets ingezet kan worden (alleen schrijven) en er alleen vanaf de machine iets uitgehaald kan worden. De machine controleert de kwaliteit voordat het de grondstof gebruikt.
+  De grondstoffen zijn natuurlijk van belang voor de kwaliteit, de toeleverancier is zorgvuldig gekozen, de kluis is zo gemaakt dat er van de buitenkant alleen iets ingezet kan worden (alleen schrijven) en er kan alleen vanaf de machine iets uitgehaald(lezen en verwijderen) worden. De machine controleert de kwaliteit voordat het de grondstof gebruikt.
 
   Het eindproduct wordt na controle van de machine, in een kluis voor de afnemer gezet. ook hier is het eenrichtingsverkeer, de machine zet het erin en de vervoerder haalt het namens de afnemer middels zijn sleutel, uit de kluis.
 
