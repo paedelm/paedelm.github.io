@@ -16,11 +16,11 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 
   Ja bij de laatste reünie van mijn oude school viel me op dat de gangen er krapper uitzagen, rijen kluisjes, dat was vroeger niet zo. Wij gooiden onze pukkel op de grond in de gang en niemand raakte wat kwijt. 
 
-  Veel van onze IT systemen zijn gebouwd in die onbezorgde tijd, en veel daarvan zijn nog actief. Misschien is het slot wel verbeterd maar de sleutel wordt nog steeds aan Jan en Alleman gegeven om noodzakelijk onderhoud ter plekke te doen. Misschien dat de sleutel beperkt houdbaar is en dat de ontvanger daarvan 3 handtekeningen moet zetten maar nog steeds lopen daar vreemden rond, die van alles kunnen zien en doen. Gelukkig zijn de meesten eerlijk maar vanuit mijn banktijd weet ik dat eerlijke mensen ook gechanteerd kunnen worden, en van tegenwoordig is bekend, onlangs nog, dat de onderwereld infiltreert.
+  Veel van onze IT systemen zijn gebouwd in die onbezorgde tijd, en veel daarvan zijn nog actief. Misschien is het slot wel verbeterd maar de sleutel wordt nog steeds aan Jan en alleman gegeven om noodzakelijk onderhoud ter plekke te doen. Misschien dat de sleutel beperkt houdbaar is en dat de ontvanger daarvan 3 handtekeningen moet zetten maar nog steeds lopen daar vreemden rond, die van alles kunnen zien en doen. De meesten zullen eerlijk zijn maar misschien wel slordig en iedereen kan gechanteerd worden, en infiltratie door de onderwereld is ook niet ondenkbeeldig.
 
-  Het is misschien herkenbaar, mijn dochter reed op haar fiets met aan de fietssleutel een zware sleutelbos (of andersom) met o.a. onze huissleutel. Zo kan je zorgen hebben over sleutels van je huis.
+  Het zijn misschien herkenbare zorgen: mijn dochter stak haar fietssleutel met daaraan een zware sleutelbos met onze huissleutel daarbij, in het slot van haar fiets. Het is gebeurd dat na een ritje alleen de fietssleutel over was. 
 
-  Dacht je vroeger nog: wat moet iemand met die gegevens? Nu ben je als de dood dat jouw gegevens te koop worden aangeboden en dat je op de koop toe nog een boete krijgt omdat je nalatig bent geweest.
+  Dacht je vroeger nog: wat moet iemand met mijn gegevens? Nu ben je als de dood dat jouw gegevens te koop worden aangeboden en dat je op de koop toe nog een boete krijgt omdat je nalatig bent geweest.
 
 ## Structureel oplossen, het fabrieksmodel.
   
@@ -38,9 +38,9 @@ Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of g
 
 ## Wat los je ermee op?
 
-  De fabriek wilde constante kwaliteit op alle productie locaties, daarom wilde men op locatie een machine die ontwikkeld was in het laboratorium, daar helemaal getest is en waarvan een exacte kopie op locatie wordt gezet. De machine is niet open te maken, is er wat aan de hand dan krijgt de locatie een nieuw gereviseerde versie uit het laboratorium. Er wordt niet gerommeld op locatie. 
+  De fabriek wil constante kwaliteit op alle productie locaties, daarom wil men op locatie een machine die ontwikkeld is in het laboratorium, daar helemaal is getest en waarvan een exacte kopie op locatie wordt gezet. De machine is niet open te maken, is er wat aan de hand dan krijgt de locatie een nieuw gereviseerde versie uit het laboratorium. Er wordt niet gerommeld op locatie. 
   
-  De grondstoffen zijn natuurlijk van belang voor de kwaliteit, de toeleverancier is zorgvuldig gekozen, de kluis is zo gemaakt dat er van de buitenkant alleen iets ingezet kan worden (alleen schrijven) en er kan alleen vanaf de machine iets uitgehaald(lezen en verwijderen) worden. De machine controleert de kwaliteit voordat het de grondstof gebruikt.
+  De grondstoffen zijn natuurlijk van belang voor de kwaliteit, de toeleverancier is zorgvuldig gekozen, de kluis is zo gemaakt dat er van de buitenkant alleen iets ingezet kan worden (alleen deponeren) en er kan alleen vanaf de machine iets uitgehaald worden. De machine controleert de kwaliteit voordat het de grondstof gebruikt.
 
   Het eindproduct wordt na controle van de machine, in een kluis voor de afnemer gezet. ook hier is het eenrichtingsverkeer, de machine zet het erin en de vervoerder haalt het namens de afnemer middels zijn sleutel, uit de kluis.
 
@@ -52,19 +52,20 @@ Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of g
 
   Behalve het eenmalig neerzetten van de machine, de services in dit geval, is er verder geen behoefte om nog op locatie te komen, de interactieve shell, een heel krachtig maar gevaarlijk hulpmiddel, kan verwijderd worden. Onderhoud, beheer dus, zit in Git, er wordt verder niks van waarde op locatie bewaard, dat zit in de kluizen en databases en die heb je niet op de server staan. Zie ze voor je als een (cloud)dienst, het maakt niet uit waar ze staan als je ze maar kan bereiken. 
 
-  Als je zover bent, kan je de server ook eenmalig opbouwen en gebruiken. Als er iets in de software veranderd, gooi je de oude server weg en bouw je een nieuwe, op basis van de gewijzigde software, op. Bij het wisselen van server moet er wel duidelijkheid zijn wie het laatse ondehanden product gaat (af)maken.
+  Op deze manier kan de server ook eenmalig opgebouwd worden. Als er iets in de software verandert, gooi je de oude server weg en bouw je een nieuwe op basis van de gewijzigde software. Bij het wisselen van server moet er wel duidelijkheid zijn wie het laatse onderhanden product gaat (af)maken.
   
-  Het is een risico om software die naar netwerkpoorten luistert te combineren met de software die je verwerking doet.  
+  Het is een risico om software die naar netwerkpoorten luistert te combineren met de software die je verwerking doet. De fabriekshal is helemaal afgesloten, en dat moet de server ook zijn. 
   
   Transport van gegevens gaat natuurlijk over het netwerk, dat besteed je uit aan een (externe) leverancier, gebruik bijvoorbeeld een Azure Storage Account , jij maakt die aan en je geeft een schrijf sleutel van een container aan de leverancier van input gegevens. Alles wat die daar schrijft, kan jij ophalen en verwerken. Je kan genotificeerd worden zonder dat jij als server op een netwerk poort luistert. Jouw storage leverancier zorgt voor alle tools, beveiliging en versleuteling en documentatie daarvan. Dat is handig en ook veilig. Je hoeft niet prijs te geven wat voor systeem je hebt, want de systemen wisselen nooit direct gegevens uit maar altijd via de storage leverancier.
 
   De log bevat maar al te vaak gegevens die je niet graag openbaar wil hebben. Het is belangrijke informatie dus sla je die op in een datakluis, bijvoorbeeld bij een storage leverancier. Lezen van de log vanaf de server moet niet mogelijk zijn.
 
-  Het productieproces, die machine die alles doet, draait in het IT systeem alle processen als services die periodiek controleren of alle seinen op groen staan (gegevens aanwezig en het tijdstip in orde) en dan hun werk doen, en dat telkens weer. De machine bestaat uit 2 delen, een **_uitvoer(execute)_** gedeelte gevoed door de versleutelde **_instructies_**. De instructies zijn beschermd tegen lezen en aanpassen. Je zult toegang tot Git moeten hebben en de gebruikelijke weg volgen om aan te passen en die aanpassing actief te krijgen. Vanaf de server is het niet mogelijk.
+  Het productieproces, die machine die alles doet, draait in het IT systeem alle processen als services die periodiek controleren of alle seinen op groen staan (gegevens aanwezig en het tijdstip in orde) en dan hun werk doen, en dat telkens weer. De machine bestaat uit 2 delen, een **_uitvoer(execute)_** gedeelte gevoed door de versleutelde **_instructies_**. De instructies zijn beschermd tegen lezen en aanpassen. Je zult toegang tot Git moeten hebben en de gebruikelijke weg volgen om hier wat aan te passen en die aanpassing actief te krijgen. Vanaf de server is het niet mogelijk.
 
 
 
 ## Is het zo makkelijk?
+
   Er is wel inspanning voor nodig, er is een goede beschrijving nodig waarmee de machine automatisch kan produceren, je moet versies beheren, goed kunnen testen om aan te tonen dat de machine werkt, je moet de geheimen bewaken die de machine nodig heeft om kluizen en databases en andere beschermde resources te benaderen.
 ### formele beschrijving
 
@@ -90,7 +91,7 @@ Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of g
 
 ## Werk te doen.
 
-  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel systemen 1.0. Wat wij horen in het nieuws is waarschijnlijk een topje van de ijsberg want iedere slachtoffer probeert het natuurlijk stil te houden.
+  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel systemen 1.0. Wat wij horen in het nieuws is waarschijnlijk een topje van de ijsberg want ieder slachtoffer probeert het natuurlijk stil te houden.
 
   Met mijn uitgewerkte methodiek, gericht op migratie en nieuwbouw, ben [ik](info@paedelman.net) er klaar voor. Wie durft?
 
