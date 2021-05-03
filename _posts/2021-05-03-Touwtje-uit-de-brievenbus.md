@@ -52,7 +52,7 @@ Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of g
 
   Behalve het eenmalig neerzetten van de machine, de services in dit geval, is er verder geen behoefte om nog op locatie te komen, de interactieve shell, een heel krachtig maar gevaarlijk hulpmiddel, kan verwijderd worden. Onderhoud, beheer dus, zit in Git, er wordt verder niks van waarde op locatie bewaard, dat zit in de kluizen en databases en die heb je niet op de server staan. Zie ze voor je als een (cloud)dienst, het maakt niet uit waar ze staan als je ze maar kan bereiken. 
 
-  Op deze manier kan de server ook eenmalig opgebouwd worden. Als er iets in de software verandert, gooi je de oude server weg en bouw je een nieuwe op basis van de gewijzigde software. Bij het wisselen van server moet er wel duidelijkheid zijn wie het laatse onderhanden product gaat (af)maken.
+  Op deze manier kan de server ook eenmalig opgebouwd worden. Als er iets in de software verandert, gooi je de oude server weg en bouw je een nieuwe op basis van de gewijzigde software. Bij het wisselen van server moet er wel duidelijkheid zijn wie het laatste onderhanden product gaat (af)maken.
   
   Het is een risico om software die naar netwerkpoorten luistert te combineren met de software die je verwerking doet. De fabriekshal is helemaal afgesloten, en dat moet de server ook zijn. 
   
@@ -73,7 +73,7 @@ Er is ook nog een laboratorium  waar de machine wordt aangepast voor nieuwe of g
 
 ### Een runtime systeem.
 
-  Er moet dus nog iets zijn wat op basis van een geïmporteerde versleutelde beschrijving een werkende machine maakt. Het draait als een tussenlaag waardoor het bijvoorbeeld sources van scripts vorborgen kan houden. Het voorkomt ongewenst parallel draaien (bron van veel ellende) door al de (trigger) events op een interne queue te plaatsen, maar maakt gewenst parallel draaien mogelijk. Het gaat ook zorgen voor diensten die het mogelijk maken bestaande programma's en scripts zonder aanpassingen te laten werken met nieuwe technieken. 
+  Er moet dus nog iets zijn wat op basis van een geïmporteerde versleutelde beschrijving een werkende machine maakt. Het draait als een tussenlaag waardoor het bijvoorbeeld sources van scripts verborgen kan houden. Het voorkomt ongewenst parallel draaien (bron van veel ellende) door al de (trigger) events op een interne queue te plaatsen, maar maakt gewenst parallel draaien mogelijk. Het gaat ook zorgen voor diensten die het mogelijk maken bestaande programma's en scripts zonder aanpassingen te laten werken met nieuwe technieken. 
 
 ### Versie beheer
 
