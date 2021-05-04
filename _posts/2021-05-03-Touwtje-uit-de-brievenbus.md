@@ -95,5 +95,5 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 
   Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel naïeve systemen. Wat wij horen in het nieuws is waarschijnlijk een topje van de ijsberg want ieder slachtoffer probeert het waarschijnlijk stil te houden.
 
-  Met mijn uitgewerkte methodiek, gericht op migratie en nieuwbouw, ben [ik](paedelman.net) er klaar voor. Wie durft?
+  Met mijn uitgewerkte methodiek, gericht op migratie en nieuwbouw, ben [ik](https://paedelman.net) er klaar voor. Wie durft?
 
