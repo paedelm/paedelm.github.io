@@ -3,7 +3,7 @@ layout: post
 title: "Nederland naïef, hoe halen we het touwtje uit de brievenbus van onze IT"
 date: 2021-05-03
 ---
-
+> Nederlanders zijn goed van vertrouwen, zo hebben we in het verleden ook veel van onze IT ontworpen. Veel van die (vergeten achtergrond) systemen draaien nog en worden nu op hun kwetsbaarheden getest met soms heel vervelende gevolgen. Ze moeten aangepast worden aan de moderne eisen van deze tijd. De technieken zijn er, betrouwbaar, veilig, toekomst vast en niet duur. Je moet er een keer aandacht aan schenken, waarom niet nu?  
 ## (Te)Goed van vertrouwen.
 
 Dat is eigenlijk een gunstige eigenschap, kennelijk vertrouwen wij elkaar en zijn we verbaasd maar ook boos als iemand dat vertrouwen schaadt. Maar te goed van vertrouwen is een vorm van naïviteit die genadeloos kan worden afgestraft, sprookjes zijn soms wreed maar je kan er wat van leren.
