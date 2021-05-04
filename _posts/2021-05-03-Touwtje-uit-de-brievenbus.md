@@ -3,7 +3,7 @@ layout: post
 title: "Nederland naïef, hoe halen we het touwtje uit de brievenbus van onze IT"
 date: 2021-05-03
 ---
-> Nederlanders zijn goed van vertrouwen, zo hebben we in het verleden ook veel van onze IT ontworpen. Veel van die (vergeten achtergrond) systemen draaien nog en worden nu op hun kwetsbaarheden getest met soms heel vervelende gevolgen. Ze moeten aangepast worden aan de moderne eisen van deze tijd. De technieken zijn er, betrouwbaar, veilig, toekomst vast en niet duur. Je moet er een keer aandacht aan schenken, waarom niet nu?  
+> Nederlanders zijn goed van vertrouwen, dat vind je terug in veel van onze oudere IT achtergrond systemen. Die systemen worden nu op hun kwetsbaarheden getest met soms heel vervelende gevolgen. Ze moeten aangepast worden. Dat kan nu makkelijker dan vroeger, met moderne technieken en wat inspanning kunnen de systemen weer betrouwbaar en veilig worden gemaakt. Wacht er niet te lang mee. Doe het nu!  
 
 ## (Te)Goed van vertrouwen.
 
@@ -17,28 +17,28 @@ date: 2021-05-03
 
   Ja bij de laatste reünie van mijn oude school viel me op dat de gangen er krapper uitzagen, rijen kluisjes, dat was vroeger niet zo. Wij gooiden onze pukkel op de grond in de gang en niemand raakte wat kwijt. 
 
-  Veel van onze IT systemen zijn gebouwd in die onbezorgde tijd, en veel daarvan zijn nog actief. Misschien is het slot wel verbeterd maar het beheer gebeurt ter plekke waardoor Jan en alleman een sleutel nodig heeft. Binnen is echter niks meer afgeschermd, hier gaat alles op vertrouwen. Laat niemand dus zijn sleutel verliezen.
+  Veel van onze IT systemen zijn gebouwd in die onbezorgde tijd, en vaak zijn ze nog actief. Misschien is het slot intussen verbeterd maar Jan en alleman heeft een sleutel en gaat naar binnen voor noodzakelijk werk zoals corrigeren en onderhouden. Binnen is echter niks afgeschermd, daar gaat alles op vertrouwen. Laat niemand zijn sleutel verliezen!
   
   Dacht je vroeger nog: wat moet iemand met mijn gegevens? Nu ben je als de dood dat jouw gegevens te koop worden aangeboden en dat je op de koop toe nog een boete krijgt vanwege nalatigheid.
 
-### Betrouwbaarheid in relatie tot veiligheid
+### Betrouwbaarheid in relatie tot veiligheid.
   
   De vroegere systemen zijn meestal niet ontworpen om volledig automatisch te werken. Als er wat mis ging dan had je altijd iemand die met de hand een correctie kon doen en het systeem daarna weer op kon starten.
-  Tegenwoordig zien we het veiligheidsrisico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem, en als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt, enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. De gevolgen die het heeft als iemand met een duister doel toegang heeft gekregen, zien we regelmatig in het nieuws.
+  Tegenwoordig zien we het veiligheidsrisico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem, en als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt, enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. In het nieuws is te volgen wat er kan gebeuren als iemand met een duister doel toegang heeft gekregen.
 
-  Met zo'n corrigerende menselijke hand is de druk om het systeem van te voren heel goed te testen minder groot. 
+  De druk om die systemen goed te testen was minder omdat men bij fouten terug kon vallen op de corrigerende menselijke hand. 
 
 ### Beveiligen van gegevens
 
-  Aan versleutelen van gegevens werd vroeger nauwelijks gedacht. Het was een gedoe en het kostte ook performance, zo werd gedacht. Je mag blij zijn als het transport versleuteld is.
+  Aan versleutelen van opgeslagen gegevens werd vroeger nauwelijks gedacht. Het was een gedoe en men was bang voor verlies van performance. Gegevens werden tijdens transport wel vaker versleuteld.
   
   Nu complete gegevens bestanden verkocht worden op het "dark web", is de overtuiging om te versleutelen wel doorgedrongen. 
   
-  Nog steeds geldt dat een versleutelde opslag de meeste hoofdbrekens kost omdat aanpassen van het bestaande systeem een flink werk lijkt te zijn. Toch kan dat meevallen. Transport versleutelen is in veel gevallen makkelijker aan te passen. Het kan wat lastiger zijn als de verwerking het transport aanstuurt.
+  Nog steeds geldt dat een versleutelde opslag de meeste hoofdbrekens kost omdat aanpassen van het bestaande systeem een flink werk lijkt te zijn. Toch kan dat meevallen. Transport versleutelen is in veel gevallen makkelijker aan te passen.
 
 ### Zorgvuldig omgaan met geheimen
 
-  De oude systemen willen nog wel eens slordig omgaan met geheimen zoals toegangsgegevens tot databases en andere belangrijke beveiligde plekken. Daar moet je iets aan doen.
+  De oude systemen willen nog wel eens slordig omgaan met geheimen zoals toegangsgegevens tot databases en andere belangrijke beveiligde plekken. 
 
 
 ## Het fabrieksmodel
@@ -54,31 +54,31 @@ date: 2021-05-03
 
 ### Wat zijn de verbeteringen?
 
-  De fabriek wil constante kwaliteit op alle productie locaties, door het ontwikkelen en testen van de machine in het laboratorium en vandaar uit een complete installatie op locatie verzekert men zich van voorspelbaar gedrag. Mede door de grondstoffen te beschermen tegen diefstal en sabotage kan het eindproduct van de gewenste kwaliteit zijn. Door het eindproduct te beschermen tegen diefstal en sabotage krijgt de klant uiteindelijk zijn product. 
-## De relatie tot een IT systeem
+  De fabriek wil constante kwaliteit op alle productie locaties, door het ontwikkelen en testen van de machine in het laboratorium en vandaar uit een complete installatie op locatie, verzekert men zich van voorspelbaar gedrag. Mede door de grondstoffen te beschermen tegen diefstal en sabotage kan het eindproduct van de gewenste kwaliteit zijn. Door het eindproduct ook te beschermen krijgt de klant uiteindelijk zijn product. 
+## De relatie tot een IT systeem.
 
-  Het laboratorium is het source control systeem, Git dus, waar de specialisten van het "DevOps team" de services bouwen en onderhouden en die gezamenlijk de machine vormen. Zij zijn ook verantwoordelijk voor het bijhouden van de versies van de services en het uitrollen naar locatie. Iedere aanpassing zou hier moeten gebeuren, en is daarom traceerbaar. De enige uitzondering hierop is het bijhouden van de kluis met geheimen.
+  Het beheer van de software gebeurt vanuit het source control systeem, Git dus, waar de specialisten van het "DevOps team" de services die gezamenlijk de machine vormen, bouwen en onderhouden . Zij zijn ook verantwoordelijk voor het bijhouden van de versies van de services en het uitrollen naar locatie. Iedere aanpassing gebeurt hier, en is dus vanwege Git traceerbaar. Dat is belangrijk want als er wat fout gaat is de eerste vraag: wat is er het laatst veranderd? De geheimen zijn het enige wat niet in Git is terug te vinden.
 
-  Behalve het eenmalig neerzetten van de machine, de services in dit geval, is er verder geen behoefte om nog op locatie te komen, de interactieve shell, een heel krachtig maar gevaarlijk hulpmiddel, kan verwijderd worden. Onderhoud, beheer dus, zit in Git, er wordt verder niks van waarde op locatie bewaard, dat zit in de kluizen en databases en die heb je niet op de server staan. 
+  Behalve bij het eenmalig uitrollen, is er verder geen behoefte om op locatie te komen, de interactieve shell, een heel krachtig maar gevaarlijk hulpmiddel voor de menselijke correcties, kan verwijderd worden. Omdat er niks van waarde op locatie wordt bewaard. 
 
   De kluizen van de fabriekshal worden (cloud)storage containers, ze voldoen aan alle veiligheidseisen, jij maakt die aan voor een leverancier en geeft die een schrijfsleutel. Alles wat daar geschreven wordt, kan jij ophalen en verwerken.  De hulpmiddelen en documentatie komen van jouw storage provider. Omdat het systeem van de storage provider er tussen zit, ben je losgekoppeld van jouw toeleverancier.
 
   De log bevat maar al te vaak gegevens die je niet openbaar wil hebben. Het is belangrijke informatie dus sla je die op in een datakluis. 
 
-  Het productieproces, die machine die alles doet, draait in het IT systeem alle processen als services die periodiek controleren of alle seinen op groen staan (gegevens aanwezig en het tijdstip in orde) en dan hun werk doen, en dat telkens weer. De machine bestaat uit 2 delen, een **_uitvoer(execute)_** gedeelte gevoed door de versleutelde **_instructies_**. De instructies zijn beschermd tegen lezen en aanpassen. 
+  Het productieproces, die machine die alles doet, draait in het IT systeem alle processen als services die periodiek controleren of er gewerkt kan worden, dat betekent: zijn de gegevens aanwezig en is het tijdstip in orde, en dat telkens weer. De machine bestaat uit 2 delen, een **_uitvoer(execute)_** gedeelte gevoed door de versleutelde **_instructies_**. De instructies zijn beschermd tegen lezen en aanpassen. 
 
 
 
 ### Wat moet je ervoor doen?
 
-### formele beschrijving
-  De inspanning zit voornamelijk in het volledig beschrijven van het proces, met het resultaat van die beschrijving kan de machine autonoom zijn werk doen. De bron beschrijving bevat echter extra informatie, nodig voor het controleren, testen en versioneren. 
+### Een formele beschrijving maken.
+  De services, worden volledig beschreven. De beschrijving wordt verwerkt en het resultaat wordt gebruikt om een instantie van een machine te draaien. Er is extra informatie in de beschrijving, die gebruikt wordt voor het controleren, testen en versioneren. 
 
-### Een runtime systeem.
+### Een runtime systeem beheren.
 
   Dit is de machine, die werkt op basis van de geïmporteerde versleutelde beschrijving. Het verbergt bijvoorbeeld sources van scripts en voorkomt ongewenst parallel draaien (bron van veel ellende) maar maakt gewenst parallel draaien mogelijk. Het faciliteert diensten die het mogelijk maken bestaande programma's en scripts zonder aanpassingen te laten werken met nieuwe technieken. 
 
-### Versie beheer
+### Versie beheer.
 
   Op basis van een aanpassing, een _change_, ga je een nieuwe versie van de machine ontwikkelen, sommige onderdelen worden vernieuwd, andere worden verwijderd en nieuwe ontstaan, van al die geraakte onderdelen maak je een nieuwe versie en die koppel je aan de _change_. De _change_ doorloopt een levensloop met als start de ontwikkelfase en als eind de productiefase. Deze kennis wordt gebruikt voor het samenstellen van de juiste versies voor iedere fase. 
 
@@ -90,6 +90,7 @@ date: 2021-05-03
 
   Verwijderen van geheimen uit alle sources, het runtime systeem zou de geheimen via de environment kunnen doorgeven.
 
+### Testen.
   Testen is belangrijk, voordat een _change_ een fase verder gaat moet de hele machine goed gekeurd zijn.
 
 ## Werk te doen.
