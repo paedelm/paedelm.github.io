@@ -54,7 +54,7 @@ date: 2021-05-03
 
 ### Wat zijn de verbeteringen?
 
-  De fabriek wil constante kwaliteit op alle productie locaties, door het ontwikkelen en testen van de machine in het laboratorium en vandaar uit een complete installatie op locatie, verzekert men zich van voorspelbaar gedrag. Mede door de grondstoffen te beschermen tegen diefstal en sabotage kan het eindproduct van de gewenste kwaliteit zijn. Door het eindproduct ook te beschermen krijgt de klant uiteindelijk zijn product. 
+  De fabriek wil constante kwaliteit op alle productie locaties, door te ontwikkelen in het veilige laboratorium verzekert men zich van voorspelbaar gedrag op locatie. Door de grondstoffen en het eindproduct te beschermen tegen diefstal en sabotage wordt de gewenste kwaliteit bereikt.  
 ## De relatie tot een IT systeem.
 
   Het beheer van de software gebeurt vanuit het source control systeem, Git dus, waar de specialisten van het "DevOps team" de services die gezamenlijk de machine vormen, bouwen en onderhouden . Zij zijn ook verantwoordelijk voor het bijhouden van de versies van de services en het uitrollen naar locatie. Iedere aanpassing gebeurt hier, en is dus vanwege Git traceerbaar. Dat is belangrijk want als er wat fout gaat is de eerste vraag: wat is er het laatst veranderd? De geheimen zijn het enige wat niet in Git is terug te vinden.
