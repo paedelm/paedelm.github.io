@@ -70,18 +70,16 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 
 ### Wat moet je ervoor doen?
 
-  De inspanning zit voornamelijk in het volledig beschrijven van het proces, met het resultaat van die beschrijving kan de machine autonoom zijn werk doen. De bron beschrijving bevat echter extra informatie, nodig voor het controleren, testen en versioneren. 
 ### formele beschrijving
-
-  Het werk voor een volledig automatisch werkend systeem, betekent volledig specificeren van alles wat nodig is om dat voor elkaar te krijgen. De specificatie moet je formeel maken, typeren of er een schema van maken. Exporteren en weer kunnen importeren, en zorgen voor achterwaartse compatibiliteit.
+  De inspanning zit voornamelijk in het volledig beschrijven van het proces, met het resultaat van die beschrijving kan de machine autonoom zijn werk doen. De bron beschrijving bevat echter extra informatie, nodig voor het controleren, testen en versioneren. 
 
 ### Een runtime systeem.
 
-  Er moet dus nog iets zijn wat op basis van een geïmporteerde versleutelde beschrijving een werkende machine maakt. Het draait als een tussenlaag waardoor het bijvoorbeeld sources van scripts verborgen kan houden. Het voorkomt ongewenst parallel draaien (bron van veel ellende) door al de (trigger) events op een interne queue te plaatsen, maar maakt gewenst parallel draaien mogelijk. Het gaat ook zorgen voor diensten die het mogelijk maken bestaande programma's en scripts zonder aanpassingen te laten werken met nieuwe technieken. 
+  Dit is de machine, die werkt op basis van de geïmporteerde versleutelde beschrijving. Het verbergt bijvoorbeeld sources van scripts en voorkomt ongewenst parallel draaien (bron van veel ellende) maar maakt gewenst parallel draaien mogelijk. Het faciliteert diensten die het mogelijk maken bestaande programma's en scripts zonder aanpassingen te laten werken met nieuwe technieken. 
 
 ### Versie beheer
 
-  Op basis van een aanpassing, een _change_, ga je een nieuwe versie van de machine ontwikkelen, sommige onderdelen worden vernieuwd, andere verwijderd en nieuwe ontstaan, van al die geraakte onderdelen maak je een nieuwe versie en die koppel je aan de _change_. De _change_ doorloopt een levensloop met als start de ontwikkelfase en als eind de productiefase. Met deze wetenschap kan je automatisch machines samenstellen vanuit de juiste versies van de onderdelen, voor iedere fase. 
+  Op basis van een aanpassing, een _change_, ga je een nieuwe versie van de machine ontwikkelen, sommige onderdelen worden vernieuwd, andere worden verwijderd en nieuwe ontstaan, van al die geraakte onderdelen maak je een nieuwe versie en die koppel je aan de _change_. De _change_ doorloopt een levensloop met als start de ontwikkelfase en als eind de productiefase. Deze kennis wordt gebruikt voor het samenstellen van de juiste versies voor iedere fase. 
 
 ### Bestaande programma's aanpassen aan de gewijzigde omstandigheden.
 
@@ -95,7 +93,7 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 
 ## Werk te doen.
 
-  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel systemen 1.0. Wat wij horen in het nieuws is waarschijnlijk een topje van de ijsberg want ieder slachtoffer probeert het natuurlijk stil te houden.
+  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel naïve systemen. Wat wij horen in het nieuws is waarschijnlijk een topje van de ijsberg want ieder slachtoffer probeert het waarschijnlijk stil te houden.
 
   Met mijn uitgewerkte methodiek, gericht op migratie en nieuwbouw, ben [ik](info@paedelman.net) er klaar voor. Wie durft?
 
