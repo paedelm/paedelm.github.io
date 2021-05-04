@@ -23,7 +23,7 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 ### Betrouwbaarheid in relatie tot veiligheid
   
   De vroegere systemen zijn meestal niet ontworpen om volledig automatisch te werken. Als er wat mis ging dan had je altijd iemand die met de hand een correctie kon doen en het systeem daarna weer op kon starten.
-  Tegenwoordig zien we het veiligheids risico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem, en als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. De gevolgen die het heeft als iemand met een duister doel toegang heeft gekregen zien we regelmatig in het nieuws.
+  Tegenwoordig zien we het veiligheidsrisico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem, en als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. De gevolgen die het heeft als iemand met een duister doel toegang heeft gekregen zien we regelmatig in het nieuws.
 
   Met zo'n corrigerende menselijke hand is de druk om het systeem van te voren heel goed te testen minder groot. 
 
@@ -31,19 +31,19 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 
   Aan versleutelen van gegevens werd vroeger nauwelijks gedacht. Het was een gedoe en het kostte ook performance, zo werd gedacht. Je mag blij zijn als het transport versleuteld is.
   
-  Nu complete gegevens bestanden verkocht worden op het dark net, is de overtuiging om te versleutelen wel doorgedrongen. 
+  Nu complete gegevens bestanden verkocht worden op het "dark web", is de overtuiging om te versleutelen wel doorgedrongen. 
   
   Nog steeds geldt dat een versleutelde opslag de meeste hoofdbrekens kost omdat aanpassen van het bestaande systeem een flink werk lijkt te zijn. Toch kan dat meevallen. Transport versleutelen is in veel gevallen makkelijker aan te passen. Het kan wat lastiger zijn als de verwerking het transport aanstuurt.
 
 ### Zorgvuldig omgaan met geheimen
 
-  De oude systemen willen nog wel eens slordig omgaan met geheimen zoals toegangs gegevens tot databases en andere belangrijke beveiligde plekken. Daar moet je iets aan doen.
+  De oude systemen willen nog wel eens slordig omgaan met geheimen zoals toegangsgegevens tot databases en andere belangrijke beveiligde plekken. Daar moet je iets aan doen.
 
 
-## Het fabrieks model
+## Het fabrieksmodel
   
   
-  Stel je maar een **_oude fabriek__** voor, in de hal is het enorm druk, toeleveranciers brengen de grondstoffen en vervoerders halen de eindproducten op. Verderop sleutelt iemand aan de machine en daar werkt (gedeeltelijk) gespecialiseerd personeel aan de productie op basis van een redelijk recent handboek. Er is een discussie gaande of de laatste revisie van de machine ongedaan gemaakt is vanwege een probleem en dat daarom de oude instructies weer gelden. Er is iemand die het allemaal haarfijn weet maar die heeft vandaag een begrafenis en kan eigenlijk niet gestoord worden. 
+  Stel je maar een **_oude fabriek_** voor, in de hal is het enorm druk, toeleveranciers brengen de grondstoffen en vervoerders halen de eindproducten op. Verderop sleutelt iemand aan de machine en daar werkt (gedeeltelijk) gespecialiseerd personeel aan de productie op basis van een redelijk recent handboek. Er is een discussie gaande of de laatste revisie van de machine ongedaan gemaakt is vanwege een probleem en dat daarom de oude instructies weer gelden. Er is iemand die het allemaal haarfijn weet maar die heeft vandaag een begrafenis en kan eigenlijk niet gestoord worden. 
 
 
   De **_nieuwe fabriek_** ziet er anders uit: een gesloten fabriekshal met gekoppelde kluizen voor toevoer van grondstoffen en afvoer van producten.  
@@ -60,7 +60,7 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 
   Behalve het eenmalig neerzetten van de machine, de services in dit geval, is er verder geen behoefte om nog op locatie te komen, de interactieve shell, een heel krachtig maar gevaarlijk hulpmiddel, kan verwijderd worden. Onderhoud, beheer dus, zit in Git, er wordt verder niks van waarde op locatie bewaard, dat zit in de kluizen en databases en die heb je niet op de server staan. 
 
-  De kluizen van de fabriekshal worden (cloud)storage containers, ze voldoen aan alle veiligheids eisen, jij maakt die aan voor een leverancier en geeft die een schrijfsleutel. Alles wat daar geschreven wordt, kan jij ophalen en verwerken.  De hulpmiddelen en documentatie komen van jouw storage provider. Omdat het systeem van de storage provider er tussen zit, ben je losgekoppeld van jouw toeleverancier.
+  De kluizen van de fabriekshal worden (cloud)storage containers, ze voldoen aan alle veiligheidseisen, jij maakt die aan voor een leverancier en geeft die een schrijfsleutel. Alles wat daar geschreven wordt, kan jij ophalen en verwerken.  De hulpmiddelen en documentatie komen van jouw storage provider. Omdat het systeem van de storage provider er tussen zit, ben je losgekoppeld van jouw toeleverancier.
 
   De log bevat maar al te vaak gegevens die je niet openbaar wil hebben. Het is belangrijke informatie dus sla je die op in een datakluis. 
 
@@ -93,7 +93,7 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 
 ## Werk te doen.
 
-  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel naïve systemen. Wat wij horen in het nieuws is waarschijnlijk een topje van de ijsberg want ieder slachtoffer probeert het waarschijnlijk stil te houden.
+  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel naïeve systemen. Wat wij horen in het nieuws is waarschijnlijk een topje van de ijsberg want ieder slachtoffer probeert het waarschijnlijk stil te houden.
 
   Met mijn uitgewerkte methodiek, gericht op migratie en nieuwbouw, ben [ik](info@paedelman.net) er klaar voor. Wie durft?
 
