@@ -23,7 +23,7 @@ De stafchef van Navalny betichtte onze parlementariërs van naïviteit, zijn zij
 ### Betrouwbaarheid in relatie tot veiligheid
   
   De vroegere systemen zijn meestal niet ontworpen om volledig automatisch te werken. Als er wat mis ging dan had je altijd iemand die met de hand een correctie kon doen en het systeem daarna weer op kon starten.
-  Tegenwoordig zien we het veiligheidsrisico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem, en als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. De gevolgen die het heeft als iemand met een duister doel toegang heeft gekregen zien we regelmatig in het nieuws.
+  Tegenwoordig zien we het veiligheidsrisico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem, en als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt, enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. De gevolgen die het heeft als iemand met een duister doel toegang heeft gekregen, zien we regelmatig in het nieuws.
 
   Met zo'n corrigerende menselijke hand is de druk om het systeem van te voren heel goed te testen minder groot. 
 
