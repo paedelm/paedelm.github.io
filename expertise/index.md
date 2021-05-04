@@ -11,7 +11,7 @@ title: Integratie van systemen
   
   > oude systemen zijn niet ontworpen op veiligheid.
 
-  Vooral het raakvlak met veiligheid en onderhoudbaarheid is interessant. Vooral omdat oude systemen niet zijn ontworpen op veiligheid. Zou je vroeger iets ontvangen, tegenwoordig haal je het op, je huurt een kluis en geeft je partner een sleutel om daar iets te deponeren. En voor iedere partner een aparte kluis. Als het er staat dan haal je het op. Jouw partner weet verder niks over jouw systeem. 
+  Vooral het raakvlak met veiligheid en onderhoudbaarheid is interessant omdat oude systemen niet zijn ontworpen op veiligheid. Zou je vroeger iets ontvangen, tegenwoordig haal je het op, je huurt een kluis en geeft je partner een sleutel om daar iets te deponeren. En voor iedere partner een aparte kluis. Als het er staat dan haal je het op. Jouw partner weet verder niks over jouw systeem. 
   
   > Hoe minder je van elkaar weet des te beter. 
   
