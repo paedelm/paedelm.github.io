@@ -5,9 +5,9 @@ date: 2021-05-03
 ---
 > Nederlanders zijn goed van vertrouwen, dat vind je terug in veel van onze oudere IT achtergrond systemen. Die systemen worden nu op hun kwetsbaarheden getest met soms heel vervelende gevolgen. Ze moeten aangepast worden. Dat kan nu makkelijker dan vroeger, met moderne technieken en wat inspanning kunnen de systemen weer betrouwbaar en veilig worden gemaakt. Wacht er niet te lang mee. Doe het nu!  
 
-## (Te)Goed van vertrouwen.
+## (Te)Goed van vertrouwen
 
-  Dat is eigenlijk een gunstige eigenschap, kennelijk vertrouwen wij elkaar en zijn we verbaasd maar ook boos als iemand dat vertrouwen schaadt. Maar te goed van vertrouwen is een vorm van naïviteit die genadeloos kan worden afgestraft, sprookjes zijn soms wreed maar je kan er wat van leren.
+  Dat is eigenlijk een gunstige eigenschap, kennelijk vertrouwen wij elkaar en zijn we verbaasd maar ook boos als iemand dat vertrouwen schaadt. Te goed van vertrouwen is een vorm van naïviteit die genadeloos kan worden afgestraft, sprookjes zijn soms wreed maar je kan er wat van leren.
 
   >Wie is daar? Ik ben het Grootmoe, Roodkapje! Ik breng U appels en wijn; doe maar vlug open!  "Trek maar aan het touwtje, dan zal de deur wel open gaan!" antwoordde Grootmoe. Nu sprong de deur vanzelf open...
 
@@ -15,30 +15,30 @@ date: 2021-05-03
 
 ## Vroeger...
 
-  Ja bij de laatste reünie van mijn oude school viel me op dat de gangen er krapper uitzagen, rijen kluisjes, dat was vroeger niet zo. Wij gooiden onze pukkel op de grond in de gang en niemand raakte wat kwijt. 
+  Bij de laatste reünie van mijn middelbare school leken de gangen krapper, er stonden rijen kluisjes, dat was vroeger niet zo. Wij gooiden onze pukkel op de grond in de gang en we waren niet bang dat er iets gestolen werd. 
 
   Veel van onze IT systemen zijn gebouwd in die onbezorgde tijd, en vaak zijn ze nog actief. Misschien is het slot intussen verbeterd maar Jan en alleman heeft een sleutel en gaat naar binnen voor noodzakelijk werk zoals corrigeren en onderhouden. Binnen is echter niks afgeschermd, daar gaat alles op vertrouwen. Laat niemand zijn sleutel verliezen!
   
-  Dacht je vroeger nog: wat moet iemand met mijn gegevens? Nu ben je als de dood dat jouw gegevens te koop worden aangeboden en dat je op de koop toe nog een boete krijgt vanwege nalatigheid.
+  Dacht je vroeger nog: wat moet iemand met mijn gegevens? Nu wil je beslist voorkomen dat jouw gegevens te koop worden aangeboden en dat je op de koop toe nog een boete krijgt vanwege nalatigheid.
 
-### Betrouwbaarheid in relatie tot veiligheid.
+### Betrouwbaarheid in relatie tot veiligheid
   
   De vroegere systemen zijn meestal niet ontworpen om volledig automatisch te werken. Als er wat mis ging dan had je altijd iemand die met de hand een correctie kon doen en het systeem daarna weer op kon starten.
-  Tegenwoordig zien we het veiligheidsrisico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem, en als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt, enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. In het nieuws is te volgen wat er kan gebeuren als iemand met een duister doel toegang heeft gekregen.
+  Tegenwoordig zien we het veiligheidsrisico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem. Als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt, enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. In de nieuwsberichten is te volgen wat er kan gebeuren als iemand met een duister doel toegang heeft gekregen.
 
   De druk om die systemen goed te testen was minder omdat men bij fouten terug kon vallen op de corrigerende menselijke hand. 
 
 ### Beveiligen van gegevens
 
-  Aan versleutelen van opgeslagen gegevens werd vroeger nauwelijks gedacht. Het was een gedoe en men was bang voor verlies van performance. Gegevens werden tijdens transport wel vaker versleuteld.
+  Aan versleutelen van opgeslagen gegevens werd vroeger nauwelijks gedacht. Dat werd als ingewikkeld beschouwd en men was bang voor verlies van performance. Tijdens transport werden gegevens wel weer vaker versleuteld.
   
   Nu complete gegevens bestanden verkocht worden op het "dark web", is de overtuiging om te versleutelen wel doorgedrongen. 
   
   Nog steeds geldt dat een versleutelde opslag de meeste hoofdbrekens kost omdat aanpassen van het bestaande systeem een flink werk lijkt te zijn. Toch kan dat meevallen. Transport versleutelen is in veel gevallen makkelijker aan te passen.
 
-### Zorgvuldig omgaan met geheimen
+### Zorgvuldig omgaan met geheimen (secrets)
 
-  De oude systemen willen nog wel eens slordig omgaan met geheimen zoals toegangsgegevens tot databases en andere belangrijke beveiligde plekken. 
+  De oude systemen willen nog wel eens slordig omgaan met geheimen zoals toegangsgegevens tot databases en andere belangrijke beveiligde plekken. Je mag de geheimen niet prijsgeven dus moet je ze adequaat beveiligen.  
 
 
 ## Het fabrieksmodel
@@ -50,39 +50,39 @@ date: 2021-05-03
   De **_nieuwe fabriek_** ziet er anders uit: een gesloten fabriekshal met gekoppelde kluizen voor toevoer van grondstoffen en afvoer van producten.  
   In de gesloten fabriekshal staat een grote machine. Aan de buitenkant zijn kluizen waar toeleveranciers met hun sleutel grondstoffen kunnen deponeren, het kan er alleen in maar niet uit. Aan de fabriekszijde kan de machine de grondstoffen uit de kluizen halen en via een magisch proces worden de eindproducten gemaakt die door de machine in afhaalkluizen worden gezet. Deze afhaalkluizen zijn aan de buitenkant van de fabriek te openen door vervoerders met een speciale sleutel die de producten vanuit de kluis in de auto kunnen zetten.
 
-  Naast de fabriek is er nog een laboratorium waar de machine wordt aangepast voor nieuwe of gewijzigde producten, daar werken specialisten aan, zij testen de nieuwe machine totdat die goed bevonden is. Dan vervangt hij de oude machine in de fabriekshal. 
+  Naast de fabriek is er nog een laboratorium waar de machine wordt aangepast voor nieuwe of gewijzigde producten, daar werken specialisten aan. Zij testen de nieuwe machine totdat die goed bevonden is. Dan vervangt hij de oude machine in de fabriekshal. 
 
 ### Wat zijn de verbeteringen?
 
   De fabriek wil constante kwaliteit op alle productie locaties, door te ontwikkelen in het veilige laboratorium verzekert men zich van voorspelbaar gedrag op locatie. Door de grondstoffen en het eindproduct te beschermen tegen diefstal en sabotage wordt de gewenste kwaliteit bereikt.  
-## De relatie tot een IT systeem.
+## De relatie tot een IT systeem
 
-  Het beheer van de software gebeurt vanuit het source control systeem, Git dus, waar de specialisten van het "DevOps team" de services die gezamenlijk de machine vormen, bouwen en onderhouden . Zij zijn ook verantwoordelijk voor het bijhouden van de versies van de services en het uitrollen naar locatie. Iedere aanpassing gebeurt hier, en is dus vanwege Git traceerbaar. Dat is belangrijk want als er wat fout gaat is de eerste vraag: wat is er het laatst veranderd? De geheimen zijn het enige wat niet in Git is terug te vinden.
+  Het beheer van de software gebeurt vanuit het source control systeem, Git dus, waar de specialisten van het "DevOps team" de services die gezamenlijk de machine vormen, bouwen en onderhouden . Zij zijn ook verantwoordelijk voor het bijhouden van de versies van de services en het uitrollen naar locatie. Iedere aanpassing gebeurt hier, en is dus vanwege Git traceerbaar. Dat is belangrijk, want als er wat fout gaat is de eerste vraag: wat is er het laatst veranderd? De geheimen zijn als enigen niet in Git terug te vinden.
 
-  Behalve bij het eenmalig uitrollen, is er verder geen behoefte om op locatie te komen, de interactieve shell, een heel krachtig maar gevaarlijk hulpmiddel voor de menselijke correcties, kan verwijderd worden. Omdat er niks van waarde op locatie wordt bewaard. 
+  Behalve bij het eenmalig uitrollen, is er verder geen behoefte om op locatie te komen. Er wordt daar immers niks van waarde bewaard. De interactieve shell, een heel krachtig maar gevaarlijk hulpmiddel voor de menselijke correcties, kan verwijderd worden.  
 
-  De kluizen van de fabriekshal worden (cloud)storage containers, ze voldoen aan alle veiligheidseisen, jij maakt die aan voor een leverancier en geeft die een schrijfsleutel. Alles wat daar geschreven wordt, kan jij ophalen en verwerken.  De hulpmiddelen en documentatie komen van jouw storage provider. Omdat het systeem van de storage provider er tussen zit, ben je losgekoppeld van jouw toeleverancier.
+  De kluizen van de fabriekshal worden (cloud)storage containers die voldoen aan alle veiligheidseisen. Per leverancier maak je zo'n container aan en je geeft haar/hem een schrijfsleutel. Alles wat daar geschreven wordt, kan je ophalen en verwerken.  De hulpmiddelen en documentatie komen van jouw storage provider. Omdat het systeem van de storage provider er tussen zit, ben je losgekoppeld van jouw toeleverancier.
 
   De log bevat maar al te vaak gegevens die je niet openbaar wil hebben. Het is belangrijke informatie dus sla je die op in een datakluis. 
 
-  Het productieproces, die machine die alles doet, draait in het IT systeem alle processen als services die periodiek controleren of er gewerkt kan worden, dat betekent: zijn de gegevens aanwezig en is het tijdstip in orde, en dat telkens weer. De machine bestaat uit 2 delen, een **_uitvoer(execute)_** gedeelte gevoed door de versleutelde **_instructies_**. De instructies zijn beschermd tegen lezen en aanpassen. 
+  Het productieproces, die machine die alles doet, draait in het IT systeem alle processen als services die periodiek controleren of er gewerkt kan worden. Dat betekent: zijn de gegevens aanwezig en is het tijdstip in orde, en dat herhaalt zich telkens weer. De machine bestaat uit 2 delen, een **_uitvoer(execute)_** gedeelte gevoed door de versleutelde **_instructies_**. De instructies zijn beschermd tegen lezen en aanpassen. 
 
 
 
 ### Wat moet je ervoor doen?
 
-### Een formele beschrijving maken.
-  De services, worden volledig beschreven. De beschrijving wordt verwerkt en het resultaat wordt gebruikt om een instantie van een machine te draaien. Er is extra informatie in de beschrijving, die gebruikt wordt voor het controleren, testen en versioneren. 
+### Een formele beschrijving maken
+  De services worden volledig beschreven. De beschrijving wordt verwerkt en het resultaat wordt gebruikt om een instantie van een machine te draaien. Er is extra informatie in de beschrijving, die gebruikt wordt voor het controleren, testen en versioneren. 
 
-### Een runtime systeem beheren.
+### Een runtime systeem beheren
 
   Dit is de machine, die werkt op basis van de geïmporteerde versleutelde beschrijving. Het verbergt bijvoorbeeld sources van scripts en voorkomt ongewenst parallel draaien (bron van veel ellende) maar maakt gewenst parallel draaien mogelijk. Het faciliteert diensten die het mogelijk maken bestaande programma's en scripts zonder aanpassingen te laten werken met nieuwe technieken. 
 
-### Versie beheer.
+### Versie beheer
 
-  Op basis van een aanpassing, een _change_, ga je een nieuwe versie van de machine ontwikkelen, sommige onderdelen worden vernieuwd, andere worden verwijderd en nieuwe ontstaan, van al die geraakte onderdelen maak je een nieuwe versie en die koppel je aan de _change_. De _change_ doorloopt een levensloop met als start de ontwikkelfase en als eind de productiefase. Deze kennis wordt gebruikt voor het samenstellen van de juiste versies voor iedere fase. 
+  Op basis van een aanpassing, een _change_, ga je een nieuwe versie van de machine ontwikkelen, sommige onderdelen worden vernieuwd, andere worden verwijderd en nieuwe ontstaan. Van al die geraakte onderdelen maak je een nieuwe versie en die koppel je aan de _change_. Deze heeft een levensloop met als start de ontwikkelfase en als eind de productiefase. Deze kennis wordt gebruikt voor het samenstellen van de juiste versies voor iedere fase. 
 
-### Bestaande programma's aanpassen aan de gewijzigde omstandigheden.
+### Bestaande programma's aanpassen aan de gewijzigde omstandigheden
 
   De programma's zijn niet gewend om gegevens uit kluizen te halen of ze daar in te zetten. Je wilt natuurlijk het liefst geen aanpassingen aan bestaande programmatuur. 
 
@@ -90,12 +90,12 @@ date: 2021-05-03
 
   Verwijderen van geheimen uit alle sources, het runtime systeem zou de geheimen via de environment kunnen doorgeven.
 
-### Testen.
-  Testen is belangrijk, voordat een _change_ een fase verder gaat moet de hele machine goed gekeurd zijn.
+### Testen
+  Testen is belangrijk, voordat een _change_ een fase verder gaat moet de hele machine goedgekeurd zijn.
 
-## Werk te doen.
+## Werk te doen
 
-  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel naïeve systemen. Wat wij horen in het nieuws is waarschijnlijk een topje van de ijsberg want ieder slachtoffer probeert het waarschijnlijk stil te houden.
+  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel naïeve systemen. Via de Media horen wij waarschijnlijk slechts het topje van de ijsberg. Slachtoffers maken hun narigheid liever niet openbaar.
 
   Met mijn uitgewerkte methodiek, gericht op migratie en nieuwbouw, ben [ik](https://paedelman.net) er klaar voor. Wie durft?
 
