@@ -6,7 +6,7 @@ date: 2021-04-23
 
 ## Actuele problemen
 
- Alom in het nieuws: storing in een systeem van de overheid, cijfers niet op tijd, bedrijf in de problemen door een hack op een essentieel systeem, gegevens gelekt en aangeboden op het dark net, en dat bijna iedere dag. Ik ben bang dat er nog heel wat systemen zijn die bij gerichte criminele aandacht flink door de mand vallen. Ze zijn daar vroeger meestal niet op ontworpen en het werd ook niet afgestraft maar dat is tegenwoordig wel anders. 
+ Alom in het nieuws: storing in een systeem van de overheid, cijfers niet op tijd, bedrijf in de problemen door een hack op een essentieel systeem, gegevens gelekt en aangeboden op het dark web, en dat bijna iedere dag. Ik ben bang dat er nog heel wat systemen zijn die bij gerichte criminele aandacht flink door de mand vallen. Ze zijn daar vroeger meestal niet op ontworpen en het werd ook niet afgestraft maar dat is tegenwoordig wel anders. 
 
 ## Wat kunnen we er aan doen?
  
@@ -91,7 +91,7 @@ Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kl
 
 ## Opslag en privacy van gegevens
 
-> Daar mee kom je liever niet in het nieuws, **_jouw gegevens aangeboden op het dark net._**
+> Daar mee kom je liever niet in het nieuws, **_jouw gegevens aangeboden op het dark web._**
 
 * Extern en versleuteld opslaan.
   
@@ -109,7 +109,7 @@ Al in Git is het zaak al de geheimen (wachtwoorden sleutels etc..) vanuit een kl
 
 * Zet geen poorten open, alle software die toch luistert op een poort, moet kritisch bekeken worden.
 
-* Een veilige oplossing om gegevens van buiten het doemin te importeren.
+* Een veilige oplossing om gegevens van buiten het domein te importeren.
  
   Als je gegevens krijgt van buiten het domein, maak dan een aparte locatie, bijvoorbeeld in de cloud, geef de eigenaar van de gegevens een schrijfsleutel en haal de gegevens vanuit die locatie naar jouw systeem om te verwerken. Vanwege de beveiliging, versleuteling, de hulpmiddelen en de documentatie is dat een makkelijke manier.
 
