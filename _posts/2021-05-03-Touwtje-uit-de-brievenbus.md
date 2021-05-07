@@ -69,7 +69,7 @@ date: 2021-05-03
 
   Het IT systeem maakt altijd een verslag van de verwerking, deze log bevat maar al te vaak gegevens die je niet openbaar wil hebben. Het is belangrijke informatie dus sla je die op in een datakluis. 
 
-  Het productieproces wordt beschermd tegen ongewenste wijzigingen, dat zijn aanpassingen die niet via Git zijn gebeurd. De machine werkt daarom als een **_draaiorgel_** en bestaat uit 2 delen, de instructies en het gedeelte dat die instructies uitvoert. De instructies zijn versleuteld, aanpassen maar ook lezen is onmogelijk. 
+  Het productieproces wordt beschermd tegen ongewenste wijzigingen, dat zijn aanpassingen die niet via Git zijn aangebracht. De machine werkt daarom als een **_draaiorgel_** en bestaat uit 2 delen, de instructies en het gedeelte dat die instructies uitvoert. De instructies zijn versleuteld, aanpassen maar ook lezen is onmogelijk. 
 
 
 
@@ -94,12 +94,12 @@ date: 2021-05-03
 
   Het runtime systeem kan bestanden voor gebruik ontcijferen en bij aanmaak versleutelen. Dat kan geheel onzichtbaar via streams of ultra kort zichtbaar door tijdelijk het filesysteem te gebruiken. Dan hoeft het programma niet aangepast te worden, maar het runtime systeem moet wel extra geconfigureerd worden.
 
-  Zichtbare geheimen moeten verwijderd worden uit Git. Neem ze op in de versleutelde instructies van het proces vanuit een sleutelkluis of je kan ze runtime op halen uit zo'n kluis. Dat laatste kan je het runtime systeem laten doen die het geheim via een "environment variable" kan doorgeven aan het programma.
+  Zichtbare geheimen moeten verwijderd worden uit Git. Neem ze op in de versleutelde instructies van het proces vanuit een sleutelkluis of je kan ze _live_ op halen uit zo'n kluis. Dat laatste kan je het runtime systeem laten doen die het geheim via een "environment variable" kan doorgeven aan het programma.
 
 ### Gegevens vastleggen voor controle en automatisch testen
   
   De inhoud van Git wordt gebruikt om de instructies van de machine te maken. De functie die daarvoor opdracht krijgt, kan allerlei eigen controles doen en een laatste controle kan een uitgebreide test van de service zijn.  
-  In de beschrijving van een service wordt daarom verwezen naar de testflow. Die flow is meestal een combinatie van een stap die de testgegevens klaar zet, gevolgd door de stap die de trigger conditie test, om daarna de verwerkings stap uit te voeren en te eindigen met het opruimen van de rommel. Behalve stap 1, het klaar zetten en stap 4 het opruimen zijn de andere stappen al aanwezig. Die aanwezige stappen zijn zich bewust van de fase waarin ze werken of hun instructies zijn verschillend per fase. Zo kunnen zij bijvoorbeeld een andere database benaderen in de Test fase dan in de Productie fase.
+  In de beschrijving van een service wordt daarom verwezen naar de testflow. Die flow is meestal een combinatie van een stap die de testgegevens klaar zet, gevolgd door de stap die de trigger conditie test, om daarna de verwerkingsstap uit te voeren en te eindigen met het opruimen van de rommel. Behalve stap 1, het klaar zetten en stap 4 het opruimen zijn de andere stappen al aanwezig. Die aanwezige stappen zijn zich bewust van de fase waarin ze werken of hun instructies zijn verschillend per fase. Zo kunnen zij bijvoorbeeld een andere database benaderen in de Test fase dan in de Productie fase.
   
   Testen is belangrijk, het gebeurt daarom automatisch voordat instructies van de machine gepubliceerd worden. Omdat pre-publicatie testen niet repeterend uitgevoerd worden, zijn er aparte testomgevingen waar langdurig getest kan worden waarna **_iemand_** beslist of de test geslaagd is en de _change_ naar een volgende fase mag gaan.
 
