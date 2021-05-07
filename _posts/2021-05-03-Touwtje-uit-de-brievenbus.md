@@ -57,7 +57,7 @@ date: 2021-05-03
 ### Wat zijn de verbeteringen?
 
   De fabriek wil constante kwaliteit op alle productie locaties, door te ontwikkelen in het veilige laboratorium verzekert men zich van voorspelbaar gedrag op locatie. Door de grondstoffen, het proces en het eindproduct te beschermen tegen diefstal en sabotage wordt de gewenste kwaliteit bereikt.  
-## De relatie tot een IT systeem
+## De vertaling van fabriek naar IT systeem
 
   De ontwikkel omgeving staat voor het **_laboratorium_**. De specialisten van het "DevOps" team werken hier aan de software van de services die gezamenlijk de machine vormen. Door het source control systeem, meestal Git, kunnen ze iedere wijziging traceren. Dat is belangrijk, want als er wat fout gaat is de eerste vraag: wat is er het laatst veranderd, wanneer en door wie? In Git worden meerdere versies bijgehouden: zoals een versie voor de nieuwe aanpassing die nog getest wordt en de versie voor de huidige productiestand die op termijn door de nieuwe aanpassing vervangen wordt. Er is een productie locatie en er zijn (meerdere) test locaties. De bronnen in Git worden gebruikt om automatisch de juiste versies op die locaties uit te rollen. Daarvoor wordt extra informatie bijgehouden. 
   
@@ -73,14 +73,16 @@ date: 2021-05-03
 
 
 
-## Wat moet je ervoor doen?
+## Wat is het benodigde werk om een naïef systeem te verbeteren?
 
 ### Een formele beschrijving maken
   De services worden volledig beschreven. De beschrijving wordt verwerkt en het resultaat wordt gebruikt om een instantie van een machine te draaien. Er is extra informatie in de beschrijving, die gebruikt wordt voor het controleren, testen en versioneren. 
 
 ### Een runtime systeem beheren
 
-  Dit is de machine, die werkt op basis van de geïmporteerde versleutelde beschrijving. Het verbergt bijvoorbeeld sources van scripts en voorkomt ongewenst parallel draaien (bron van veel ellende) maar maakt gewenst parallel draaien mogelijk. Het faciliteert diensten die het mogelijk maken bestaande programma's en scripts zonder aanpassingen te laten werken met nieuwe technieken. 
+  Dit is de machine, die werkt op basis van de geïmporteerde versleutelde beschrijving. Het verbergt bijvoorbeeld sources van scripts en voorkomt ongewenst parallel draaien (bron van veel ellende) maar maakt gewenst parallel draaien mogelijk. Het faciliteert diensten die het mogelijk maken bestaande programma's en scripts zonder aanpassingen te laten werken met nieuwe technieken.
+
+  Draait de machine normaal gesproken zijn services repeterend, zij is ook inzetbaar op een ontwikkel systeem om een **_niet_** repeterende test uit te voeren voordat de instructies gepubliceerd worden.   
 
 ### Versie beheer
 
@@ -88,14 +90,18 @@ date: 2021-05-03
 
 ### Bestaande programma's aanpassen aan de gewijzigde omstandigheden
 
-  De programma's zijn niet gewend om gegevens uit kluizen te halen of ze daar in te zetten. Je wilt natuurlijk het liefst geen aanpassingen aan bestaande programmatuur. 
+  Je wilt de bestaande programmatuur het liefst niet aanpassen. Om toch gebruik te maken van versleutelde gegevens uit kluizen, kan je gebruik maken van faciliteiten van het runtime systeem.
 
-  Soms kan je daarvoor de streams _stdin_ en _stdout_ gebruiken. De runtime kan het (ontcijferde)bestand dan streamen of met een extra stap vooraf op het filesysteem zetten.
+  Het runtime systeem kan bestanden voor gebruik ontcijferen en bij aanmaak versleutelen. Dat kan geheel onzichtbaar via streams of ultra kort zichtbaar door tijdelijk het filesysteem te gebruiken. Dan hoeft het programma niet aangepast te worden, maar het runtime systeem moet wel extra geconfigureerd worden.
 
-  Verwijderen van geheimen uit alle sources, het runtime systeem zou de geheimen via de environment kunnen doorgeven.
+  Zichtbare geheimen moeten verwijderd worden uit Git. Neem ze op in de versleutelde instructies van het proces vanuit een sleutelkluis of je kan ze runtime op halen uit zo'n kluis. Dat laatste kan je het runtime systeem laten doen die het geheim via een "environment variable" kan doorgeven aan het programma.
 
-### Testen
-  Testen is belangrijk, voordat een _change_ een fase verder gaat moet de hele machine goedgekeurd zijn.
+### Gegevens vastleggen voor controle en automatisch testen
+  
+  De inhoud van Git wordt gebruikt om de instructies van de machine te maken. De functie die daarvoor opdracht krijgt, kan allerlei eigen controles doen en een laatste controle kan een uitgebreide test van de service zijn.  
+  In de beschrijving van een service wordt daarom verwezen naar de testflow. Die flow is meestal een combinatie van een stap die de testgegevens klaar zet, gevolgd door de stap die de trigger conditie test, om daarna de verwerkings stap uit te voeren en te eindigen met het opruimen van de rommel. Behalve stap 1, het klaar zetten en stap 4 het opruimen zijn de andere stappen al aanwezig. Die aanwezige stappen zijn zich bewust van de fase waarin ze werken of hun instructies zijn verschillend per fase. Zo kunnen zij bijvoorbeeld een andere database benaderen in de Test fase dan in de Productie fase.
+  
+  Testen is belangrijk, het gebeurt daarom automatisch voordat instructies van de machine gepubliceerd worden. Omdat pre-publicatie testen niet repeterend uitgevoerd worden, zijn er aparte testomgevingen waar langdurig getest kan worden waarna **_iemand_** beslist of de test geslaagd is en de _change_ naar een volgende fase mag gaan.
 
 ## Werk te doen
 
