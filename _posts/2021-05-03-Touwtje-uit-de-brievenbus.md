@@ -73,7 +73,7 @@ date: 2021-05-03
 
 
 
-### Wat moet je ervoor doen?
+## Wat moet je ervoor doen?
 
 ### Een formele beschrijving maken
   De services worden volledig beschreven. De beschrijving wordt verwerkt en het resultaat wordt gebruikt om een instantie van een machine te draaien. Er is extra informatie in de beschrijving, die gebruikt wordt voor het controleren, testen en versioneren. 
