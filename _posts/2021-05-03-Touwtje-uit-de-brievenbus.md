@@ -103,9 +103,9 @@ date: 2021-05-03
   
   Testen is belangrijk, het gebeurt daarom automatisch voordat instructies van de machine gepubliceerd worden. Omdat pre-publicatie testen niet repeterend uitgevoerd worden, zijn er aparte testomgevingen waar langdurig getest kan worden waarna **_iemand_** beslist of de test geslaagd is en de _change_ naar een volgende fase mag gaan.
 
-## Werk te doen
+## Op naar betrouwbare en veilige IT, laten we de krachten bundelen!
 
-  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel naïeve systemen. Via de Media horen wij waarschijnlijk slechts het topje van de ijsberg. Slachtoffers maken hun narigheid liever niet openbaar.
+  Naar mijn beste weten is er werk te doen. Er zijn vast en zeker nog veel naïeve systemen. Via de Media horen wij waarschijnlijk slechts het topje van de ijsberg. 
 
-  Met mijn uitgewerkte methodiek, gericht op migratie en nieuwbouw, ben [ik](https://paedelman.net) er klaar voor. Wie durft?
+  Met mijn uitgewerkte methodiek, op basis van moderne technieken, jarenlange ervaring en gezond verstand, gericht op migratie en nieuwbouw, ben [ik](https://paedelman.net) er klaar voor. Wie durft?
 
