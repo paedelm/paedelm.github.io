@@ -7,6 +7,7 @@ date: 2021-05-03
 
 ## (Te)Goed van vertrouwen
 
+  ![](touwtje.jpg)  
   Dat is eigenlijk een gunstige eigenschap, kennelijk vertrouwen wij elkaar en zijn we verbaasd maar ook boos als iemand dat vertrouwen schaadt. Te goed van vertrouwen is een vorm van naïviteit die genadeloos kan worden afgestraft, sprookjes zijn soms wreed maar je kan er wat van leren.
 
   >Wie is daar? Ik ben het Grootmoe, Roodkapje! Ik breng U appels en wijn; doe maar vlug open!  "Trek maar aan het touwtje, dan zal de deur wel open gaan!" antwoordde Grootmoe. Nu sprong de deur vanzelf open...
@@ -43,29 +44,32 @@ date: 2021-05-03
 
 ## Het fabrieksmodel
   
-  
+  >De fabriek kan symbool staan voor een IT systeem. Het heeft een verwerkingsproces met grondstoffen als invoer en als resultaat een product. De oude fabriek staat symbool voor het naïeve systeem, en de nieuwe voor het betrouwbare en veilige systeem.   
+
   Stel je maar een **_oude fabriek_** voor, in de hal is het enorm druk, toeleveranciers brengen de grondstoffen en vervoerders halen de eindproducten op. Verderop sleutelt iemand aan de machine en daar werkt (gedeeltelijk) gespecialiseerd personeel aan de productie op basis van een redelijk recent handboek. Er is een discussie gaande of de laatste revisie van de machine ongedaan gemaakt is vanwege een probleem en dat daarom de oude instructies weer gelden. Er is iemand die het allemaal haarfijn weet maar die heeft vandaag een begrafenis en kan eigenlijk niet gestoord worden. 
 
 
   De **_nieuwe fabriek_** ziet er anders uit: een gesloten fabriekshal met gekoppelde kluizen voor toevoer van grondstoffen en afvoer van producten.  
   In de gesloten fabriekshal staat een grote machine. Aan de buitenkant zijn kluizen waar toeleveranciers met hun sleutel grondstoffen kunnen deponeren, het kan er alleen in maar niet uit. Aan de fabriekszijde kan de machine de grondstoffen uit de kluizen halen en via een magisch proces worden de eindproducten gemaakt die door de machine in afhaalkluizen worden gezet. Deze afhaalkluizen zijn aan de buitenkant van de fabriek te openen door vervoerders met een speciale sleutel die de producten vanuit de kluis in de auto kunnen zetten.
 
-  Naast de fabriek is er nog een laboratorium waar de machine wordt aangepast voor nieuwe of gewijzigde producten, daar werken specialisten aan. Zij testen de nieuwe machine totdat die goed bevonden is. Dan vervangt hij de oude machine in de fabriekshal. 
+  Naast de fabriek is er nog een **_laboratorium_** waar de machine wordt aangepast voor nieuwe of gewijzigde producten, daar werken specialisten aan. Zij testen de nieuwe machine totdat die goed bevonden is. Dan vervangt hij de oude machine in de fabriekshal. 
 
 ### Wat zijn de verbeteringen?
 
   De fabriek wil constante kwaliteit op alle productie locaties, door te ontwikkelen in het veilige laboratorium verzekert men zich van voorspelbaar gedrag op locatie. Door de grondstoffen en het eindproduct te beschermen tegen diefstal en sabotage wordt de gewenste kwaliteit bereikt.  
 ## De relatie tot een IT systeem
 
-  Het beheer van de software gebeurt vanuit het source control systeem, Git dus, waar de specialisten van het "DevOps team" de services die gezamenlijk de machine vormen, bouwen en onderhouden . Zij zijn ook verantwoordelijk voor het bijhouden van de versies van de services en het uitrollen naar locatie. Iedere aanpassing gebeurt hier, en is dus vanwege Git traceerbaar. Dat is belangrijk, want als er wat fout gaat is de eerste vraag: wat is er het laatst veranderd? De geheimen zijn als enigen niet in Git terug te vinden.
+  De ontwikkel omgeving staat voor het **_laboratorium_**. De specialisten van het "DevOps" team werken hier aan de software van de services die gezamenlijk de machine vormen. Door het source control systeem, meestal Git, kunnen ze iedere wijziging traceren. Dat is belangrijk, want als er wat fout gaat is de eerste vraag: wat is er het laatst veranderd, wanneer en door wie? In Git worden meerdere versies bijgehouden: zoals een versie voor de nieuwe aanpassing die nog getest wordt en de versie voor de huidige productiestand die op termijn door de nieuwe aanpassing vervangen wordt. Er is een productie locatie en er zijn (meerdere) test locaties. De bronnen in Git worden gebruikt om automatisch de juiste versies op die locaties uit te rollen. Daarvoor wordt extra informatie bijgehouden. 
+  
+  Zit alles in Git? Nee, gegevens die geheim moeten blijven worden in speciale kluizen opgeslagen.
 
-  Behalve bij het eenmalig uitrollen, is er verder geen behoefte om op locatie te komen. Er wordt daar immers niks van waarde bewaard. De interactieve shell, een heel krachtig maar gevaarlijk hulpmiddel voor de menselijke correcties, kan verwijderd worden.  
+  Door de volautomatische verwerking is er, behalve bij het eenmalig uitrollen, geen behoefte om op locatie te komen. Er wordt daar immers niks van waarde bewaard. De interactieve shell, een heel krachtig maar gevaarlijk hulpmiddel voor menselijke correcties, kan verwijderd worden.  
 
-  De kluizen van de fabriekshal worden (cloud)storage containers die voldoen aan alle veiligheidseisen. Per leverancier maak je zo'n container aan en je geeft haar/hem een schrijfsleutel. Alles wat daar geschreven wordt, kan je ophalen en verwerken.  De hulpmiddelen en documentatie komen van jouw storage provider. Omdat het systeem van de storage provider er tussen zit, ben je losgekoppeld van jouw toeleverancier.
+  De (cloud)storage containers zijn de kluizen van de fabriekshal, zij voldoen aan alle veiligheidseisen. Per leverancier maak je zo'n container aan en je geeft haar/hem een schrijfsleutel. Alles wat daar geschreven wordt, kan je ophalen en verwerken.  De hulpmiddelen en documentatie komen van jouw storage provider. Omdat het systeem van de storage provider er tussen zit, ben je losgekoppeld van jouw toeleverancier.
 
-  De log bevat maar al te vaak gegevens die je niet openbaar wil hebben. Het is belangrijke informatie dus sla je die op in een datakluis. 
+  Het IT systeem maakt altijd een verslag van de verwerking, deze log bevat maar al te vaak gegevens die je niet openbaar wil hebben. Het is belangrijke informatie dus sla je die op in een datakluis. 
 
-  Het productieproces, die machine die alles doet, draait in het IT systeem alle processen als services die periodiek controleren of er gewerkt kan worden. Dat betekent: zijn de gegevens aanwezig en is het tijdstip in orde, en dat herhaalt zich telkens weer. De machine bestaat uit 2 delen, een **_uitvoer(execute)_** gedeelte gevoed door de versleutelde **_instructies_**. De instructies zijn beschermd tegen lezen en aanpassen. 
+  Het productieproces wordt beschermd tegen ongewenste wijzigingen, dat zijn aanpassingen die niet via Git zijn gebeurd. De machine werkt daarom als een **_draaiorgel_** en bestaat uit 2 delen, de instructies en het gedeelte dat die instructies uitvoert. De instructies zijn versleuteld, aanpassen maar ook lezen is onmogelijk. 
 
 
 
