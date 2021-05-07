@@ -7,7 +7,7 @@ date: 2021-05-03
 
 ## (Te)Goed van vertrouwen
 
-  ![](touwtje.jpg)  
+  ![](/touwtje.jpg)  
   Dat is eigenlijk een gunstige eigenschap, kennelijk vertrouwen wij elkaar en zijn we verbaasd maar ook boos als iemand dat vertrouwen schaadt. Te goed van vertrouwen is een vorm van naïviteit die genadeloos kan worden afgestraft, sprookjes zijn soms wreed maar je kan er wat van leren.
 
   >Wie is daar? Ik ben het Grootmoe, Roodkapje! Ik breng U appels en wijn; doe maar vlug open!  "Trek maar aan het touwtje, dan zal de deur wel open gaan!" antwoordde Grootmoe. Nu sprong de deur vanzelf open...
@@ -25,7 +25,7 @@ date: 2021-05-03
 ### Betrouwbaarheid in relatie tot veiligheid
   
   De vroegere systemen zijn meestal niet ontworpen om volledig automatisch te werken. Als er wat mis ging dan had je altijd iemand die met de hand een correctie kon doen en het systeem daarna weer op kon starten.
-  Tegenwoordig zien we het veiligheidsrisico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem. Als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt, enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. In de nieuwsberichten is te volgen wat er kan gebeuren als iemand met een duister doel toegang heeft gekregen.
+  Tegenwoordig zien we het veiligheidsrisico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem. Als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt, enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. In de Media is te volgen wat er kan gebeuren als iemand met een duister doel toegang heeft gekregen.
 
   De druk om die systemen goed te testen was minder omdat men bij fouten terug kon vallen op de corrigerende menselijke hand. 
 
@@ -56,7 +56,7 @@ date: 2021-05-03
 
 ### Wat zijn de verbeteringen?
 
-  De fabriek wil constante kwaliteit op alle productie locaties, door te ontwikkelen in het veilige laboratorium verzekert men zich van voorspelbaar gedrag op locatie. Door de grondstoffen en het eindproduct te beschermen tegen diefstal en sabotage wordt de gewenste kwaliteit bereikt.  
+  De fabriek wil constante kwaliteit op alle productie locaties, door te ontwikkelen in het veilige laboratorium verzekert men zich van voorspelbaar gedrag op locatie. Door de grondstoffen, het proces en het eindproduct te beschermen tegen diefstal en sabotage wordt de gewenste kwaliteit bereikt.  
 ## De relatie tot een IT systeem
 
   De ontwikkel omgeving staat voor het **_laboratorium_**. De specialisten van het "DevOps" team werken hier aan de software van de services die gezamenlijk de machine vormen. Door het source control systeem, meestal Git, kunnen ze iedere wijziging traceren. Dat is belangrijk, want als er wat fout gaat is de eerste vraag: wat is er het laatst veranderd, wanneer en door wie? In Git worden meerdere versies bijgehouden: zoals een versie voor de nieuwe aanpassing die nog getest wordt en de versie voor de huidige productiestand die op termijn door de nieuwe aanpassing vervangen wordt. Er is een productie locatie en er zijn (meerdere) test locaties. De bronnen in Git worden gebruikt om automatisch de juiste versies op die locaties uit te rollen. Daarvoor wordt extra informatie bijgehouden. 
@@ -84,7 +84,7 @@ date: 2021-05-03
 
 ### Versie beheer
 
-  Op basis van een aanpassing, een _change_, ga je een nieuwe versie van de machine ontwikkelen, sommige onderdelen worden vernieuwd, andere worden verwijderd en nieuwe ontstaan. Van al die geraakte onderdelen maak je een nieuwe versie en die koppel je aan de _change_. Deze heeft een levensloop met als start de ontwikkelfase en als eind de productiefase. Deze kennis wordt gebruikt voor het samenstellen van de juiste versies voor iedere fase. 
+  Op basis van een aanpassing, een _change_, ga je een nieuwe versie van de machine ontwikkelen, sommige onderdelen worden vernieuwd, andere worden verwijderd en nieuwe ontstaan. Van al die geraakte onderdelen maak je een nieuwe versie en die koppel je aan de _change_. Deze heeft een levensloop met als start de ontwikkelfase en als eind de productiefase. Deze kennis wordt gebruikt voor het automatisch samenstellen van de juiste versies voor iedere fase. 
 
 ### Bestaande programma's aanpassen aan de gewijzigde omstandigheden
 
