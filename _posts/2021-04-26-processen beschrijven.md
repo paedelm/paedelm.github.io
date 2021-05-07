@@ -11,11 +11,11 @@ date: 2021-04-26
  
  Omdat er geen hand meer aan te pas komt, moet de beschrijving formeel en volledig getypeerd worden. Vanwege het volledige beheer krijg je te maken met versies en omgevingen wat resulteert in verschillende variaties van dezelfde service. 
 
- De keuze voor wat je gebruikt om te beschrijven, is een belangrijke. Naast de eisen zijn er ook veel wensen:   **_makkelijk te onderhouden_**,  **_ondersteuning bij het invoeren_**, dat **_uitbreiding of wijziging van de vast te leggen gegevens_ zonder verplichte migratie** en**_eigen templates te maken_ voor veel voorkomende patronen** , om maar een een aantal te noemen.
+ De keuze voor wat je gebruikt om te beschrijven, is een belangrijke. Naast de eisen zijn er ook veel wensen:   **_makkelijk te onderhouden_**,  **_ondersteuning bij het invoeren_**, dat **_uitbreiding of wijziging van de vast te leggen gegevens_ zonder verplichte migratie** en **_eigen templates te maken_ voor veel voorkomende patronen** , om maar een aantal te noemen.
   
  Om het wiel uit te vinden is _**on**verstandig_ dus ga je op zoek naar iets bestaands waarvan je weet dat het goed werkt, support aanwezig is en wordt onderhouden. 
  
- Dus kom je op een een programmeertaal, met sterke typering en een eenvoudige syntax en een sterk eco-systeem. Er moeten records getypeerd kunnen worden en de velden van de records moeten de bekende primitieven aan kunnen, zoals string, integer, date, time, boolean en nog meer. Een record moet ook een record als veld kunnen hebben en ook zichzelf, en heel belangrijk is ook dat je generieke types kan gebruiken waarvoor je een specifiek type kan invullen. Natuurlijk moet de recordstructuur te exporteren zijn naar Json of Xml of iets anders, als de import maar hetzelfde oplevert als de recordstructuur voor de export. Die controle is belangrijk en moet uitgevoerd kunnen worden. 
+ Dus kom je op een een programmeertaal, met sterke typering en een eenvoudige syntax en een sterk ecosysteem. Er moeten records getypeerd kunnen worden en de velden van de records moeten de bekende primitieven aan kunnen, zoals string, integer, date, time, boolean en nog meer. Een record moet ook een record als veld kunnen hebben en ook zichzelf, en heel belangrijk is ook dat je generieke types kan gebruiken waarvoor je een specifiek type kan invullen. Natuurlijk moet de recordstructuur te exporteren zijn naar Json of Xml of iets anders, als de import maar hetzelfde oplevert als de recordstructuur voor de export. Die controle is belangrijk en moet uitgevoerd kunnen worden. 
  
 Een programmeertaal dus en niet het handmatig onderhouden van het exportformaat. Omdat met een programma hergebruik, conditioneel genereren, indelen in sourcefiles, gebruik van intellisense, pre-processing zoals compileren, controleren zoals testen en nog veel meer, mogelijk is. Uiteindelijk ben ik op F# terecht gekomen het heeft de voordelen van een dotnet omgeving met zijn uitgebreide library, het heeft een eenvoudige syntax, het kan goed de types afleiden, het heeft string interpolatie voor templates, condities zijn expressies en geen statements, en het allerbelangrijkste is de [Discriminated Union](https://fsharpforfunandprofit.com/posts/discriminated-unions/). C# kwam in de buurt maar heeft (nog) niet alles wat F# kan. Ik heb me alleen beperkt tot DotNet en daarbinnen gericht op sterk getypeerde talen met mogelijkheid tot reflectie. 
 
@@ -149,7 +149,7 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
 
 * Je moet er alles in kwijt kunnen.
   
-  Voorlopig kan alles er in behalve functions. Waar het source systeem met functions meerdere omgevingen bedient, ligt bij het export formaat de omgeving vast. Het is dus een export voor die bewuste omgeving.Omdat je byte arrays kan exporteren is al het exotische mogelijk. Ik heb daar al op voor gesorteerd door een directorytree(_ContentZipOfProgDir_) als optie op te nemen bij een _ExternScript_. Als voorbeeld hiervoor gebruik ik een java programma die voor exporteren wordt gecompileerd en waarvan de gecompileerde jar-file via de _ContentZipOfProgDir_ property mee komt in de export. 
+  Voorlopig kan alles er in behalve functions. Waar het source systeem met functions meerdere omgevingen bedient, ligt bij het export formaat de omgeving vast. Het is dus een export voor die bewuste omgeving. Omdat je byte arrays kan exporteren is al het exotische mogelijk. Ik heb daar al op voor gesorteerd door een directorytree(_ContentZipOfProgDir_) als optie op te nemen bij een _ExternScript_. Als voorbeeld hiervoor gebruik ik een java programma die voor exporteren wordt gecompileerd en waarvan de gecompileerde jar-file via de _ContentZipOfProgDir_ property mee komt in de export. 
 
 * Optimaal gebruik maken van de Ide.
 
@@ -173,7 +173,7 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
 
   Om aan je gegevens te komen mag je echter alles inzetten, je hebt een hele programmeeromgeving ter beschikking om er aan te komen. Je kan databases benaderen, de cloud voor  kluizen of wat dan ook, je kan compileren, docker imgages maken, allemaal geen probleem. 
 
-  Hou echter de traceerbaarheid in het oog. Gebruik daarom gegevens die in Git staan. Er is een uitzondering: **_Zet je geheimen niet zichtbaar in de sources_**. Haal ze uit een kluis, ik gebruik zelf een kluisjes in Azure, in F# kan je een functie schrijven en gebruiken die de geheimenen uit jouw kluis halen, met intellisense kan je jouw geheim kiezen en tikfouten zijn verleden tijd. Bedenk wel dat hier veiligheid boven traceerbaarheid gaat.
+  Hou echter de traceerbaarheid in het oog. Gebruik daarom gegevens die in Git staan. Er is een uitzondering: **_Zet je geheimen niet zichtbaar in de sources_**. Haal ze uit een kluis, ik gebruik zelf een kluisjes in Azure, in F# kan je een functie schrijven en gebruiken die de geheimen uit jouw kluis halen, met intellisense kan je jouw geheim kiezen en tikfouten zijn verleden tijd. Bedenk wel dat hier veiligheid boven traceerbaarheid gaat.
 
   Voorbeeld gebruik Secrets:
   ~~~

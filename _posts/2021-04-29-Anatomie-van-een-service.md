@@ -47,11 +47,11 @@ date: 2021-04-29
 
   * Doorgeven van geheimen
     
-    Een script wat van beschermde resources gebruik maakt kan de sleutels via omgevings variabelen ontvangen. Omdat de source van het script nu zelf versleuteld is kunnen die gegevens tijdens generatie ook vanuit de kluis in het script gezet worden. 
+    Een script wat van beschermde resources gebruik maakt kan de sleutels via omgevingsvariabelen ontvangen. Omdat de source van het script nu zelf versleuteld is kunnen die gegevens tijdens generatie ook vanuit de kluis in het script gezet worden. 
     
     Let wel op geheimen die door de service container in de "environment" worden gezet door alle services van het domein die daarna worden gestart, kunnen worden gebruikt. Dat moet geen probleem zijn want binnen een domein mag iedereen bij elkaars spullen. Maar in het algemeen is isoleren toch verstandig dus is het beter de geheimen alleen aan het child proces te geven.
 
-    Er is de mogelijkheid om via **_stdout_** opdrachten aan de service container te geven om omgevings variabelen te zetten die dan door een andere service kunnen worden gebruikt. 
+    Er is de mogelijkheid om via **_stdout_** opdrachten aan de service container te geven om omgevingsvariabelen te zetten die dan door een andere service kunnen worden gebruikt. 
 
   * Aanmaken van een programma directory
 
