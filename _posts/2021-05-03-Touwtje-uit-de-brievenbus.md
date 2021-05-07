@@ -69,7 +69,7 @@ date: 2021-05-03
 
   Het IT systeem maakt altijd een verslag van de verwerking, deze log bevat maar al te vaak gegevens die je niet openbaar wil hebben. Het is belangrijke informatie dus sla je die op in een datakluis. 
 
-  Het productieproces wordt beschermd tegen ongewenste wijzigingen, dat zijn aanpassingen die niet via Git zijn aangebracht. De machine werkt daarom als een **_draaiorgel_** en bestaat uit 2 delen, de instructies en het gedeelte dat die instructies uitvoert. De instructies zijn versleuteld, aanpassen maar ook lezen is onmogelijk. 
+  Het productieproces wordt beschermd tegen ongewenste wijzigingen, dat zijn aanpassingen die niet via Git zijn aangebracht. De machine werkt daarom als een **_draaiorgel_** en bestaat uit twee delen, de instructies en het gedeelte dat die instructies uitvoert. De instructies zijn versleuteld, aanpassen maar ook lezen is onmogelijk. 
 
 
 
