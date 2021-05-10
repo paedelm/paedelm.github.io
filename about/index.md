@@ -22,9 +22,7 @@ title: Over mij
 
   Ik heb een rijke ervaring als software ontwikkelaar, meer dan 40 jaar actief in het vak, en het lijkt nu wel leuker dan ooit. Door de steeds verbeterde hardware is er meer mogelijk waardoor de programmeertalen en omgevingen krachtiger zijn geworden.  
 
-  Daardoor is er meer mogelijk, maar door al die extra mogelijkheden lijkt het ook complexer te worden.  
-
-  Soms zie je door de bomen het bos niet. Mijn uitgangspunt is het doel niet uit het oog verliezen en de hulpmiddelen gebruiken die het doel ondersteunen. Maar ook inzien dat betere hulpmiddelen ambitieuze doelen mogelijk maken. 
+  Door al die extra mogelijkheden lijkt het ook complexer te worden. Soms zie je door de bomen het bos niet. Mijn uitgangspunt is het doel niet uit het oog verliezen en de hulpmiddelen gebruiken die het doel ondersteunen. Maar ook inzien dat betere hulpmiddelen ambitieuze doelen mogelijk maken. 
 
   Door voor ogen te houden wat je graag wil, en wat je zeker niet wil, kan je oplossingen maken die gebruik maken van de huidige krachtige bouwstenen die (gratis) aanwezig zijn en waarmee je als lego-blokjes de oplossing kan bouwen. 
 
