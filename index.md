@@ -9,5 +9,5 @@ title: Peter Edelman, specialist voor IT achter de schermen
   Ik kan je met mijn ervaring en verstand helpen bij het veilig en geruisloos integreren van al die systemen die hun werk achter jouw schermen doen. 
   
   Als die systemen _getest,  veilig, en  goed onderhoudbaar_ zijn, zal je geruster kunnen slapen.  
-  [_Lees meer_](/expertise)
+  [_Lees meer_]({% post_url 2021-05-03-Touwtje-uit-de-brievenbus %})
 
