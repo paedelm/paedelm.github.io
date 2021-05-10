@@ -5,6 +5,8 @@ title: Over mij
 # {{ page.title }}
 
 ## Persoon
+  ![](profiel-peter2.jpg)
+  
   Ik ben Peter Edelman, geboren in de vorige eeuw en een enthousiast tennisser, schaatser en wandelaar.  
   Met tennis heb ik het nog geschopt tot deelname aan de Nederlandse veteranen kampioenschappen, en met schaatsen kan ik mijn rondjes rijden maar dan op wat lager niveau.  
 
