@@ -12,7 +12,7 @@ title: Over mij
 
   De natuur en onze leefomgeving zijn mij dierbaar daarom probeer ik mij te gedragen als een passant die er van mag genieten maar bewust is dat anderen na hem dat ook willen. 
 
-  Ik leef samen met Anjo, mijn vrouw, zij is tolk gebarentaal, en samen hebben wij 4 kinderen en 5 kleinkinderen.
+  Ik leef samen met Anjo, mijn vrouw, zij is tolk Gebarentaal, en samen hebben wij 4 kinderen en 5 kleinkinderen.
 
 ## Professie
 
@@ -26,7 +26,10 @@ title: Over mij
 
   Door voor ogen te houden wat je graag wil, en wat je zeker niet wil, kan je oplossingen maken die gebruik maken van de huidige krachtige bouwstenen die (gratis) aanwezig zijn en waarmee je als lego-blokjes de oplossing kan bouwen. 
 
-## Expertise
-  [Zie hier een beschrijving van mijn expertise](/expertise)
+## Activiteiten
+
+  Sinds mei 2021 ben ik begonnen met mijn bedrijf. Ik richt me op het betrouwbaar en veilig maken van IT systemen. Naar mijn idee is daar veel werk te doen. In de Media zijn regelmatig berichten over IT systemen waar het fout mee is gegaan. Ik ga voor een structurele, geautomatiseerde oplossing. Zie [_mijn verhaal_]({% post_url 2021-05-03-Touwtje-uit-de-brievenbus %}).
+  
+
   
 
