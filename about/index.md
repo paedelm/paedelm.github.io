@@ -10,7 +10,7 @@ title: Over mij
   Ik ben Peter Edelman, geboren in de vorige eeuw en een enthousiast tennisser, schaatser en wandelaar.  
   Met tennis heb ik het nog geschopt tot deelname aan de Nederlandse veteranen kampioenschappen, en met schaatsen kan ik mijn rondjes rijden maar dan op wat lager niveau.  
 
-  Wandelen doe ik voor de ontspanning en dat doe ik graag in het [bos](https://www.natuurmonumenten.nl/natuurgebieden/spanderswoud) bij mij in de buurt.  
+  Wandelen doe ik voor de ontspanning en dat doe ik graag in het [_bos_](https://www.natuurmonumenten.nl/natuurgebieden/spanderswoud) bij mij in de buurt.  
 
   De natuur en onze leefomgeving zijn mij dierbaar daarom probeer ik mij te gedragen als een passant die er van mag genieten maar bewust is dat anderen na hem dat ook willen. 
 
