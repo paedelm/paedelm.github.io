@@ -24,15 +24,15 @@ title: CV
   
   Als een van de eerste heb ik aan balie automatisering gedaan met het programmeren van balie terminals en geldautomaten. Datasaab was de leverancier van de hardware en had een eigen ecosysteem met zijn mini computer en een eigen software omgeving. Er werd geprogrammeerd in DIL (Datasaab Interpretive Language).
 
-### 1980 - 1985 PHP - Pierson Heldring & Pierson  
+### 1980 - 1992 PHP - Pierson Heldring & Pierson  
   Van de ene bank naar de andere. Ik heb hier vooral aan het transactie systeem en aan databases gewerkt, daarnaast was ik expert geworden op het Sperry Univac 1100 mainframe, thuis in de assembler taal heb ik veel technische klusjes uitgevoerd.
 
-### 1985 - 1994 Brocacef 
+### 1992 - 2004 Brocacef 
 
   Nu iets heel anders, een groothandel in medicijnen en kantoorartikelen. Hier heb ik geprogrammeerd aan de logistieke systemen in C op DOS en OS/2 en AIX, aan een apotheek systeem in Delphi en aan de besturing van PLC's in een magazijn.
   Vele klussen, meestal technisch van aard vanwege allerhande apparatuur die gebruikt werd in het magazijn. Hier heb ik op een AIX systeem een modem pool aangestuurd om de orders van apotheken binnen te krijgen.  Later heb ik een gemoderniseerde variant gemaakt via ISDN, alleen niet in C maar in Delphi (Pascal).    
 
-### 1994 - 2021 Delta Lloyd - Nationale Nederlanden
+### 2004 - 2021 Delta Lloyd - Nationale Nederlanden
 
   Ik heb me bij Delta Lloyd voornamelijk bezig gehouden met systeem integratie. Het was het tijdperk van de Enterprise Service Bus en Java als programmeertaal, ik heb alle producten van IBM gezien, mijn expertise is MQ, message georiënteerde communicatie en File Transfer. Ik weet alles over het transport van gegevens maar ook hoe je die veilig verwerkt. En op veel systemen, ik heb gewerkt op Windows, Aix, Linux (RHEL, Suse) en z/OS.
   Na de overname door Nationale Nederlanden ben ik bezig geweest met een assurantie pakket, gemaakt rond een Oracle database, dat volledig in de AWS cloud ging draaien. Mijn laatste grote klus is een migratie geweest van DL systemen naar de infrastructuur van NN. Dat was een uitdaging omdat steeds kleine stukjes werden gemigreerd en alles wat dat raakte, aangepast moest worden. Dat ging uiteindelijk volledig automatisch, mijn oplossing genereerde op basis van zo'n migratie alle aanpassingen. Werkte een gemigreerd stukje toch nog niet goed dan kon de terugweg ook gegenereerd worden. De methodiek die ik hier gebruikt heb ligt ten grondslag aan de oplossing die ik uitgevonden heb voor het gecombineerde "DevOps" beheer voor de ontwikkeling en uitrol van betrouwbare en veilige systemen.
