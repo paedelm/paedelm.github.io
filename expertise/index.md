@@ -7,15 +7,15 @@ title: Integratie van systemen
 ## Expertise
 
   Ik heb een passie voor het ontwerpen van processen die moeten samenwerken en gegevens moeten uitwisselen. 
-  Het is daarom ook niet gek dat ik veel bezig ben met de onderverdeling in domeinen en interactie tussen de domeinen. 
+  De onderverdeling in domeinen en een goed ontwerp van de interactie tussen hen is heel belangrijk voor het dagelijks functioneren en voor het kunnen aanbrengen van toekomstige aanpassingen. 
   
-  > oude systemen zijn niet ontworpen op veiligheid.
+  > Systemen ontwerpen die helemaal automatisch runnen
 
-  Vooral het raakvlak met veiligheid en onderhoudbaarheid is interessant omdat oude systemen niet zijn ontworpen op veiligheid. Zou je vroeger iets ontvangen, tegenwoordig haal je het op, je huurt een kluis en geeft je partner een sleutel om daar iets te deponeren. En voor iedere partner een aparte kluis. Als het er staat dan haal je het op. Jouw partner weet verder niks over jouw systeem. 
+  Vooral oudere systemen zijn ontworpen met de gedachte dat er wel iemand handmatig kan ingrijpen als er iets mis gaat. Het is de kunst om vooraf te kunnen zien wat er mis zou kunnen gaan. En als je dat weet dan kan je het wel voorkomen of automatisch corrigeren. 
   
   > Hoe minder je van elkaar weet des te beter. 
   
-  Alleen op het punt van de interactie moet je kunnen vertrouwen dat de ander zich aan de afspraken houdt. En eenduidigheid realiseren is zeker een kunst.
+  Alleen op de raakvlakken (interfaces) van systemen zijn goede afspraken nodig, voor de rest zou het niet moeten uitmaken hoe een systeem zijn functionaliteit implementeert. Dan geeft het ook geen problemen als dat veranderd wordt. 
 
   > Ervaring is belangrijk, weet wat er fout kan gaan!
 
@@ -33,8 +33,8 @@ title: Integratie van systemen
 
   Veel systemen zijn nog uit de tijd dat een developer de software schreef en een beheerder dat installeerde. Soms ging dat installeren automatisch, of via een handleiding, of een combinatie. En als er dan wat fout ging, was het de beheerder die in de log en op het systeem kon kijken. En de developer zat met de handen in het haar, hij keek in Git en deed zijn test en alles was goed, maar in het echt ging het fout. Soms was de fout het verschil tussen wat in Git stond en wat er werkelijk in productie stond.
 
-  Dankzij DevOps kan nu alles in Git (op de geheimen na) en kan het runtime systeem afgesloten worden voor interactief gebruik, de verschillen tussen Test en Productie omgevingen zijn ook vastgelegd in Git en zelfs de infrastructuur kan in Code worden vastgelegd. Eindelijk is alles te automatiseren en in één bron vast te leggen. Maar om goed te automatiseren, en niet hoe het vroeger ging: te robotiseren, is een goede inventarisering en een goed _compleet_ ontwerp nodig en als je dat toch aanpast, wil je geen tijdrovend migratie traject in.
+  Dankzij DevOps kan nu alles in Git worden vastgelegd. De verschillen tussen Test en Productie omgevingen zijn daar nu te vinden en zelfs de infrastructuur kan daar in Code worden vastgelegd. Nu is het mogelijk om een runtime omgeving op te bouwen vanuit Git en dat helemaal te automatiseren. Als de gegevens dan ook ergens anders zijn opgeslagen, en dat kan, zou het runtime systeem afgesloten kunnen worden voor interactief gebruik.  
 
-  > Mijn passie is het begin van "betrouwbaar en veilig", hoe kom je af van het touwtje uit de brievenbus.
+  > Op naar betrouwbare en veilige systemen
 
   Ik heb een methodiek ontwikkeld die als basis kan dienen voor betrouwbare en veilige systemen. Het is bedoeld voor migratie van oude systemen maar ook voor nieuwbouw. Zie mijn verhaal over [_ "Het touwtje uit de brievenbus"_]({% post_url 2021-05-03-Touwtje-uit-de-brievenbus %}). 
