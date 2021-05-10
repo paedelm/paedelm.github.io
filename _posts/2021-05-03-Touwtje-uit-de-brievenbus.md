@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Nederland naïef, hoe halen we het touwtje uit de brievenbus van onze IT"
+title: "Nederlandse naïviteit, hoe halen we het touwtje uit de brievenbus van onze IT"
 date: 2021-05-03
 ---
-> Nederlanders zijn goed van vertrouwen, zie onze oudere IT achtergrond systemen. Voor handmatige correctie en onderhoud zijn die systemen vriendelijk toegankelijk gemaakt alsof er een touwtje uit de brievenbus hangt. Daar komen nu ook "foute" specialisten op af met soms heel vervelende gevolgen. We moeten van dat handmatige af, dan kan dat touwtje weg. Pas ze aan. Met hedendaagse technieken en wat inspanning krijgen we ze weer betrouwbaar en veilig. Wacht er niet te lang mee. Doe het nu!  
+> Wij zijn goed van vertrouwen, zie onze oudere IT systemen. Voor handmatige correctie en onderhoud zijn die systemen vriendelijk toegankelijk gemaakt alsof er een touwtje uit de brievenbus hangt. Daar komen nu ook "foute" specialisten op af met soms heel vervelende gevolgen. We moeten van dat handmatige af, dan kan dat touwtje weg. Pas die systemen aan. Met hedendaagse technieken en wat inspanning krijgen we ze weer betrouwbaar en veilig. Wacht er niet te lang mee. Doe het nu!  
 
-## (Te)Goed van vertrouwen
+## Goed van vertrouwen
 
   ![](/touwtje.jpg)  
   Dat is eigenlijk een gunstige eigenschap, kennelijk vertrouwen wij elkaar en zijn we verbaasd maar ook boos als iemand dat vertrouwen schaadt. Te goed van vertrouwen is een vorm van naïviteit die genadeloos kan worden afgestraft, sprookjes zijn soms wreed maar je kan er wat van leren.
@@ -24,7 +24,7 @@ date: 2021-05-03
 
 ### Betrouwbaarheid in relatie tot veiligheid
   
-  De vroegere systemen zijn meestal niet ontworpen om volledig automatisch te werken. Als er wat mis ging dan had je altijd iemand die met de hand een correctie kon doen en het systeem daarna weer op kon starten.
+  De vroegere achtergrond systemen zijn meestal niet ontworpen om volledig automatisch te werken. Als er wat mis ging dan had je altijd iemand die met de hand een correctie kon doen en het systeem daarna weer op kon starten.
   Tegenwoordig zien we het veiligheidsrisico hiervan, om te corrigeren moeten mensen toegang hebben tot het IT systeem. Als ze daar binnen zijn, hebben ze vaak (te) ruime bevoegdheden en is het soms moeilijk te zien wat er precies gedaan is. Dat kan voor iemand die naar beste eer en geweten werkt, enorme stress opleveren omdat ieder foutje grote gevolgen kan hebben. In de Media is te volgen wat er kan gebeuren als iemand met een duister doel toegang heeft gekregen.
 
   De druk om die systemen goed te testen was minder omdat men bij fouten terug kon vallen op de corrigerende menselijke hand. 
