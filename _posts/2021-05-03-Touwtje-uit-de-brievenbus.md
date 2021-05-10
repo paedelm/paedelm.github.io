@@ -3,7 +3,7 @@ layout: post
 title: "Nederland naïef, hoe halen we het touwtje uit de brievenbus van onze IT"
 date: 2021-05-03
 ---
-> Nederlanders zijn goed van vertrouwen, dat vind je terug in veel van onze oudere IT achtergrond systemen. Die systemen worden nu op hun kwetsbaarheden getest met soms heel vervelende gevolgen. Ze moeten aangepast worden. Dat kan nu makkelijker dan vroeger, met moderne technieken en wat inspanning kunnen de systemen weer betrouwbaar en veilig worden gemaakt. Wacht er niet te lang mee. Doe het nu!  
+> Nederlanders zijn goed van vertrouwen, zie onze oudere IT achtergrond systemen. Voor handmatige correctie en onderhoud zijn die systemen vriendelijk toegankelijk gemaakt alsof er een touwtje uit de brievenbus hangt. Daar komen nu ook "foute" specialisten op af met soms heel vervelende gevolgen. We moeten van dat handmatige af, dan kan dat touwtje weg. Pas ze aan. Met hedendaagse technieken en wat inspanning krijgen we ze weer betrouwbaar en veilig. Wacht er niet te lang mee. Doe het nu!  
 
 ## (Te)Goed van vertrouwen
 
