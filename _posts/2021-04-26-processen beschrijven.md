@@ -6,18 +6,19 @@ date: 2021-04-26
 
 ## Achtergrond
 
- In het kader van een betrouwbaar en veilig IT domein, wordt het ontwikkelen en uitrollen van de processen beheerd vanuit Git. In de bron wordt het haarfijn beschreven met als doel de juiste versleutelde versie te exporteren. Het **_runtime systeem_** gebruikt die om de processen als beveiligde **_Services_** te laten draaien.
+ In het kader van een betrouwbaar en veilig IT domein, wordt het ontwikkelen en uitrollen van de processen beheerd vanuit Git. In de bron wordt het haarfijn beschreven met als doel de juiste versleutelde versie te exporteren. Het **_runtime systeem_** gebruikt die om de processen als beveiligde **_Services_** te laten draaien. Een **_Service_** is een repeterend proces dat bestaat uit 2 stappen, de eerste stap bepaalt of de tweede stap uitgevoerd gaat worden. Een proces dat ieder uur repeteert, controleert of het dagelijks mutatie bestand aanwezig is, dat gebeurt normaal maar 1 keer in 24 uur, dus stap 1 draait 24 keer en stap 2 één keer per dag.
 
  
- Omdat er geen hand meer aan te pas komt, moet de beschrijving formeel en volledig getypeerd worden. Vanwege het volledige beheer krijg je te maken met versies en omgevingen wat resulteert in verschillende variaties van dezelfde service. 
+ Omdat er geen hand meer aan te pas komt, moet de beschrijving formeel en volledig getypeerd worden. Zo kan er automatisch worden uitgevoerd. Ik vergelijk de geëxporteerde instructies van de services van een systeem, beter gezegd domein, met het **_orgelboek_** van een **_draaiorgel_**.  
+ Er zijn echter verschillende boeken. Vanwege het volledige beheer met nieuwe onderhanden aanpassingen, krijg je te maken met verschillende versies en test-omgevingen. Je kunt dus meerdere variaties van dezelfde service onderhouden en er zijn verschillende boeken voor iedere omgeving één.
 
- De keuze voor wat je gebruikt om te beschrijven, is een belangrijke. Naast de eisen zijn er ook veel wensen:   **_makkelijk te onderhouden_**,  **_ondersteuning bij het invoeren_**, dat **_uitbreiding of wijziging van de vast te leggen gegevens_ zonder verplichte migratie** en **_eigen templates te maken_ voor veel voorkomende patronen** , om maar een aantal te noemen.
+ Hoe ga je de beschrijving vastleggen? Die keuze is belangrijk. Om enkele criteria te noemen:   **_makkelijk te onderhouden_**,  **_ondersteuning bij het invoeren_**, dat **_uitbreiding of wijziging van de vast te leggen gegevens_ zonder verplichte migratie** en **_eigen templates te maken_ voor veel voorkomende patronen** .
   
- Om het wiel uit te vinden is _**on**verstandig_ dus ga je op zoek naar iets bestaands waarvan je weet dat het goed werkt, support aanwezig is en wordt onderhouden. 
+ Niet opnieuw het wiel uitvinden.  Dus ga je op zoek naar iets bestaands waarvan je weet dat het goed werkt, support aanwezig is en wordt onderhouden. 
  
- Dus kom je op een een programmeertaal, met sterke typering en een eenvoudige syntax en een sterk ecosysteem. Er moeten records getypeerd kunnen worden en de velden van de records moeten de bekende primitieven aan kunnen, zoals string, integer, date, time, boolean en nog meer. Een record moet ook een record als veld kunnen hebben en ook zichzelf, en heel belangrijk is ook dat je generieke types kan gebruiken waarvoor je een specifiek type kan invullen. Natuurlijk moet de recordstructuur te exporteren zijn naar Json of Xml of iets anders, als de import maar hetzelfde oplevert als de recordstructuur voor de export. Die controle is belangrijk en moet uitgevoerd kunnen worden. 
+ Zo kom je bij een programmeertaal, met sterke typering en een eenvoudige syntax en een sterk ecosysteem. Er moeten records getypeerd kunnen worden en de velden van de records moeten de bekende primitieven aan kunnen, zoals string, integer, date, time, boolean en nog meer. Een record moet ook een record als veld kunnen hebben en ook zichzelf, en heel belangrijk is ook dat je generieke types kan gebruiken waarvoor je een specifiek type kan invullen. Natuurlijk moet de recordstructuur te exporteren zijn naar Json of Xml of iets anders, als de import maar hetzelfde oplevert als de recordstructuur voor de export. Die controle is belangrijk en moet uitgevoerd kunnen worden. 
  
-Een programmeertaal dus en niet het handmatig onderhouden van het exportformaat. Omdat met een programma hergebruik, conditioneel genereren, indelen in sourcefiles, gebruik van intellisense, pre-processing zoals compileren, controleren zoals testen en nog veel meer, mogelijk is. Uiteindelijk ben ik op F# terecht gekomen het heeft de voordelen van een dotnet omgeving met zijn uitgebreide library, het heeft een eenvoudige syntax, het kan goed de types afleiden, het heeft string interpolatie voor templates, condities zijn expressies en geen statements, en het allerbelangrijkste is de [Discriminated Union](https://fsharpforfunandprofit.com/posts/discriminated-unions/). C# kwam in de buurt maar heeft (nog) niet alles wat F# kan. Ik heb me alleen beperkt tot DotNet en daarbinnen gericht op sterk getypeerde talen met mogelijkheid tot reflectie. 
+ Je ziet nog al eens de keuze op een exportformaat vallen. Maar handmatig onderhouden van een exportformaat is een lastig karwei, een getypeerde programmeertaal is daar veel beter in. Denk maar aan hergebruik, conditioneel genereren, indelen in sourcefiles, gebruik van intellisense, pre-processing zoals compileren, controleren zoals testen en nog veel meer. Uiteindelijk ben ik op F# terecht gekomen het heeft de voordelen van een dotnet omgeving met zijn uitgebreide library, het heeft een eenvoudige syntax, het kan goed de types afleiden, het heeft string interpolatie voor templates, condities zijn expressies en geen statements, en het allerbelangrijkste is de [Discriminated Union](https://fsharpforfunandprofit.com/posts/discriminated-unions/). C# kwam in de buurt maar heeft (nog) niet alles wat F# kan. Ik heb me alleen beperkt tot DotNet en daarbinnen gericht op sterk getypeerde talen met mogelijkheid tot reflectie. 
 
 ## Wat moet je beschrijven?
 
@@ -109,12 +110,17 @@ let pythonScript env  =  $"""
 """
 
 let Service name env = 
+    // definitie "program" dit is de flow die bestaat uit één Task van het type ExternScript wat python uitvoert.  
     let program = Task {
             Id = sprintf "%s.%A.%d.%d" name env version revision
             ShowLog = true;
             Program  = ExternScript {Runner = "python"; ContentZipOfProgDir = None; StdinRedirect = None; StdoutRedirect = None }
             Params = [|"-c"; (pythonScript env).Replace("\r\n","\n"); name|]
         }
+
+    // hier wordt een "optionele Service" teruggegeven:
+    // in omgeving DEVL en TEST resulteert dat in "Some Service"
+    // in de andere omgevingen is het resultaat "None" 
     match env with
     | DEVL | TEST -> Some {
         Name = name;
@@ -124,9 +130,11 @@ let Service name env =
     | _ -> None
 ~~~
 
-Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een functie die als parameter de omgeving mee krijgt en die als resultaat het item voor de bewuste omgeving terug geeft.  Als het source systeem gaat genereren, dat doet het als het runt, worden jouw functies aangeroepen met de juiste versie voor de juiste omgeving, en dat is gebaseerd op het _change_ systeem, waar iedere versie van een service is gekoppeld aan een _change_. En de levensloop van de _change_ van Development tot Productie loopt. Als de _change_ wisselt van omgeving moet er opnieuw gegenereerd worden. Je hebt dus de mogelijkheid variatie aan te brengen op basis van de omgeving, of zelfs geen service te exporteren. Dat heet een option, je geeft terug "**_Some Service_**" of "**_None_**"
+Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een functie die als parameter de omgeving mee krijgt en die als resultaat het item voor de bewuste omgeving terug geeft.  
 
- Als eerste wordt hier het pythonScript aangemaakt. Het bestaat uit environment variabelen en een python source die ingelezen wordt vanuit een file. Er wordt van het zo ontstane python script een Task aangemaakt met een Program van het type ExternScript met als runner python waaraan ons script doorgegeven. Dit Program wordt gebruikt in ons Process en dat wordt alleen gegenereerd als we in DEVL of TEST omgeving zitten. In de overige omgevingen wordt **_None_** geproduceerd.
+Zelf schrijf je functies die aangeroepen worden door het generatie systeem. Genereren gebeurt altijd voor alle omgevingen die in het domein bestaan. In mijn voorbeeld zijn er 4 omgevingen (DEVL, TEST, ACPT en PROD), dus ontstaan er 4 export files. Bij generatie worden jouw functies aangeroepen met de juiste versie voor de juiste omgeving, dat weet het systeem omdat jij verplicht bent (dank aan de typering) de versie van de service aan een _change_ te koppelen en een _change_ een levensloop heeft van DEVL, TEST, ACPT tot PROD, die jij ook bij moet houden. Als de _change_ wisselt van omgeving moet er opnieuw gegenereerd worden. Je hebt dus de mogelijkheid variatie aan te brengen op basis van de omgeving, of zelfs geen service te exporteren. Dat heet een option, je geeft terug "**_Some Service_**" of "**_None_**"
+
+Als eerste wordt hier het pythonScript aangemaakt. Het bestaat uit environment variabelen en een python source die ingelezen wordt vanuit een file. Er wordt van het zo ontstane python script een Task aangemaakt met een Program van het type ExternScript met als runner python waaraan ons script als parameter wordt doorgegeven. Dit Program wordt gebruikt in ons Process en dat wordt alleen gegenereerd als we in DEVL of TEST omgeving zitten. In de overige omgevingen wordt **_None_** geproduceerd.
 
 ### _Changes_
   
@@ -141,7 +149,7 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
    Een _change_ hoeft niet altijd voorwaarts te gaan, je wilt soms terug bij problemen. Als van A naar P geen feest is, kan je de situatie redden door van P naar A te gaan.
 
 
-## Waar ik rekening mee gehouden heb bij het beschrijven.
+## Waar rekening mee gehouden is bij het beschrijven.
 
 * De beschrijving moet na import gelijk zijn aan wat het voor export was.
   
@@ -149,17 +157,17 @@ Ter verduidelijking: De source bedient alle mogelijke omgevingen het bevat een f
 
 * Je moet er alles in kwijt kunnen.
   
-  Voorlopig kan alles er in behalve functions. Waar het source systeem met functions meerdere omgevingen bedient, ligt bij het export formaat de omgeving vast. Het is dus een export voor die bewuste omgeving. Omdat je byte arrays kan exporteren is al het exotische mogelijk. Ik heb daar al op voor gesorteerd door een directorytree(_ContentZipOfProgDir_) als optie op te nemen bij een _ExternScript_. Als voorbeeld hiervoor gebruik ik een java programma die voor exporteren wordt gecompileerd en waarvan de gecompileerde jar-file via de _ContentZipOfProgDir_ property mee komt in de export. 
+  Voorlopig kan alles er in behalve functions. Waar het source systeem met functions meerdere omgevingen bedient, ligt bij het export formaat de omgeving vast. Het is dus een export voor die bewuste omgeving. Omdat je byte arrays kan exporteren is al het exotische mogelijk. Voorbeeld daarvan is de directorytree(_ContentZipOfProgDir_) die als optie in het record staat van _ExternScript_. Het kan gebruikt worden bij een te compileren programma zoals een java programma die voor exporteren wordt gecompileerd en waarvan de gecompileerde jar-file via de _ContentZipOfProgDir_ property mee komt in de export. 
 
 * Optimaal gebruik maken van de Ide.
 
-  Ik gebruik VisualStudio Code met plugin Ionide voor F# om intellisense te activeren en op je fouten te wijzen. Maar ook het python script, java programma of welke source dan ook, de Ide herkent het meestal wel of er is wel een plugin voor te krijgen en je hebt ondersteuning van de Ide bij het schrijven daarvan.
+  Wordt gebruikt met VisualStudio Code met plugin Ionide voor F# om intellisense te activeren en op fouten te wijzen. Maar ook het python script, java programma of welke source dan ook, de Ide herkent het meestal wel of er is wel een plugin voor te krijgen en je hebt ondersteuning van de Ide bij het schrijven daarvan.
 
   Soms moet je kiezen: de source van een script in een string constante met interpolatie of in een file met de juiste extensie met het voordeel van Ide ondersteuning. Gelukkig kan je beiden in F#, je kan het ook combineren het omgeving afhankelijke stuk in een string en het vaste stuk in de file.
 
 * Testen en controleren
 
-  Door te kiezen voor een actief systeem, jouw code wordt aangeroepen om iets te exporteren, is het ook makkelijk om controles in te bouwen, zeg maar unit tests. De eind controle probeer ik af te dwingen door jouw te vragen voor iedere versie van de service een script te leveren om test gegevens klaar te zetten, dat _test-initialisatie-script_ wordt gecombineerd in een UntilError flow met de service flow. Het resultaat is een eenmalige test van jouw service, als die fouten geeft, stopt de export.
+  Door te kiezen voor een actief systeem, jouw code wordt aangeroepen om iets te exporteren, is het ook makkelijk om controles in te bouwen, zeg maar unit tests. De eind controle wordt geregeld door een optioneel testflow property voor iedere versie van de service in te vullen. De testflow bestaat meestal uit 3 stappen, stap 1 is een  _test-initialisatie-script_, stap 2 is de _service flow_ , en stap 3 is het _test-opruim- script_. Het resultaat is een eenmalige test van jouw service, als die fouten geeft, stopt de export.
 
 * Meerdere versies van services bijhouden en die koppelen aan de juiste omgeving.
   
