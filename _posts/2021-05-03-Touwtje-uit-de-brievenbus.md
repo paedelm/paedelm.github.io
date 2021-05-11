@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Nederlandse naïviteit, hoe halen we het touwtje uit de brievenbus van onze IT"
+title: "Nederland naïef, hoe halen we het touwtje uit de brievenbus van onze IT"
 date: 2021-05-03
 ---
 > Wij zijn goed van vertrouwen, zie onze oudere IT systemen. Voor handmatige correctie en onderhoud zijn die systemen vriendelijk toegankelijk gemaakt alsof er een touwtje uit de brievenbus hangt. Daar komen nu ook "foute" specialisten op af met soms heel vervelende gevolgen. We moeten van dat handmatige af, dan kan dat touwtje weg. Pas die systemen aan. Met hedendaagse technieken en wat inspanning krijgen we ze weer betrouwbaar en veilig. Wacht er niet te lang mee. Doe het nu!  
