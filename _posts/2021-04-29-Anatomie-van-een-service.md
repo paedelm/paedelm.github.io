@@ -30,7 +30,7 @@ date: 2021-04-29
 
   * Service verwerking
 
-    Een service is een flow van programma's die iedere tijd interval, of via een ander event wordt gestart. Het starten gebeurt altijd via een bericht op de queue van de mailboxprocessor waar de service aangekoppeld is. Het is mogelijk om "in process" een dotnet dll aan te roepen, dat zou kunnen om even snel het bestaan van een file te checken, maar het is veiliger om een child process te starten, voor beiden geldt dat op de uitkomst gewacht wordt voordat het volgende queue bericht wordt gelezen. 
+    Een service is een flow van programma's die ieder tijd interval, of op basis van een event wordt gestart. Het starten gebeurt altijd via een bericht op de queue van de mailboxprocessor waar de service aangekoppeld is. Het is mogelijk om "in process" een dotnet dll aan te roepen, dat zou kunnen om even snel het bestaan van een file te checken, maar het is veiliger om een child process te starten, voor beiden geldt dat op de uitkomst gewacht wordt voordat het volgende queue bericht wordt gelezen. 
 
     Vaak kan de service pas starten als er aan bepaalde condities is voldaan, bijvoorbeeld dat bepaalde bestanden aanwezig zijn of dat iets in een database staat. Dat kan in de service worden opgelost door een trigger stap te combineren met de werkelijke verwerking in een "UntilError" flow. Als de trigger stapt faalt, wordt de verwerkings stap niet uitgevoerd. Dit patroon biedt de mogelijkheid om de logging van een falende trigger stap te onderdrukken, dat scheelt veel meldingen als je iedere minuut controleert terwijl in de praktijk de trigger maar eenmaal per dag optreedt. 
 
