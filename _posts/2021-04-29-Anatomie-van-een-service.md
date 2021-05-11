@@ -32,7 +32,7 @@ date: 2021-04-29
 
     Een service is een flow van programma's die ieder tijd interval, of op basis van een event wordt gestart. Het starten gebeurt altijd via een bericht op de queue van de mailboxprocessor waar de service aangekoppeld is. Het is mogelijk om "in process" een dotnet dll aan te roepen, dat zou kunnen om even snel het bestaan van een file te checken, maar het is veiliger om een child process te starten, voor beiden geldt dat op de uitkomst gewacht wordt voordat het volgende queue bericht wordt gelezen. 
 
-    Vaak kan de service pas starten als er aan bepaalde condities is voldaan, bijvoorbeeld dat bepaalde bestanden aanwezig zijn of dat iets in een database staat. Dat kan in de service worden opgelost door een trigger stap te combineren met de werkelijke verwerking in een "UntilError" flow. Als de trigger stapt faalt, wordt de verwerkings stap niet uitgevoerd. Dit patroon biedt de mogelijkheid om de logging van een falende trigger stap te onderdrukken, dat scheelt veel meldingen als je iedere minuut controleert terwijl in de praktijk de trigger maar eenmaal per dag optreedt. 
+    Vaak kan de service pas starten als er aan bepaalde condities is voldaan, bijvoorbeeld dat bepaalde bestanden aanwezig zijn of dat iets in een database staat. Dat kan in de service worden opgelost door een trigger stap te combineren met de werkelijke verwerking in een "UntilError" flow. Als de trigger stapt faalt, wordt de verwerkingsstap niet uitgevoerd. Dit patroon biedt de mogelijkheid om de log van een falende trigger stap te onderdrukken, dat scheelt veel meldingen als je iedere minuut controleert terwijl in de praktijk de trigger maar eenmaal per dag optreedt. 
 
     Met events kan je de frequentie van het pollen terugdringen. Zie die events als een extra, de mogelijkheid om zo snel mogelijk te reageren, maar gebruik nog wel "slow polling" voor eventueel gemiste events.
     Events kunnen geconfigureerd worden met een delay. Stel dat een service wacht op een mutatie<volgnummer>.txt bestand, maar het bestand pas wil verwerken als het minimaal 0,5 seconden oud is, dan kan het vragen het create event pas na een 0,5 seconden op de queue te zetten.
@@ -47,7 +47,7 @@ date: 2021-04-29
 
     Met deze mogelijkheden kan je bestaande scripts versleutelde files laten verwerken of aanmaken. Dat kan door van de streams gebruik te maken of het bestaande programma vooraf te laten gaan door een stap om te ontcijferen en te laten volgen door een stap die versleuteld. Het maken van zo'n pre- en post- stap kan met unix utility "cat" en de hierboven genoemde redirection van **_stdin_** en **_stdout_** en het opgeven van een sleutel.
 
-    Let wel op dat de sleutels niet in een onversleutelde source terecht komen maar dat ze ergens vanuit een kluis worden gehaald.
+    Let wel op dat de sleutels niet in een on-versleutelde source terecht komen maar dat ze ergens vanuit een kluis worden gehaald.
 
   * Doorgeven van geheimen
     
