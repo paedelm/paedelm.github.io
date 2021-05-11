@@ -7,14 +7,15 @@ date: 2021-04-29
 ## Achtergrond
 
   In het kader van betrouwbare en veilige IT systemen worden de systemen in domeinen opgedeeld en worden de processen binnen het domein als service uitgevoerd door een runtime systeem.
+  Een service is een eeuwig repeterend proces. Het bestaat uit 2 stappen, de eerste stap bepaalt of de tweede stap mag starten. De eerste stap wordt normaal gesproken veel vaker uitgevoerd dan de tweede stap. Moet iets uitgevoerd worden op basis van een dagelijkse mutatie file, en je wil die toch snel verwerken, dan zou je iedere 2 minuten stap 1 draaien, en één keer per dag stap 2. 
 
-  Het runtime systeem heeft als doel de processen beheerst uit te voeren, en dat periodiek te doen vanuit een versleuteld bron bestand om gegarandeerd de juiste programma's te starten.
+  Het runtime systeem heeft als doel de repeterende processen beheerst uit te voeren, en dat periodiek te doen vanuit een versleuteld bron bestand om gegarandeerd de juiste programma's te starten.
 
 ## Hoe werkt het runtime systeem?
 
   * Algemeen
 
-    Het programma is de service-container, het is dan ook bedoeld om services te draaien en het gebruikt daarvoor de [mailbox processor van F#](https://fsharpforfunandprofit.com/posts/concurrency-actor-model/).
+    Het runtime programma heet de service-container, het is dan ook bedoeld om services te draaien en het gebruikt daarvoor de [mailbox processor van F#](https://fsharpforfunandprofit.com/posts/concurrency-actor-model/). Deze werkt ook als oneindig repeterend proces, maar dan met een queue als input. Het verwerkt in een loop de queue berichten en bij een lege queue wordt er gewacht. 
 
   * Serieel runnen
 
@@ -31,7 +32,10 @@ date: 2021-04-29
 
     Een service is een flow van programma's die iedere tijd interval, of via een ander event wordt gestart. Het starten gebeurt altijd via een bericht op de queue van de mailboxprocessor waar de service aangekoppeld is. Het is mogelijk om "in process" een dotnet dll aan te roepen, dat zou kunnen om even snel het bestaan van een file te checken, maar het is veiliger om een child process te starten, voor beiden geldt dat op de uitkomst gewacht wordt voordat het volgende queue bericht wordt gelezen. 
 
-    Vaak kan de service pas starten als er bepaalde condities is voldaan, bijvoorbeeld dat bepaalde bestanden aanwezig zijn of dat iets in een database staat. Dat kan in de service worden opgelost door een trigger stap te combineren met de werkelijke verwerking in een "UntilError" flow of een shell script te schrijven wat hetzelfde doet. Als de trigger stapt faalt, wordt de verwerkings stap niet uitgevoerd. Het hoeft natuurlijk niet zo, die trigger conditie kan ook in de verwerking zijn opgenomen, maar het is een mogelijkheid als je het originele verwerking niet wil of kan aanpassen.
+    Vaak kan de service pas starten als er aan bepaalde condities is voldaan, bijvoorbeeld dat bepaalde bestanden aanwezig zijn of dat iets in een database staat. Dat kan in de service worden opgelost door een trigger stap te combineren met de werkelijke verwerking in een "UntilError" flow. Als de trigger stapt faalt, wordt de verwerkings stap niet uitgevoerd. Dit patroon biedt de mogelijkheid om de logging van een falende trigger stap te onderdrukken, dat scheelt veel meldingen als je iedere minuut controleert terwijl in de praktijk de trigger maar eenmaal per dag optreedt. 
+
+    Met events kan je de frequentie van het pollen terugdringen. Zie die events als een extra, de mogelijkheid om zo snel mogelijk te reageren, maar gebruik nog wel "slow polling" voor eventueel gemiste events.
+    Events kunnen geconfigureerd worden met een delay. Stel dat een service wacht op een mutatie<volgnummer>.txt bestand, maar het bestand pas wil verwerken als het minimaal 0,5 seconden oud is, dan kan het vragen het create event pas na een 0,5 seconden op de queue te zetten.
 
     * Bewust parallel runnen
       
