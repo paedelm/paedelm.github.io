@@ -115,6 +115,8 @@ date: 2021-05-24
 
 ## De datastructuren van een IT domein op een rijtje
 
+  ![](/datastructuren.jpg)
+  
  - Stap   
    een stap is een flow of een task
    een stap geeft altijd een resultaat
