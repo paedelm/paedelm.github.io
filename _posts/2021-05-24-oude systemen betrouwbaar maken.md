@@ -83,7 +83,7 @@ date: 2021-05-24
   Een nieuwe domein beschrijving onstaat alleen als deze getest en goed bevonden is.
 ## Werkwijze
 
-  ![](/werkwijze.jpg)
+  ![](/Werkwijze.jpg)
 ### **_Breek het systeem op in domeinen_**
 
   Ieder domein van het systeem staat op zijn eigen server en heeft zijn eigen Git repository. Het idee is dat iedere verandering terug te vinden is in de repository. Het onderhoud op de repository gebeurt door een team met als doel dat iedere wijziging door minstens 4 ogen is gecontroleerd. Als er onderdelen zijn van het systeem waar het team geen verantwoordelijkheid voor heeft dan verhuist dat stuk naar een ander domein, en zal er een formele interface worden afgesproken. Verdere regels voor het opbreken kunnen van technische en organisatorische aard zijn. Ieder domein heeft zijn eigen beheer cyclus.
