@@ -44,29 +44,29 @@ date: 2021-05-24
 
 ## Wat kan je er aan doen?
 
-### Inleiding
+![](/WatKunJeErAanDoen.jpg)
   
-#### _Bescherming tegen ongewenste wijzigingen_
+### _Bescherming tegen ongewenste wijzigingen_
 
   Het uiteindelijk doel is een systeem te hebben wat betrouwbaar werkt en wat haar gegevens beschermd tegen diefstal. Uitgaande van een betrouwbare situatie, moet na een wijziging het systeem opnieuw betrouwbaar zijn. Daarvoor moeten de aanpassingen traceerbaar zijn en gecontroleerd zijn door minimaal 2 geautoriseerde personen en zijn getest volgens jouw normen. Dus op de server even een aanpassing doen, is er niet meer bij. Met dit uitganspunt is interactieve toegang tot de server van het systeem niet nodig waardoor de veiligheid enorm toeneemt.  
 
-#### _Versleutelen van waardevolle onderdelen_ 
+### _Versleutelen van waardevolle onderdelen_ 
   
   Toch kan je niet uitsluiten dat iemand alsnog op de server kan komen en daar proberen gegevens te stelen, scripts aan te passen of het systeem te gijzelen. Dat is niet erg als al die belangrijke gegevens al door jou zelf zijn versleuteld en door jou te reproduceren zijn.
 
-#### _Dicht zetten van poorten_
+### _Dicht zetten van poorten_
 
   Om op de server geen open poorten te hebben, daardoor minder op te vallen en vrij te zijn een andere server in te zetten, zorg je ervoor dat niemand direct contact hoeft te maken met jouw server. Hoe wissel je dan gegevens uit met een ander domein? Dat kan via een derde, betrouwbare partij, bijvoorbeeld een cloud provider, waar je een storage container huurt en die gebruikt om data uit te wisselen. De beveiliging en beschikbaarheid daarvan, transport (Https) en opslag (versleuteld) is in orde, beter waarschijnlijk dan je zelf kan bereiken. En tegenwoordig bieden ze je de mogelijkheid om events te krijgen, dat kan als Https client daar hoef je geen Https server (meer) voor te zijn. 
   
-#### _Persistente gegevens buiten de server opslaan_ 
+### _Persistente gegevens buiten de server opslaan_ 
   
   Je kunt de server van jouw systeem zo voor een ander inwisselen als het je ook lukt om alle persistente gegevens buiten de server op te slaan. En dat kan door gebruik te maken van een storage provider, veiligheid en beschikbaarheid is dan in orde, alleen de bestaande processen moeten daar nog mee omgaan. Dat wordt opgelost door _de service die het proces beheert_, die zorgt dat de gegevens _just in time_ beschikbaar zijn op het moment dat het proces wat de gegevens gaat verwerken kan starten en de gepersisteerde resultaten van het proces, verplaatst naar de storage provider.  
 
-#### _Installatie procedure vereenvoudigen_
+### _Installatie procedure vereenvoudigen_
 
   Het domein (zie opbreken in domeinen) is eenvoudiger te installeren op een server als de domeinbeschrijving maar uit één configuratiebestand bestaat.
 
-#### _Enkele aanroep start het domein_ 
+### _Enkele aanroep start het domein_ 
 
   Het is de bedoeling om een server te hebben waar een programma draait met deze pseudo aanroep:  
   
@@ -74,14 +74,14 @@ date: 2021-05-24
 
   En daarmee wordt het domein met één commando in de lucht gebracht. Hierdoor wordt het eenvoudiger een nieuwe versie van het domein te draaien. Je kunt ook met één klap de normale verwerking vervangen. Dat is te gebruiken in situaties waar een conversie nodig is voordat een nieuwe versie van het domein actief wordt. 
 
-#### _Een service per proces_
+### _Een service per proces_
 
   Op die domeinserver draait voor ieder proces een nooit eindigende service die het proces telkens start als de voorwaarde daarvoor geldig is.
    
   Iedere wijziging betekent een nieuwe domeinbeschrijving, met nieuwe, gewijzigde of verwijderde services.
 
   Een nieuwe domein beschrijving onstaat alleen als deze getest en goed bevonden is.
-### Werkwijze
+## Werkwijze
 
 #### **_Breek het systeem op in domeinen_**
 
