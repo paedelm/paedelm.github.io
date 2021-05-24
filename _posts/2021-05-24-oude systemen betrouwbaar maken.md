@@ -83,11 +83,12 @@ date: 2021-05-24
   Een nieuwe domein beschrijving onstaat alleen als deze getest en goed bevonden is.
 ## Werkwijze
 
-#### **_Breek het systeem op in domeinen_**
+  ![](/werkwijze.jpg)
+### **_Breek het systeem op in domeinen_**
 
   Ieder domein van het systeem staat op zijn eigen server en heeft zijn eigen Git repository. Het idee is dat iedere verandering terug te vinden is in de repository. Het onderhoud op de repository gebeurt door een team met als doel dat iedere wijziging door minstens 4 ogen is gecontroleerd. Als er onderdelen zijn van het systeem waar het team geen verantwoordelijkheid voor heeft dan verhuist dat stuk naar een ander domein, en zal er een formele interface worden afgesproken. Verdere regels voor het opbreken kunnen van technische en organisatorische aard zijn. Ieder domein heeft zijn eigen beheer cyclus.
 
-#### **_Beheer het IT domein als een geheel_**
+### **_Beheer het IT domein als een geheel_**
  
  Wat is een IT domein concreet? Het bestaat uit processen die, als ze mogen en kunnen, periodiek gestart worden. Er is een service per proces die de voorwaarden in de gaten houdt en het proces dan start. Het proces zelf bestaat uit één of meerdere programma stappen en zo'n stap is een programma taak of zelf weer een flow van stappen. De stap geeft altijd een uitkomst: het is goed of fout gegaan.  
 
@@ -102,7 +103,7 @@ date: 2021-05-24
 
    Het IT systeem draait op een Operating System, Windows of een Unix variant en start het programma "RunITDomein <domeinbeschrijvingvanhetdomein>". Het image van het Operating System wordt beschreven met een dockerfile.
  
-#### **_De transformatie van bron beschrijving naar export file_**
+### **_Transformeer de bron beschrijving naar een export file_**
 
  De beschrijving gaat dus volgens sterk getypeerde datastructuren. Door die formele beschrijving krijg je hulp van de Ide met intellisense en met behulp van de compiler zorgt de Ide ook voor fout detectie. De beschrijving wordt gecompileerd en uitgevoerd. Het resultaat is een versleutelde exportfile. Dat is de file die door "RunITDomein" wordt uitgevoerd. 
  
@@ -112,7 +113,7 @@ date: 2021-05-24
 
  Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamelen van wat er al is. En wat je tijdens het ontwikkel proces met de hand deed, ga je nu geautomatiseerd doen. Daarmee leg je de kennis in de hoofden van mensen vast in Git.   
 
-### De datastructuren van een IT domein op een rijtje
+## De datastructuren van een IT domein op een rijtje
 
  - Stap   
    een stap is een flow of een task
