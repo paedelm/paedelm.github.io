@@ -20,16 +20,16 @@ date: 2021-05-24
 
 ### Als halfautomatisch systeem ontworpen
 
- Het ontwerp ging vroeger uit van zoveel mogelijk geautomatiseerde processen. In normale gevallen lukt dat, maar bij een lichte verstoring was een handmatige correctie gebruikelijk. Tegenwoordig merken we dat toegang voor handmatig ingrijpen gebruikt wordt voor het aanvallen van een systeem. Eenmaal toegang gekregen heeft men vaak (te) grote bevoegdheden en is er lastig te traceren wat voor acties er zijn ondernomen. Een goed bedoelende specialist kan onbedoeld het systeem ondermijnen, die andere specialist, de hacker,  is er op uit, dat merk je direct of je komt er pas (veel) later achter.
+ Het ontwerp ging vroeger uit van zoveel mogelijk geautomatiseerde processen. In normale gevallen lukt dat, maar bij een lichte verstoring was een handmatige correctie gebruikelijk. Tegenwoordig merken we dat toegang voor handmatig ingrijpen gebruikt wordt voor het aanvallen van een systeem. Eenmaal toegang gekregen heeft men vaak (te) grote bevoegdheden en is er lastig te traceren wat voor acties er zijn ondernomen. Een goed bedoelende specialist kan onbedoeld het systeem ondermijnen, die andere specialist, de hacker, doet het bewust. Soms is de ondermijning direct merkbaar, maar het kan ook sluimerend zijn eventueel ter voorbereiding op iets ergers.
  
 ### Meerdere disciplines zijn verantwoordelijk
 
- Wat vroeger ook een rol speelde: er waren twee disciplines verantwoordelijk voor een IT systeem, de ene schreef de software en de andere rolde het uit. Dat resulteerde nogal eens in incomplete gegevens bij de overdracht, bij het over te dragen programma hoort ook extra informatie zoals de voorwaarde waaronder het moet draaien, parameters die afhankelijk zijn van de omgeving waarin het gaat draaien en nog meer. Een handleiding moest uitkomst bieden. Maar het is een kunst om die te maken, en dat is meestal niet de hobby van een software ontwikkelaar.
+ Wat vroeger ook een rol speelde: er waren twee disciplines verantwoordelijk voor een IT systeem, de ene schreef de software en de andere rolde het uit. Dat resulteerde nogal eens in incomplete gegevens bij de overdracht, bij het over te dragen programma hoort ook extra informatie zoals de voorwaarde waaronder het moet draaien, parameters die afhankelijk zijn van de omgeving waarin het gaat draaien en nog meer. Een handleiding moest uitkomst bieden. Maar het is een kunst om die te maken.
  Het IT systeem werd ook niet in zijn geheel overgedragen maar het was een set onderdelen, ieder met zijn eigen instructies. Installatie gaat dan bijna nooit in één keer goed, met als gevolg handmatige correcties en (te)korte testen om de goede werking te controleren. Men is (te) snel tevreden met de werking waardoor er soms vervelende subtiele fouten onopgemerkt blijven.
 
 ### Toegankelijk maken van de server voor andere systemen
 
- De systemen draaien nooit helemaal geïsoleerd, er zijn meestal gegevens van anderen systemen nodig. Bij zo'n overdracht was er meestal direct contact tussen de servers van beide systemen.
+ De systemen draaien nooit helemaal geïsoleerd, er zijn meestal gegevens van anderen systemen nodig. Bij zo'n overdracht is er meestal direct contact tussen de servers van beide systemen.
  Hiervoor wordt een poort open gezet, die goed beveiligd moet worden. Beveiligen betekent in dit geval zorgen dat je met de laatste security patches werkt. Dat wil vaak misgaan. Veel bedrijven wachten te lang met het aanbrengen van die patches. Dit komt regelmatig in de Media.  
 
 ### Waardevolle gegevens zijn zichtbaar aanwezig op de server van het systeem  
@@ -46,25 +46,29 @@ date: 2021-05-24
 
 ![](/WatKunJeErAanDoen.jpg)
   
-### _Bescherming tegen ongewenste wijzigingen_
-
-  Het uiteindelijk doel is een systeem te hebben wat betrouwbaar werkt en wat haar gegevens beschermd tegen diefstal. Uitgaande van een betrouwbare situatie, moet na een wijziging het systeem opnieuw betrouwbaar zijn. Daarvoor moeten de aanpassingen traceerbaar zijn en gecontroleerd zijn door minimaal 2 geautoriseerde personen en zijn getest volgens jouw normen. Dus op de server even een aanpassing doen, is er niet meer bij. Met dit uitganspunt is interactieve toegang tot de server van het systeem niet nodig waardoor de veiligheid enorm toeneemt.  
-
-### _Versleutelen van waardevolle onderdelen_ 
+### _Het systeem opdelen in domeinen_
   
-  Toch kan je niet uitsluiten dat iemand alsnog op de server kan komen en daar proberen gegevens te stelen, scripts aan te passen of het systeem te gijzelen. Dat is niet erg als al die belangrijke gegevens al door jou zelf zijn versleuteld en door jou te reproduceren zijn.
+  Ieder domein van het systeem staat op zijn eigen server en heeft zijn eigen Git repository. Het idee is dat iedere verandering terug te vinden is in de repository. Het onderhoud op de repository gebeurt door een team met als doel dat iedere wijziging door minstens 4 geautoriseerde ogen is gecontroleerd. Als er onderdelen zijn van het systeem waar het team geen verantwoordelijkheid voor heeft dan verhuist dat stuk naar een ander domein, en zal er een formele interface worden afgesproken. Verdere regels voor het opbreken kunnen van technische en organisatorische aard zijn. Ieder domein heeft zijn eigen beheer cyclus.
+  Een nieuwe domein beschrijving onstaat alleen als deze getest en goed bevonden is.
+  
+  
+### _Bescherming tegen diefstal en ongewenste wijzigingen_
+
+  Door de geëxporteerde configuratie uit Git versleuteld op de server te zetten, dwing je af dat de wijzigingen altijd via Git lopen. Dat is een bescherming tegen je zelf maar natuurlijk ook tegen een hacker. Uiteraard is het verstandig de toegang tot de server dicht te gooien. Deze tweede ring van beveiliging geeft extra bescherming.  
+  
+  Als er vanuit de processen waardevolle gegevens op de server worden gezet dan moeten die ook versleuteld worden. Het is echter verstandig om zulke gegevens, als ze buiten het proces bewaard moeten worden, op een andere plek op te slaan.
 
 ### _Dicht zetten van poorten_
 
-  Om op de server geen open poorten te hebben, daardoor minder op te vallen en vrij te zijn een andere server in te zetten, zorg je ervoor dat niemand direct contact hoeft te maken met jouw server. Hoe wissel je dan gegevens uit met een ander domein? Dat kan via een derde, betrouwbare partij, bijvoorbeeld een cloud provider, waar je een storage container huurt en die gebruikt om data uit te wisselen. De beveiliging en beschikbaarheid daarvan, transport (Https) en opslag (versleuteld) is in orde, beter waarschijnlijk dan je zelf kan bereiken. En tegenwoordig bieden ze je de mogelijkheid om events te krijgen, dat kan als Https client daar hoef je geen Https server (meer) voor te zijn. 
+  Voorkom direct contact met de server van jouw domein. Dan zijn er geen open poorten. De server valt minder op en je bent vrij om de server te vervangen door een andere. Hoe wissel je dan gegevens uit met een ander domein? Dat kan via een derde, betrouwbare partij, bijvoorbeeld een cloud provider, waar je een storage container huurt en die gebruikt om data uit te wisselen. De beveiliging en beschikbaarheid daarvan, transport (Https) en opslag (versleuteld) is in orde, beter waarschijnlijk dan je zelf kan bereiken. En wil je een event krijgen als er wat in de storage container is neergezet? Dat is mogelijk. Daar hoef je geen poort voor open te zetten. 
   
 ### _Persistente gegevens buiten de server opslaan_ 
   
-  Je kunt de server van jouw systeem zo voor een ander inwisselen als het je ook lukt om alle persistente gegevens buiten de server op te slaan. En dat kan door gebruik te maken van een storage provider, veiligheid en beschikbaarheid is dan in orde, alleen de bestaande processen moeten daar nog mee omgaan. Dat wordt opgelost door _de service die het proces beheert_, die zorgt dat de gegevens _just in time_ beschikbaar zijn op het moment dat het proces wat de gegevens gaat verwerken kan starten en de gepersisteerde resultaten van het proces, verplaatst naar de storage provider.  
+  Je kunt de server van jouw domein zo voor een ander inwisselen als het je ook lukt om alle persistente gegevens buiten de server op te slaan. En dat kan door gebruik te maken van een storage provider, veiligheid en beschikbaarheid is dan in orde, alleen de bestaande processen moeten daar nog mee omgaan. Dat wordt opgelost door _de service die het proces beheert_, die zorgt dat de gegevens _just in time_ beschikbaar zijn op het moment dat het proces wat de gegevens gaat verwerken kan starten. De gepersisteerde resultaten van het proces worden na afloop verplaatst naar de storage provider.  
 
 ### _Installatie procedure vereenvoudigen_
 
-  Het domein (zie opbreken in domeinen) is eenvoudiger te installeren op een server als de domeinbeschrijving maar uit één configuratiebestand bestaat.
+  Het domein is eenvoudiger te installeren op een server als de domeinbeschrijving maar uit één configuratiebestand bestaat.
 
 ### _Enkele aanroep start het domein_ 
 
@@ -80,13 +84,12 @@ date: 2021-05-24
    
   Iedere wijziging betekent een nieuwe domeinbeschrijving, met nieuwe, gewijzigde of verwijderde services.
 
-  Een nieuwe domein beschrijving onstaat alleen als deze getest en goed bevonden is.
 ## Werkwijze
 
   ![](/Werkwijze.jpg)
 ### **_Breek het systeem op in domeinen_**
 
-  Ieder domein van het systeem staat op zijn eigen server en heeft zijn eigen Git repository. Het idee is dat iedere verandering terug te vinden is in de repository. Het onderhoud op de repository gebeurt door een team met als doel dat iedere wijziging door minstens 4 ogen is gecontroleerd. Als er onderdelen zijn van het systeem waar het team geen verantwoordelijkheid voor heeft dan verhuist dat stuk naar een ander domein, en zal er een formele interface worden afgesproken. Verdere regels voor het opbreken kunnen van technische en organisatorische aard zijn. Ieder domein heeft zijn eigen beheer cyclus.
+  Het resultaat is één domein per server beschreven in één repository onder verantwoordelijkheid van één team. Let vooral op dat er geen onderdelen zijn waar een ander team voor verantwoordelijk is. Een goede indeling kan voorkomen dat een voor jou niet traceerbare wijziging, de oorzaak is van het falen van jouw systeem.
 
 ### **_Beheer het IT domein als een geheel_**
  
@@ -111,33 +114,65 @@ date: 2021-05-24
 
  De informatie haal je uit de gegevens van het bestaande systeem. Soms is die informatie nog niet geschikt om op te nemen: een Java of C# sourcefile is niet uitvoerbaar die moet eerst gecompileerd worden. Dat compileren kan je doen op het moment dat jouw functie wordt aangeroepen om de informatie aan te leveren voor de service waarin deze programmataak een rol speelt.
 
- Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamelen van wat er al is. En wat je tijdens het ontwikkel proces met de hand deed, ga je nu geautomatiseerd doen. Daarmee leg je de kennis in de hoofden van mensen vast in Git.   
+### **_Beheer van aanpassingen_**
+ Als je het domein gaat aanpassen, ontstaat een tweede versie van het domein. Want naast de actuele versie ontstaat de nieuwe versie die nog in ontwikkeling is. De sources van beide versies moeten onderhouden kunnen worden. Daarvoor wordt er in Git een Change opgenomen. 
+ Als er vanwege de Change een service veranderd (nieuw, gewijzigd of verwijderd) moet worden dan wordt daar een nieuwe versie van gemaakt en die versie wordt gekoppeld aan de Change. De change doorloopt een levensloop van Ontwikkeling via extra omgevingen uiteindelijk naar Productie. Door de koppeling met de versie weet de export functie in Git welke versies van de services in de beschrijving van de desbetreffende omgevingen komen.
+
+### **_Verzamelen rangschikken en vastleggen_**
+ Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamelen van wat er al is, dat rangschikken en vastleggen. En wat je tijdens het ontwikkel proces met de hand deed, ga je nu geautomatiseerd doen. Daarmee leg je de kennis in de hoofden van mensen vast in Git.   
 
 ## De datastructuren van een IT domein op een rijtje
 
   ![](/datastructuren.jpg)
+
+- Stap    
+  Met een stap beschrijf je een programma flow of een enkele taak of combinaties daarvan.
+  Dit is de definitie in woorden:  
+  Een Stap is een Flow of Taak  
+  Een Flow is een lijst van Stappen (list<Stap>)  
+  Een Taak is een Programma met parameters  
+  een Stap geeft altijd een resultaat van "goed" of "fout" 
+
+- Flow  
+  Een flow is een lijst van stappen. 
+  De stappen worden in volgorde uitgevoerd behalve bij de Parallel Flow.  
+  Bij de Unconditional Flow worden alle stappen uitgevoerd.  
+  Bij de UntilOk Flow stopt het uitvoering na de eerste Stap die goed gaat.  
+  Bij de UntilError Flow stopt de uitvoering na de eerste Stap die fout gaat.
+  Bij de Parallel Flow worden alle Stappen tegelijk gestart.
+
+- Taak
+  Een taak is een programma of script of dll-aanroep 
+
+- Proces  
+  Een Proces bestaat uit een Stap.  
+  Die Stap is een enkele Taak of een Flow die de verwerking van het Proces doet.   
+
+- Voorwaarde  
+  Dit is een Stap die bepaald of een Proces uitgevoerd kan worden.  
+- Archivering (Archief Stap)  
+  De Archivering is de Stap ter afsluiting van het Proces om de Voorwaarde hiervan op te heffen.  
+  Ter verduidelijking: als de voorwaarde het bestaan van path "input/mutatie123.txt" is dan verplaatst de Archivering deze bijvoorbeeld naar "archief/mutatie123.txt".  
+  Hiermee voorkom je dat het bestand twee keer wordt verwerkt.  
+
+- Service 
+  Een Service verzorgt de uitvoering van een Proces op basis van de Voorwaarde 
+  Als de Voorwaarde succesvol is uitgevoerd, wordt het Proces uitgevoerd.
+  Als het Proces succesvol is uitgevoerd wordt de Archivering uitgevoerd.  
+  De Service doet dit repeterend met een op te geven interval.  
+
+- Test
+  De Test is een Flow bestaande uit 3 stappen: TestInit, Service, TestOpruimen.  
+  Precies beschreven is het: UnconditionalFlow(AndFlow(TestInit;Service);TestOpruimen)  
+  In taal: TestInit wordt gedraaid, als dat goed is gegaan dan draait de Service en ongeacht de eerdere resultaten draait TestOpruimen.  
+
+- De server  
+  De server wordt beschreven met een dockerfile  
+  In die dockerfile staat het Operating System en alle noodzakelijke software beschreven.  
+  Het entrypoint is het programma runITdomein met de domeinbeschrijving als parameter.
+
+## Samenvatting
   
- - Stap   
-   een stap is een flow of een task
-   een stap geeft altijd een resultaat
- - Flow  
-   Een flow is een lijst van stappen
- - Taak
-   Een taak is een programma of script of dll-aanroep 
-   het is de bouwsteen van een proces
- - Proces  
-   Een proces is een stap die op basis van een "voorwaarde" stap wordt uitgevoerd
- - Voorwaarde  
-   Dit is een Stap die bepaald of een Proces uitgevoerd kan worden.
- - Service 
-   Een Service verzorgt de uitvoering van een Proces op basis van de "voorwaarde" stap  
-   De Service doet dit repeterend met een op te geven interval.
- - De server  
-   De server wordt beschreven met een dockerfile  
-   In die dockerfile staat het Operating System en alle noodzakelijke software beschreven.  
-   Het entrypoint is het programma runITdomein met de domeinbeschrijving als parameter.
-
-### Beheer van aanpassingen
-
-Er wordt een change(aanpassing) opgenomen in Git als er iets veranderd moet worden in het domein. Van iedere service die het raakt, wordt een nieuwe versie gemaakt en gekoppeld aan de Change. De change doorloopt een levensloop van Ontwikkeling ... Productie. Door de koppeling met de versie weet de export functie in Git welke versies van de services in de beschrijving van de desbetreffende omgevingen komen.
+  Er zullen heel wat IT systemen zijn die hun werk naar behoren doen maar daarbij soms een handmatig zetje nodig hebben. De oudere systemen zijn niet altijd bijgewerkt met de laatste versies van de software. Dat heeft misschien te maken met personeel wat er niet meer is, beschrijvingen die niet meer kloppen en dat het lastig is het systeem te testen. Het is de vrees voor omvallen van het systeem waardoor men niet graag aanpast. Hierdoor wordt het systeem gevoeliger voor aanvallen van buiten en eenmaal binnen op de server heeft een aanvaller vrij spel. 
+  Als je zonder angst verder wil met zo'n systeem dan zal je een keer alles wat nodig is om het systeem te ontwikkelen, te testen en te draaien, moeten verzamelen en gestructureerd vast leggen in een Git repository. Daarmee komt automatisch testen binnen bereik, kan je de processen beter beheersen en wordt het mogelijk om gebruik te maken van nieuwe technieken zonder het bestaande helemaal om te gooien. 
 
