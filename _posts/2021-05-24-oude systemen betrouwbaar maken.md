@@ -118,9 +118,9 @@ date: 2021-05-24
 
 ### **_Beheer van aanpassingen_**
  Als je het domein gaat aanpassen, ontstaat een tweede versie van het domein. Want naast de actuele versie ontstaat de nieuwe versie die nog in ontwikkeling is. De sources van beide versies moeten onderhouden kunnen worden. Daarvoor wordt er in Git een Change opgenomen. 
- Als er vanwege de Change een service veranderd (nieuw, gewijzigd of verwijderd) moet worden dan wordt daar een nieuwe versie van gemaakt en die versie wordt gekoppeld aan de Change. De change doorloopt een levensloop van Ontwikkeling via extra omgevingen uiteindelijk naar Productie. Door de koppeling met de versie weet de export functie in Git welke versies van de services in de beschrijving van de desbetreffende omgevingen komen.
+ Als er vanwege de Change een service veranderd (nieuw, gewijzigd of verwijderd) moet worden dan wordt daar een nieuwe versie van gemaakt en die versie wordt gekoppeld aan de Change. De Change doorloopt een levensloop van Ontwikkeling via extra omgevingen uiteindelijk naar Productie. Door de koppeling met de versie weet de export functie in Git welke versies van de services in de beschrijving van de desbetreffende omgevingen komen.
 
-### **_Verzamelen rangschikken en vastleggen_**
+### **_Verzamelen, rangschikken en vastleggen_**
  Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamelen van wat er al is, dat rangschikken en vastleggen. En wat je tijdens het ontwikkel proces met de hand deed, ga je nu geautomatiseerd doen. Daarmee leg je de kennis in de hoofden van mensen vast in Git.   
 
 ## De datastructuren van een IT domein op een rijtje
@@ -151,7 +151,7 @@ date: 2021-05-24
   Die Stap is een enkele Taak of een Flow die de verwerking van het Proces doet.  
 
 - Voorwaarde  
-  Dit is een Stap die bepaald of een Proces uitgevoerd kan worden.  
+  Dit is een Stap die bepaalt of een Proces uitgevoerd kan worden  
 - Archivering (Archief Stap)  
   De Archivering is de Stap ter afsluiting van het Proces om de Voorwaarde hiervan op te heffen.  
   Ter verduidelijking: als de voorwaarde het bestaan van path "input/mutatie123.txt" is dan verplaatst de Archivering deze bijvoorbeeld naar "archief/mutatie123.txt".  
@@ -165,11 +165,11 @@ date: 2021-05-24
   De Service doet dit repeterend met een op te geven interval.  
 
 - Test  
-  De Test is een Flow bestaande uit 3 stappen: TestInit, Service, TestOpruimen.  
+  De Test is een Flow bestaande uit 3 stappen: TestInit, Service, en TestOpruimen.  
   De flow beschrijving is: UnconditionalFlow(UntilErrorFlow(TestInit;Service);TestOpruimen)  
   En gewoon beschreven: TestInit wordt gedraaid, als dat goed is gegaan dan draait de Service en ongeacht de eerdere resultaten draait TestOpruimen.  
 
-- De server  
+- De Server  
   De server wordt beschreven met een dockerfile  
   In die dockerfile staat het Operating System en alle noodzakelijke software beschreven.  
   Het entrypoint is het programma runITdomein met de domeinbeschrijving als parameter.
