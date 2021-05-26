@@ -125,15 +125,15 @@ date: 2021-05-24
 
 ## De datastructuren van een IT domein op een rijtje
 
-  ![](/datastructuren.jpg)
+  ![](/datastructuren.jpg)  
 
-- Stap    
+- Stap  
   Met een stap beschrijf je een programma flow of een enkele taak of combinaties daarvan.
   Dit is de definitie in woorden:  
   Een Stap is een Flow of Taak  
   Een Flow is een lijst van Stappen (list<Stap>)  
   Een Taak is een Programma met parameters  
-  een Stap geeft altijd een resultaat van "goed" of "fout" 
+  een Stap geeft altijd een resultaat van "goed" of "fout"  
 
 - Flow  
   Een flow is een lijst van stappen. 
@@ -141,35 +141,35 @@ date: 2021-05-24
   Bij de Unconditional Flow worden alle stappen uitgevoerd.  
   Bij de UntilOk Flow stopt het uitvoering na de eerste Stap die goed gaat.  
   Bij de UntilError Flow stopt de uitvoering na de eerste Stap die fout gaat.
-  Bij de Parallel Flow worden alle Stappen tegelijk gestart.
+  Bij de Parallel Flow worden alle Stappen tegelijk gestart.  
 
-- Taak
+- Taak  
   Een taak is een programma of script of dll-aanroep 
 
 - Proces  
   Een Proces bestaat uit een Stap.  
-  Die Stap is een enkele Taak of een Flow die de verwerking van het Proces doet.   
+  Die Stap is een enkele Taak of een Flow die de verwerking van het Proces doet.  
 
-- Voorwaarde
+- Voorwaarde  
   Dit is een Stap die bepaald of een Proces uitgevoerd kan worden.  
 - Archivering (Archief Stap)  
   De Archivering is de Stap ter afsluiting van het Proces om de Voorwaarde hiervan op te heffen.  
   Ter verduidelijking: als de voorwaarde het bestaan van path "input/mutatie123.txt" is dan verplaatst de Archivering deze bijvoorbeeld naar "archief/mutatie123.txt".  
   Hiermee voorkom je dat het bestand twee keer wordt verwerkt.  
 
-- Service
+- Service  
   Een Service verzorgt de uitvoering van een Proces op basis van de Voorwaarde 
   De flow beschrijving is: UntilErrorFlow(Voorwaarde;UntilErrorFlow(Proces; Archivering)) 
   Als de Voorwaarde succesvol is uitgevoerd, wordt het Proces uitgevoerd.
   Als het Proces succesvol is uitgevoerd wordt de Archivering uitgevoerd.  
   De Service doet dit repeterend met een op te geven interval.  
 
-- Test
+- Test  
   De Test is een Flow bestaande uit 3 stappen: TestInit, Service, TestOpruimen.  
   De flow beschrijving is: UnconditionalFlow(UntilErrorFlow(TestInit;Service);TestOpruimen)  
   En gewoon beschreven: TestInit wordt gedraaid, als dat goed is gegaan dan draait de Service en ongeacht de eerdere resultaten draait TestOpruimen.  
 
-- De server
+- De server  
   De server wordt beschreven met een dockerfile  
   In die dockerfile staat het Operating System en alle noodzakelijke software beschreven.  
   Het entrypoint is het programma runITdomein met de domeinbeschrijving als parameter.
