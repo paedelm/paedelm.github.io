@@ -144,6 +144,8 @@ date: 2021-05-24
 - Taak
   Een taak is een programma of script of dll-aanroep 
 
+  ![](/serverschets.jpg)
+
 - Proces  
   Een Proces bestaat uit een Stap.  
   Die Stap is een enkele Taak of een Flow die de verwerking van het Proces doet.   
@@ -155,24 +157,33 @@ date: 2021-05-24
   Ter verduidelijking: als de voorwaarde het bestaan van path "input/mutatie123.txt" is dan verplaatst de Archivering deze bijvoorbeeld naar "archief/mutatie123.txt".  
   Hiermee voorkom je dat het bestand twee keer wordt verwerkt.  
 
-- Service 
+- Service
   Een Service verzorgt de uitvoering van een Proces op basis van de Voorwaarde 
+  De flow beschrijving is: UntilErrorFlow(Voorwaarde;UntilErrorFlow(Proces; Archivering)) 
   Als de Voorwaarde succesvol is uitgevoerd, wordt het Proces uitgevoerd.
   Als het Proces succesvol is uitgevoerd wordt de Archivering uitgevoerd.  
   De Service doet dit repeterend met een op te geven interval.  
 
 - Test
   De Test is een Flow bestaande uit 3 stappen: TestInit, Service, TestOpruimen.  
-  Precies beschreven is het: UnconditionalFlow(AndFlow(TestInit;Service);TestOpruimen)  
-  In taal: TestInit wordt gedraaid, als dat goed is gegaan dan draait de Service en ongeacht de eerdere resultaten draait TestOpruimen.  
+  De flow beschrijving is: UnconditionalFlow(UntilErrorFlow(TestInit;Service);TestOpruimen)  
+  En gewoon beschreven: TestInit wordt gedraaid, als dat goed is gegaan dan draait de Service en ongeacht de eerdere resultaten draait TestOpruimen.  
 
-- De server  
+- De server
   De server wordt beschreven met een dockerfile  
   In die dockerfile staat het Operating System en alle noodzakelijke software beschreven.  
   Het entrypoint is het programma runITdomein met de domeinbeschrijving als parameter.
 
 ## Samenvatting
   
-  Er zullen heel wat IT systemen zijn die hun werk naar behoren doen maar daarbij soms een handmatig zetje nodig hebben. De oudere systemen zijn niet altijd bijgewerkt met de laatste versies van de software. Dat heeft misschien te maken met personeel wat er niet meer is, beschrijvingen die niet meer kloppen en dat het lastig is het systeem te testen. Het is de vrees voor omvallen van het systeem waardoor men niet graag aanpast. Hierdoor wordt het systeem gevoeliger voor aanvallen van buiten en eenmaal binnen op de server heeft een aanvaller vrij spel. 
-  Als je zonder angst verder wil met zo'n systeem dan zal je een keer alles wat nodig is om het systeem te ontwikkelen, te testen en te draaien, moeten verzamelen en gestructureerd vast leggen in een Git repository. Daarmee komt automatisch testen binnen bereik, kan je de processen beter beheersen en wordt het mogelijk om gebruik te maken van nieuwe technieken zonder het bestaande helemaal om te gooien. 
+  Er zullen heel wat IT systemen zijn die hun werk naar behoren doen maar daarbij soms een handmatig zetje nodig hebben. De oudere systemen zijn niet altijd bijgewerkt met de laatste versies van de software. Dat heeft misschien te maken met personeel wat er niet meer is, beschrijvingen die niet meer kloppen en dat het lastig is het systeem te testen. Het is de vrees voor omvallen van het systeem waardoor men het niet graag aanpast. Hierdoor wordt het systeem gevoeliger voor aanvallen van buiten en eenmaal binnen op de server heeft een aanvaller vrij spel.  
 
+  Als je zonder angst verder wil met zo'n systeem dan zal je een keer alles wat nodig is om het systeem te ontwikkelen, te testen en te draaien, moeten verzamelen en gestructureerd vast leggen in een Git repository. Daarmee komt automatisch testen binnen bereik, kan je de processen beter beheersen en wordt het mogelijk om gebruik te maken van nieuwe technieken zonder het bestaande helemaal om te gooien.  
+ 
+  Ik heb een methodiek ontwikkeld waarbij je gebruik maakt van de compiler in combinatie met de IDE om de gegevens foutvrij vast te leggen, tijdens het invoeren heb je hulp door intellisense en geeft het de fouten aan en je wordt gestopt als het niet door de compiler komt. Niet alle fouten kan hij aan. De compiler vindt het bijvoorbeeld goed dat jij 2 versies van een service aan dezelfde Change hangt. Dat kan logischerwijs niet, welke versie gaat hij exporteren voor deze Change? Dat kan je echter met eigen fout opsporing detecteren, geef een foutmelding en laat het export proces stoppen. In dit geval heb ik het al gedaan, maar jij kan zo ook fouten voorkomen. De ultieme test is de eenmalige uitvoering van jouw Services (zie de Test Stap), als die goed eindigen kan de export doorgang vinden.
+  
+  Niet alleen fout detectie, je bent degene die de datastructuren vult. Dat betekent dat je voor veel voorkomende patronen eenvoudigere data structuren kan gebruiken, templates, en van daaruit de standaard structuren vult. De hoeveelheid gegevens die je vastlegt wordt daardoor minder en het geheel wordt leesbaarder.  
+  
+  De tools zijn dus zeer geavanceerd, gratis, worden goed onderhouden en veel gebruikt. Met mijn definities kan je ieder systeem vastleggen maar ik heb rekening gehouden met uitbreidingen op de definities als dat nodig zou zijn. Daarvoor hoef je niet al het eerdere werk aan te passen.
+
+  Een kwetsbaar systeem zal je zelf moeten aanpakken er is geen wondermiddeltje die dat voor je doet. Met mijn methodiek gestoeld op jaren ervaring en uitgevoerd met moderne techniek, kan ik helpen. Dat bespaart vallen en opstaan en daardoor tijd en frustratie. Ik heb het al uitgezocht en uitgetest. Nieuwsgierig? Ik ben er klaar voor! 
