@@ -97,37 +97,40 @@ date: 2021-05-24
 
 ### **_Beheer het IT domein als een geheel_**
  
- Wat is een IT domein concreet? Het bestaat uit processen die, als ze mogen en kunnen, periodiek gestart worden. Er is een service per proces die de voorwaarden in de gaten houdt en het proces dan start. Het proces zelf bestaat uit één of meerdere programma stappen en zo'n stap is een programma taak of zelf weer een flow van stappen. De stap geeft altijd een uitkomst: het is goed of fout gegaan.  
+Wat is een IT domein concreet? Het bestaat uit processen die, als ze mogen en kunnen, periodiek gestart worden. Er is een service per proces die de voorwaarden in de gaten houdt en het proces dan start. Het proces zelf bestaat uit één of meerdere programma stappen en zo'n stap is een programma taak of zelf weer een flow van stappen. De stap geeft altijd een uitkomst: het is goed of fout gegaan.  
 
-   In de flow kan je spelen met die uitkomst. Je hebt flows die de stappen uitvoeren totdat er eentje fout gaat of flows die uitvoeren tot er eentje goed gaat of hij voert ze gewoon allemaal uit, serieel of parallel.  
+In de flow kan je spelen met die uitkomst. Je hebt flows die de stappen uitvoeren totdat er eentje fout gaat of flows die uitvoeren tot er eentje goed gaat of hij voert ze gewoon allemaal uit, serieel of parallel.  
 
-   De programmataak beschrijft het programma, hoe het gestart wordt, de commandline, met welke parameters en welke omgevingsvariabelen. At runtime volstaat de commandline eventueel aangevuld met de inhoud van een directory tree. De directorytree wordt dan opgebouwd voordat het programma op basis van de commandline wordt opgestart. Het garandeert dat alles te starten is, van scripts, gecompileerde programma's met een framework tot standalone executables met eventuele shared libraries.  
+De programmataak beschrijft het programma, hoe het gestart wordt, de commandline, met welke parameters en welke omgevingsvariabelen. At runtime volstaat de commandline eventueel aangevuld met de inhoud van een directory tree. De directorytree wordt dan opgebouwd voordat het programma op basis van de commandline wordt opgestart. Het garandeert dat alles te starten is, van scripts, gecompileerde programma's met een framework tot standalone executables met eventuele shared libraries.  
 
-   Het zijn dus de services die continue draaien en op de goede momenten, als alle resources aanwezig zijn en de tijd rijp is, hun proces starten. Nadat het proces gedraaid heeft, moet de start voorwaarde wel opheven worden. Meestal gebeurt dat in een archiverings stap nadat het proces goed geëindigd is. De services voorkomen fouten en hebben een zelfcorrigerend karakter. Het proces doet zijn ding en geeft aan of het goed of fout is gegaan, en de service regelt de foutafhandeling, het eventuele opnieuw proberen. De services kunnen reageren op events, zoals timer events, watch events op het file systeem op queue's etc.... 
-   Het verwerken van data op de plek waar het afgeleverd wordt wil nog wel eens leiden tot het archiveren van nog niet verwerkte gegevens. De service kan hier een rol spelen door de te verwerken gegevens eerst naar de plaats van verwerking te brengen en dan het proces te starten.
-   De service zorgt er ook voor dat de events serieel worden afgehandeld waardoor het proces niet perongeluk parallel wordt gestart. Gewenst parallel verwerken van gegevens is echter wel mogelijk.  
-   Dit service niveau is belangrijk en mist nog al eens in oude systemen.  
+Het zijn dus de services die continue draaien en op de goede momenten, als alle resources aanwezig zijn en de tijd rijp is, hun proces starten. Nadat het proces gedraaid heeft, moet de start voorwaarde wel opheven worden. Meestal gebeurt dat in een archiverings stap nadat het proces goed geëindigd is. De services voorkomen fouten en hebben een zelfcorrigerend karakter. Het proces doet zijn ding en geeft aan of het goed of fout is gegaan, en de service regelt de foutafhandeling, het eventuele opnieuw proberen. De services kunnen reageren op events, zoals timer events, watch events op het file systeem op queue's etc.... 
 
-   Het IT systeem draait op een Operating System, Windows of een Unix variant en start het programma "RunITDomein <domeinbeschrijvingvanhetdomein>". Het image van het Operating System wordt beschreven met een dockerfile.
+Het verwerken van data op de plek waar het afgeleverd wordt, wil nog wel eens leiden tot het archiveren van nog niet verwerkte gegevens. De service kan hier een rol spelen door de te verwerken gegevens eerst naar de plaats van verwerking te brengen en dan het proces te starten.
+
+De service zorgt er ook voor dat de events serieel worden afgehandeld waardoor het proces niet per ongeluk parallel wordt gestart. Gewenst parallel verwerken van gegevens is echter wel mogelijk. De service is belangrijk en mist nog al eens in oude systemen.  
+
+Het IT systeem draait op een Operating System, Windows of een Unix variant en start het programma "RunITDomein <domeinbeschrijvingvanhetdomein>". Het image van het Operating System wordt beschreven met een dockerfile.
  
 ### **_Transformeer de bron beschrijving naar een export file_**
 
- De beschrijving gaat dus volgens sterk getypeerde datastructuren. Door die formele beschrijving krijg je hulp van de Ide met intellisense en met behulp van de compiler zorgt de Ide ook voor fout detectie. De beschrijving wordt gecompileerd en uitgevoerd. Het resultaat is een versleutelde exportfile. Dat is de file die door "RunITDomein" wordt uitgevoerd. 
+De beschrijving gaat dus volgens sterk getypeerde datastructuren. Door die formele beschrijving krijg je hulp van de Ide met intellisense en met behulp van de compiler zorgt de Ide ook voor fout detectie. De beschrijving wordt gecompileerd en uitgevoerd. Het resultaat is een versleutelde exportfile. Dat is de file die door "RunITDomein" wordt uitgevoerd. 
  
- De informatie die je oplevert gebeurt op basis van een parameter, de omgeving. Jij hebt de mogelijkheid iets anders op te leveren in de Ontwikkel omgeving dan in de Productie omgeving. Daarom vul je niet een datastructuur met een vaste waarde, maar maak je een functie die de waarde terug geeft op basis van zijn parameter. Vanwege dit mechanisme kan je ook eigen controles uitvoeren met als ultieme controle een praktijk test. Jouw IT domein wordt gecompileerd met gedeeltelijk eigen controles en eigen generatie logica.  
+De informatie die je oplevert gebeurt op basis van een parameter, de omgeving. Jij hebt de mogelijkheid iets anders op te leveren in de Ontwikkel omgeving dan in de Productie omgeving. Daarom vul je niet een datastructuur met een vaste waarde, maar maak je een functie die de waarde terug geeft op basis van zijn parameter. Vanwege dit mechanisme kan je ook eigen controles uitvoeren met als ultieme controle een praktijk test. Jouw IT domein wordt gecompileerd met gedeeltelijk eigen controles en eigen generatie logica.  
 
- De informatie haal je uit de gegevens van het bestaande systeem. Soms is die informatie nog niet geschikt om op te nemen: een Java of C# sourcefile is niet uitvoerbaar die moet eerst gecompileerd worden. Dat compileren kan je doen op het moment dat jouw functie wordt aangeroepen om de informatie aan te leveren voor de service waarin deze programmataak een rol speelt.
+De informatie haal je uit de gegevens van het bestaande systeem. Soms is die informatie nog niet geschikt om op te nemen: een Java of C# sourcefile is niet uitvoerbaar die moet eerst gecompileerd worden. Dat compileren kan je doen op het moment dat jouw functie wordt aangeroepen om de informatie aan te leveren voor de service waarin deze programmataak een rol speelt.
 
 ### **_Beheer van aanpassingen_**
- Als je het domein gaat aanpassen, ontstaat een tweede versie van het domein. Want naast de actuele versie ontstaat de nieuwe versie die nog in ontwikkeling is. De sources van beide versies moeten onderhouden kunnen worden. Daarvoor wordt er in Git een Change opgenomen. 
- Als er vanwege de Change een service veranderd (nieuw, gewijzigd of verwijderd) moet worden dan wordt daar een nieuwe versie van gemaakt en die versie wordt gekoppeld aan de Change. De Change doorloopt een levensloop van Ontwikkeling via extra omgevingen uiteindelijk naar Productie. Door de koppeling met de versie weet de export functie in Git welke versies van de services in de beschrijving van de desbetreffende omgevingen komen.
+
+Als je het domein gaat aanpassen, ontstaat een tweede versie van het domein. Want naast de actuele versie ontstaat de nieuwe versie die nog in ontwikkeling is. De sources van beide versies moeten onderhouden kunnen worden. Daarvoor wordt er in Git een Change opgenomen. 
+Als er vanwege de Change een service veranderd moet worden (nieuw, gewijzigd of verwijderd) dan wordt daar een nieuwe versie van gemaakt en die versie wordt gekoppeld aan de Change. De Change doorloopt een levensloop van Ontwikkeling via extra omgevingen uiteindelijk naar Productie. Door de koppeling met de versie weet de export functie in Git welke versies van de services in de beschrijving van de desbetreffende omgevingen komen.
 
 ### **_Verzamelen, rangschikken en vastleggen_**
- Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamelen van wat er al is, dat rangschikken en vastleggen. En wat je tijdens het ontwikkel proces met de hand deed, ga je nu geautomatiseerd doen. Daarmee leg je de kennis in de hoofden van mensen vast in Git.   
+
+Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamelen van wat er al is, dat rangschikken en vastleggen. En wat je tijdens het ontwikkel proces met de hand deed, ga je nu geautomatiseerd doen. Daarmee leg je de kennis in de hoofden van mensen vast in Git.   
 
 ## De datastructuren van een IT domein op een rijtje
 
-  ![](/datastructuren.jpg)  
+![](/datastructuren.jpg)  
 
 - Stap  
   Met een stap beschrijf je een programma flow of een enkele taak of combinaties daarvan.
@@ -154,6 +157,7 @@ date: 2021-05-24
 
 - Voorwaarde  
   Dit is een Stap die bepaalt of een Proces uitgevoerd kan worden  
+
 - Archivering (Archief Stap)  
   De Archivering is de Stap ter afsluiting van het Proces om de Voorwaarde hiervan op te heffen.  
   Ter verduidelijking: als de voorwaarde het bestaan van path "input/mutatie123.txt" is dan verplaatst de Archivering deze bijvoorbeeld naar "archief/mutatie123.txt".  
@@ -178,14 +182,18 @@ date: 2021-05-24
 
 ## Samenvatting
   
-  Er zullen heel wat IT systemen zijn die hun werk naar behoren doen maar daarbij soms een handmatig zetje nodig hebben. De oudere systemen zijn niet altijd bijgewerkt met de laatste versies van de software. Dat heeft misschien te maken met personeel wat er niet meer is, beschrijvingen die niet meer kloppen en dat het lastig is het systeem te testen. Het is de vrees voor omvallen van het systeem waardoor men het niet graag aanpast. Hierdoor wordt het systeem gevoeliger voor aanvallen van buiten en eenmaal binnen op de server heeft een aanvaller vrij spel.  
+Er zullen heel wat IT systemen zijn die hun werk naar behoren doen maar daarbij soms een handmatig zetje nodig hebben. Daarvoor is toegang nodig op de server. De oudere systemen zijn niet altijd bijgewerkt met de laatste software updates, dat maakt ze kwetsbaar. Men durft niet goed, bang dat het systeem omvalt. De mensen die het gemaakt hebben zijn weg, de documentatie is niet betrouwbaar en het is lastig te testen. Aanvallers hebben op de server vrij spel, soms zijn ze maanden actief voordat iemand iets in de gaten heeft.  
 
-  Als je zonder angst verder wil met zo'n systeem dan zal je een keer alles wat nodig is om het systeem te ontwikkelen, te testen en te draaien, moeten verzamelen en gestructureerd vast leggen in een Git repository. Daarmee komt automatisch testen binnen bereik, kan je de processen beter beheersen en wordt het mogelijk om gebruik te maken van nieuwe technieken zonder het bestaande helemaal om te gooien.  
- 
-  Ik heb een methodiek ontwikkeld waarbij je gebruik maakt van de compiler in combinatie met de IDE om de gegevens foutvrij vast te leggen, tijdens het invoeren heb je hulp door intellisense en geeft het de fouten aan en je wordt gestopt als het niet door de compiler komt. Niet alle fouten kan hij aan. De compiler vindt het bijvoorbeeld goed dat jij 2 versies van een service aan dezelfde Change hangt. Dat kan logischerwijs niet, welke versie gaat hij exporteren voor deze Change? Dat kan je echter met eigen fout opsporing detecteren, geef een foutmelding en laat het export proces stoppen. In dit geval heb ik het al gedaan, maar jij kan zo ook fouten voorkomen. De ultieme test is de eenmalige uitvoering van jouw Services (zie de Test Stap), als die goed eindigen kan de export doorgang vinden.
-  
-  Niet alleen fout detectie, je bent degene die de datastructuren vult. Dat betekent dat je voor veel voorkomende patronen eenvoudigere data structuren kan gebruiken, templates, en van daaruit de standaard structuren vult. De hoeveelheid gegevens die je vastlegt wordt daardoor minder en het geheel wordt leesbaarder.  
-  
-  De tools zijn dus zeer geavanceerd, gratis, worden goed onderhouden en veel gebruikt. Met mijn definities kan je ieder systeem vastleggen maar ik heb rekening gehouden met uitbreidingen op de definities als dat nodig zou zijn. Daarvoor hoef je niet al het eerdere werk aan te passen.
+Als je zonder angst verder wil met zo'n systeem dan zal je een keer alles wat nodig is om het systeem te ontwikkelen, te testen en te draaien, moeten verzamelen en gestructureerd vast leggen in een Git repository. Daarmee komt automatisch testen binnen bereik, kan je de processen beter beheersen en wordt het mogelijk om gebruik te maken van nieuwe technieken zonder het bestaande helemaal om te gooien. Als bonus heb je een fantastisch gedocumenteerd systeem, het nageslacht zal dankbaar zijn. 
 
-  Een kwetsbaar systeem zal je zelf moeten aanpakken er is geen wondermiddeltje die dat voor je doet. Met mijn methodiek gestoeld op jaren ervaring en uitgevoerd met moderne techniek, kan ik helpen. Dat bespaart vallen en opstaan en daardoor tijd en frustratie. Ik heb het al uitgezocht en uitgetest. Nieuwsgierig? Ik ben er klaar voor! 
+Het is logisch dat er tegenaan gehikt wordt. Het klinkt als veel werk. Toch kan dat meevallen. Natuurlijk zal je het systeem moeten doorgronden en de juiste versies van de software opzoeken. Dat kan je echter voor een groot gedeelte op de server terugvinden, alleen bij gecompileerde programma's zal je de juiste source ergens (waarschijnlijk anders) moeten vinden. En daarbij komt de angst dat veel van de scripts en programma's veranderd moeten worden. Dat kan erg meevallen als je het slim aanpakt.  
+
+Ik heb een methodiek ontwikkeld waarbij je gebruik maakt van de compiler in combinatie met de IDE om de gegevens foutvrij vast te leggen, tijdens het invoeren heb je hulp door intellisense en geeft het de fouten aan en je wordt gestopt als het niet door de compiler komt. Je kunt daar boven op ook je eigen fout detectie toevoegen voordat als laatste jouw service getest wordt.
+  
+Niet alleen fout detectie, je bent degene die de datastructuren vult. Dat betekent dat je voor veel voorkomende patronen eenvoudigere data structuren kan gebruiken en van daaruit de standaard structuren vult. De hoeveelheid gegevens die je vastlegt wordt daardoor minder, de fouten kans kleiner en het geheel wordt leesbaarder.  
+
+De wijzigingen die je in het systeem wil maken zoals de versleuteling van scripts en data en het gebruik van storage containers kan in de service geconfigureerd worden om zo de bestaande software te ontzien. 
+
+De tools zijn dus zeer geavanceerd, gratis, worden goed onderhouden en veel gebruikt. Met mijn definities kan je ieder systeem vastleggen maar ik heb rekening gehouden met uitbreidingen op de definities als dat nodig zou zijn. Daarvoor hoef je niet al het eerdere werk aan te passen.  
+
+ Mijn methodiek is er, het bespaart vallen en opstaan en daardoor tijd en frustratie. Ik heb het al uitgezocht en uitgetest. Nieuwsgierig? Ik ben er klaar voor! 
