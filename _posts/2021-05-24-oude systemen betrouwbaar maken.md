@@ -150,7 +150,7 @@ date: 2021-05-24
   Een Proces bestaat uit een Stap.  
   Die Stap is een enkele Taak of een Flow die de verwerking van het Proces doet.   
 
-- Voorwaarde  
+- Voorwaarde
   Dit is een Stap die bepaald of een Proces uitgevoerd kan worden.  
 - Archivering (Archief Stap)  
   De Archivering is de Stap ter afsluiting van het Proces om de Voorwaarde hiervan op te heffen.  
