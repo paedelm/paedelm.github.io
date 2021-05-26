@@ -30,7 +30,7 @@ date: 2021-05-24
 ### Toegankelijk maken van de server voor andere systemen
 
  De systemen draaien nooit helemaal geïsoleerd, er zijn meestal gegevens van anderen systemen nodig. Bij zo'n overdracht is er meestal direct contact tussen de servers van beide systemen.
- Hiervoor wordt een poort open gezet, die goed beveiligd moet worden. Beveiligen betekent in dit geval zorgen dat je met de laatste security patches werkt. Dat wil vaak misgaan. Veel bedrijven wachten te lang met het aanbrengen van die patches. Dit komt regelmatig in de Media.  
+ Hiervoor wordt een poort open gezet, die goed beveiligd moet worden. Beveiligen betekent vooral dat je met de laatste security updates werkt. Dat gaat vaak mis. Veel bedrijven wachten te lang met het aanbrengen van die updates.   
 
 ### Waardevolle gegevens zijn zichtbaar aanwezig op de server van het systeem  
 
@@ -56,19 +56,20 @@ date: 2021-05-24
 
   Door de geëxporteerde configuratie uit Git versleuteld op de server te zetten, dwing je af dat de wijzigingen altijd via Git lopen. Dat is een bescherming tegen je zelf maar natuurlijk ook tegen een hacker. Uiteraard is het verstandig de toegang tot de server dicht te gooien. Deze tweede ring van beveiliging geeft extra bescherming.  
   
-  Als er vanuit de processen waardevolle gegevens op de server worden gezet dan moeten die ook versleuteld worden. Het is echter verstandig om zulke gegevens, als ze buiten het proces bewaard moeten worden, op een andere plek op te slaan.
+  Als er vanuit de processen waardevolle gegevens op de server worden gezet dan moeten die ook versleuteld worden. Het is echter beter om zulke gegevens, als ze buiten het proces bewaard moeten worden, op een andere plek op te slaan.
 
 ### _Dicht zetten van poorten_
 
-  Voorkom direct contact met de server van jouw domein. Dan zijn er geen open poorten. De server valt minder op en je bent vrij om de server te vervangen door een andere. Hoe wissel je dan gegevens uit met een ander domein? Dat kan via een derde, betrouwbare partij, bijvoorbeeld een cloud provider, waar je een storage container huurt en die gebruikt om data uit te wisselen. De beveiliging en beschikbaarheid daarvan, transport (Https) en opslag (versleuteld) is in orde, beter waarschijnlijk dan je zelf kan bereiken. En wil je een event krijgen als er wat in de storage container is neergezet? Dat is mogelijk. Daar hoef je geen poort voor open te zetten. 
+  Voorkom direct contact met de server van jouw domein. Dan zijn er geen open poorten. De server valt minder op en als niemand jouw server adres gebruikt, ben je vrij om de server te vervangen door een andere. Hoe wissel je dan gegevens uit met een ander domein? Dat kan via een derde, betrouwbare partij, bijvoorbeeld een cloud provider, waar je een storage container huurt en die gebruikt om data uit te wisselen. De beveiliging en beschikbaarheid daarvan, transport (Https) en opslag (versleuteld) is in orde, beter waarschijnlijk dan je zelf kan bereiken. En wil je een event krijgen als er wat in de storage container is neergezet? Dat is mogelijk. Daar hoef je geen poort voor open te zetten. 
   
 ### _Persistente gegevens buiten de server opslaan_ 
   
-  Je kunt de server van jouw domein zo voor een ander inwisselen als het je ook lukt om alle persistente gegevens buiten de server op te slaan. En dat kan door gebruik te maken van een storage provider, veiligheid en beschikbaarheid is dan in orde, alleen de bestaande processen moeten daar nog mee omgaan. Dat wordt opgelost door _de service die het proces beheert_, die zorgt dat de gegevens _just in time_ beschikbaar zijn op het moment dat het proces wat de gegevens gaat verwerken kan starten. De gepersisteerde resultaten van het proces worden na afloop verplaatst naar de storage provider.  
+  Als het je ook lukt om alle persistente gegevens buiten de server op te slaan, kan je makkelijker wisselen van server. Dat kan door gebruik te maken van een storage provider, veiligheid en beschikbaarheid is dan in orde, alleen de bestaande processen moeten daar nog mee omgaan. Dat wordt opgelost door _de service die het proces beheert_, die zorgt dat de gegevens _just in time_ beschikbaar zijn op het moment dat het proces wat de gegevens gaat verwerken kan starten. De gepersisteerde resultaten van het proces worden na afloop verplaatst naar de storage provider.  
 
 ### _Installatie procedure vereenvoudigen_
 
   Het domein is eenvoudiger te installeren op een server als de domeinbeschrijving maar uit één configuratiebestand bestaat.
+  Iedere wijziging betekent een nieuwe domeinbeschrijving, met nieuwe, gewijzigde of verwijderde services.
 
 ### _Enkele aanroep start het domein_ 
 
@@ -81,8 +82,9 @@ date: 2021-05-24
 ### _Een service per proces_
 
   Op die domeinserver draait voor ieder proces een nooit eindigende service die het proces telkens start als de voorwaarde daarvoor geldig is.
-   
-  Iedere wijziging betekent een nieuwe domeinbeschrijving, met nieuwe, gewijzigde of verwijderde services.
+
+  ![](/serverschets.jpg)
+
 
 ## Werkwijze
 
@@ -143,8 +145,6 @@ date: 2021-05-24
 
 - Taak
   Een taak is een programma of script of dll-aanroep 
-
-  ![](/serverschets.jpg)
 
 - Proces  
   Een Proces bestaat uit een Stap.  
