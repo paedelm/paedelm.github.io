@@ -77,7 +77,7 @@ date: 2021-05-24
 
   Het is de bedoeling om een server te hebben waar een programma draait met deze pseudo aanroep:  
   
-  - runITDomein <versleutelde domeinbeschrijving>  
+  - runITDomein \<versleutelde domeinbeschrijving\>  
 
   En daarmee wordt het domein met één commando in de lucht gebracht. Hierdoor wordt het eenvoudiger een nieuwe versie van het domein te draaien. Je kunt ook met één klap de normale verwerking vervangen. Dat is te gebruiken in situaties waar een conversie nodig is voordat een nieuwe versie van het domein actief wordt. 
 
