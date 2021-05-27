@@ -12,7 +12,7 @@ date: 2021-05-24
 
 ## Welke problemen geeft dat
 
-  We zijn afhankelijk van onze computersystemen, bij uitval ligt vaak een groot gedeelte van de bedrijfsvoering stil. Als je slachtoffer bent van ransomware onstaat ook het dilemma of je losgeld gaat betalen. Bij gestolen gegevens maak je kans voor nalatigheid een boete te krijgen.
+  We zijn afhankelijk van onze computersystemen, bij uitval ligt vaak een groot gedeelte van de bedrijfsvoering stil. Als je slachtoffer bent van ransomware ontstaat ook het dilemma of je losgeld gaat betalen. Bij gestolen gegevens maak je kans voor nalatigheid een boete te krijgen.
   De aandacht in de Media is geen goede reclame voor je bedrijf.  
   Het kan ook maatschappij ontwrichtend zijn als bijvoorbeeld een nutsbedrijf geraakt wordt. Alle voorbeelden zijn de laatste tijd wel in het nieuws geweest.
 
@@ -51,7 +51,7 @@ date: 2021-05-24
 ### _Het systeem opdelen in domeinen_
   
   Ieder domein van het systeem staat op zijn eigen server en heeft zijn eigen Git repository. Het idee is dat iedere verandering terug te vinden is in de repository. Het onderhoud op de repository gebeurt door een team met als doel dat iedere wijziging door minstens 4 geautoriseerde ogen is gecontroleerd. Als er onderdelen zijn van het systeem waar het team geen verantwoordelijkheid voor heeft dan verhuist dat stuk naar een ander domein, en zal er een formele interface worden afgesproken. Verdere regels voor het opbreken kunnen van technische en organisatorische aard zijn. Ieder domein heeft zijn eigen beheer cyclus.
-  Een nieuwe domein beschrijving onstaat alleen als deze getest en goed bevonden is.
+  Een nieuwe domein beschrijving ontstaat alleen als deze getest en goed bevonden is.
   
   
 ### _Bescherming tegen diefstal en ongewenste wijzigingen_
@@ -103,7 +103,7 @@ In de flow kan je spelen met die uitkomst. Je hebt flows die de stappen uitvoere
 
 De programmataak beschrijft het programma, hoe het gestart wordt, de commandline, met welke parameters en welke omgevingsvariabelen. At runtime volstaat de commandline eventueel aangevuld met de inhoud van een directory tree. De directorytree wordt dan opgebouwd voordat het programma op basis van de commandline wordt opgestart. Het garandeert dat alles te starten is, van scripts, gecompileerde programma's met een framework tot standalone executables met eventuele shared libraries.  
 
-Het zijn dus de services die continue draaien en op de goede momenten, als alle resources aanwezig zijn en de tijd rijp is, hun proces starten. Nadat het proces gedraaid heeft, moet de start voorwaarde wel opheven worden. Meestal gebeurt dat in een archiverings stap nadat het proces goed geëindigd is. De services voorkomen fouten en hebben een zelfcorrigerend karakter. Het proces doet zijn ding en geeft aan of het goed of fout is gegaan, en de service regelt de foutafhandeling, het eventuele opnieuw proberen. De services kunnen reageren op events, zoals timer events, watch events op het file systeem op queue's etc.... 
+Het zijn dus de services die continue draaien en op de goede momenten, als alle resources aanwezig zijn en de tijd rijp is, hun proces starten. Nadat het proces gedraaid heeft, moet de start voorwaarde wel opgeheven worden. Meestal gebeurt dat in een archiveringsstap nadat het proces goed geëindigd is. De services voorkomen fouten en hebben een zelfcorrigerend karakter. Het proces doet zijn ding en geeft aan of het goed of fout is gegaan, en de service regelt de foutafhandeling, het eventuele opnieuw proberen. De services kunnen reageren op events, zoals timer events, watch events op het file systeem op queue's etc.... 
 
 Het verwerken van data op de plek waar het afgeleverd wordt, wil nog wel eens leiden tot het archiveren van nog niet verwerkte gegevens. De service kan hier een rol spelen door de te verwerken gegevens eerst naar de plaats van verwerking te brengen en dan het proces te starten.
 
