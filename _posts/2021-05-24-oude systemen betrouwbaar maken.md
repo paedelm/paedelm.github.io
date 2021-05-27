@@ -181,7 +181,9 @@ Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamel
   Het entrypoint is het programma runITdomein met de domeinbeschrijving als parameter.
 
 ## Samenvatting
-  
+
+![](/Samenvatting.jpg)  
+
 Er zullen heel wat IT systemen zijn die hun werk naar behoren doen maar daarbij soms een handmatig zetje nodig hebben. Daarvoor is toegang nodig op de server. De oudere systemen zijn niet altijd bijgewerkt met de laatste software updates, dat maakt ze kwetsbaar. Men durft niet goed, bang dat het systeem omvalt. De mensen die het gemaakt hebben zijn weg, de documentatie is niet betrouwbaar en het is lastig te testen. Aanvallers hebben op de server vrij spel, soms zijn ze maanden actief voordat iemand iets in de gaten heeft.  
 
 Als je zonder angst verder wil met zo'n systeem dan zal je een keer alles wat nodig is om het systeem te ontwikkelen, te testen en te draaien, moeten verzamelen en gestructureerd vast leggen in een Git repository. Daarmee komt automatisch testen binnen bereik, kan je de processen beter beheersen en wordt het mogelijk om gebruik te maken van nieuwe technieken zonder het bestaande helemaal om te gooien. Als bonus heb je een fantastisch gedocumenteerd systeem, het nageslacht zal dankbaar zijn. 
@@ -196,4 +198,4 @@ De wijzigingen die je in het systeem wil maken zoals de versleuteling van script
 
 De tools zijn dus zeer geavanceerd, gratis, worden goed onderhouden en veel gebruikt. Met mijn definities kan je ieder systeem vastleggen maar ik heb rekening gehouden met uitbreidingen op de definities als dat nodig zou zijn. Daarvoor hoef je niet al het eerdere werk aan te passen.  
 
- Mijn methodiek is er, het bespaart vallen en opstaan en daardoor tijd en frustratie. Ik heb het al uitgezocht en uitgetest. Nieuwsgierig? Ik ben er klaar voor! 
+Doe het zelf, met een team uiteraard. Voor veiligheid en betrouwbaarheid is het vier ogen principe belangrijk, laat dus altijd iemand controleren. Ik kan je op weg helpen. Met mijn methodiek ben ik al door die valkuilen gegaan. Dat scheelt tijd en frustratie.
