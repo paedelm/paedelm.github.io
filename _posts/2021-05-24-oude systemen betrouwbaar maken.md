@@ -113,7 +113,7 @@ Het IT systeem draait op een Operating System, Windows of een Unix variant en st
  
 ### **_Transformeer de bron beschrijving naar een export file_**
 
-De beschrijving gaat dus volgens sterk getypeerde datastructuren. Door die formele beschrijving krijg je hulp van de Ide met intellisense en met behulp van de compiler zorgt de Ide ook voor fout detectie. De beschrijving wordt gecompileerd en uitgevoerd. Het resultaat is een versleutelde exportfile. Dat is de file die door "RunITDomein" wordt uitgevoerd. 
+De beschrijving gaat dus volgens sterk getypeerde datastructuren. Door die formele beschrijving krijg je hulp van de IDE met intellisense en met behulp van de compiler zorgt de IDE ook voor fout detectie. De beschrijving wordt gecompileerd en uitgevoerd. Het resultaat is een versleutelde exportfile. Dat is de file die door "RunITDomein" wordt uitgevoerd. 
  
 De informatie die je oplevert gebeurt op basis van een parameter, de omgeving. Jij hebt de mogelijkheid iets anders op te leveren in de Ontwikkel omgeving dan in de Productie omgeving. Daarom vul je niet een datastructuur met een vaste waarde, maar maak je een functie die de waarde terug geeft op basis van zijn parameter. Vanwege dit mechanisme kan je ook eigen controles uitvoeren met als ultieme controle een praktijk test. Jouw IT domein wordt gecompileerd met gedeeltelijk eigen controles en eigen generatie logica.  
 
@@ -121,12 +121,12 @@ De informatie haal je uit de gegevens van het bestaande systeem. Soms is die inf
 
 ### **_Beheer van aanpassingen_**
 
-Als je het domein gaat aanpassen, ontstaat een tweede versie van het domein. Want naast de actuele versie ontstaat de nieuwe versie die nog in ontwikkeling is. De sources van beide versies moeten onderhouden kunnen worden. Daarvoor wordt er in Git een Change opgenomen. 
+Als je het domein gaat aanpassen, ontstaat er een tweede versie van. Want naast de actuele versie ontstaat de nieuwe versie die nog in ontwikkeling is. De sources van beide versies moeten onderhouden kunnen worden. Daarvoor wordt er in Git een Change opgenomen. 
 Als er vanwege de Change een service veranderd moet worden (nieuw, gewijzigd of verwijderd) dan wordt daar een nieuwe versie van gemaakt en die versie wordt gekoppeld aan de Change. De Change doorloopt een levensloop van Ontwikkeling via extra omgevingen uiteindelijk naar Productie. Door de koppeling met de versie weet de export functie in Git welke versies van de services in de beschrijving van de desbetreffende omgevingen komen.
 
 ### **_Verzamelen, rangschikken en vastleggen_**
 
-Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamelen van wat er al is, dat rangschikken en vastleggen. En wat je tijdens het ontwikkel proces met de hand deed, ga je nu geautomatiseerd doen. Daarmee leg je de kennis in de hoofden van mensen vast in Git.   
+Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamelen van wat er al is, dat rangschikken en vastleggen. En wat je tijdens het ontwikkel proces met de hand deed, ga je nu geautomatiseerd doen. Daarmee leg je al die gefragmenteerde kennis gestructureerd op één plek vast. In Git natuurlijk, waardoor je alle wijzigingen kan traceren.   
 
 ## De datastructuren van een IT domein op een rijtje
 
@@ -168,7 +168,7 @@ Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamel
   De flow beschrijving is: UntilErrorFlow(Voorwaarde;UntilErrorFlow(Proces; Archivering)) 
   Als de Voorwaarde succesvol is uitgevoerd, wordt het Proces uitgevoerd.
   Als het Proces succesvol is uitgevoerd wordt de Archivering uitgevoerd.  
-  De Service doet dit repeterend met een op te geven interval.  
+  De Service doet dit repeterend met een op te geven interval maar kan ook reageren op events, om sneller te reageren. 
 
 - Test  
   De Test is een Flow bestaande uit 3 stappen: TestInit, Service, en TestOpruimen.  
@@ -188,13 +188,13 @@ Er zullen heel wat IT systemen zijn die hun werk naar behoren doen maar daarbij 
 
 Als je zonder angst verder wil met zo'n systeem dan zal je een keer alles wat nodig is om het systeem te ontwikkelen, te testen en te draaien, moeten verzamelen en gestructureerd vast leggen in een Git repository. Daarmee komt automatisch testen binnen bereik, kan je de processen beter beheersen en wordt het mogelijk om gebruik te maken van nieuwe technieken zonder het bestaande helemaal om te gooien. Als bonus heb je een fantastisch gedocumenteerd systeem, het nageslacht zal dankbaar zijn. 
 
-Het is logisch dat er tegenaan gehikt wordt. Het klinkt als veel werk. Toch kan dat meevallen. Natuurlijk zal je het systeem moeten doorgronden en de juiste versies van de software opzoeken. Dat kan je echter voor een groot gedeelte op de server terugvinden, alleen bij gecompileerde programma's zal je de juiste source ergens (waarschijnlijk anders) moeten vinden. En daarbij komt de angst dat veel van de scripts en programma's veranderd moeten worden. Dat kan erg meevallen als je het slim aanpakt.  
+Het is logisch dat er tegenaan gehikt wordt. Het klinkt als veel werk. Toch kan dat meevallen. Natuurlijk zal je het systeem moeten doorgronden en de juiste versies van de software opzoeken. Dat kan je echter voor een groot gedeelte op de server terugvinden, alleen bij gecompileerde programma's zal je de juiste source ergens anders moeten vinden. En daarbij komt de angst dat veel van de scripts en programma's veranderd moeten worden. Dat kan erg meevallen als je het slim aanpakt.  
 
-Ik heb een methodiek ontwikkeld waarbij je gebruik maakt van de compiler in combinatie met de IDE om de gegevens foutvrij vast te leggen, tijdens het invoeren heb je hulp door intellisense en geeft het de fouten aan en je wordt gestopt als het niet door de compiler komt. Je kunt daar boven op ook je eigen fout detectie toevoegen voordat als laatste jouw service getest wordt.
+Ik heb een methodiek ontwikkeld waarbij je gebruik maakt van de compiler in combinatie met de IDE om de gegevens foutvrij vast te leggen, tijdens het invoeren heb je hulp door intellisense en geeft het de fouten aan en je wordt gestopt als het niet door de compiler komt. Je kunt daar boven op ook je eigen fout detectie toevoegen voordat jouw service getest wordt.
   
-Niet alleen fout detectie, je bent degene die de datastructuren vult. Dat betekent dat je voor veel voorkomende patronen eenvoudigere data structuren kan gebruiken en van daaruit de standaard structuren vult. De hoeveelheid gegevens die je vastlegt wordt daardoor minder, de fouten kans kleiner en het geheel wordt leesbaarder.  
+Niet alleen fout detectie is mogelijk, je bent degene die de datastructuren vult. Dat betekent dat je bij veel voorkomende patronen eenvoudigere data structuren kan gebruiken en van daaruit de standaard structuren vult. De hoeveelheid gegevens die je vastlegt wordt daardoor minder, de fouten kans kleiner en het geheel wordt leesbaarder.  
 
-De wijzigingen die je in het systeem wil maken zoals de versleuteling van scripts en data en het gebruik van storage containers kan in de service geconfigureerd worden om zo de bestaande software te ontzien. 
+De wijzigingen die je in het systeem wil maken zoals de versleuteling van scripts en data en het gebruik van storage containers, kan in de service geconfigureerd worden om zo de bestaande software te ontzien. 
 
 De tools zijn dus zeer geavanceerd, gratis, worden goed onderhouden en veel gebruikt. Met mijn definities kan je ieder systeem vastleggen maar ik heb rekening gehouden met uitbreidingen op de definities als dat nodig zou zijn. Daarvoor hoef je niet al het eerdere werk aan te passen.  
 
