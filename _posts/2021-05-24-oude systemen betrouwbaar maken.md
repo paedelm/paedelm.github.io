@@ -3,7 +3,7 @@ layout: post
 title: "Hoe maken we onze oude IT systemen betrouwbaar en veilig?"
 date: 2021-05-24
 ---
->Meldingen van computer problemen zijn talrijk. We zijn afhankelijk van IT systemen. Storingen en hacken zijn Nieuws. Er draaien veel (oude)systemen die niet toegerust zijn om deze problemen te voorkomen. Aanpassen heeft prioriteit en kan op een gestructureerde manier door de oude programma's van een nieuwe betrouwbare en veilige laag te voorzien. De moderne technieken zijn er, zelfs gratis, mijn methodiek maakt er gebruik van. Aan de slag dus.  
+>Meldingen van computer problemen zijn talrijk. We zijn afhankelijk van IT systemen. Storingen en hacken zijn Nieuws. Er draaien veel (oude)systemen die niet toegerust zijn om deze problemen te voorkomen. Aanpassen heeft prioriteit en kan op een gestructureerde manier door de oude programma's van een nieuwe betrouwbare en veilige laag te voorzien. De moderne technieken zijn er, zelfs gratis en mijn methodiek maakt er gebruik van. Aan de slag dus.  
 
 ## Wat is er aan de hand
  Er is de laatste tijd een toename van berichten in de Media over computer storingen, gelekte gegevens, en gevallen van ransomware. 
@@ -18,20 +18,20 @@ date: 2021-05-24
 
 ## Oorzaken vanuit het verleden
 
-  ![](/kwetsbare-systemen.jpg)
+  ![](/Kwetsbare Systemen.jpg)
 
 ### Als halfautomatisch systeem ontworpen
 
- Het ontwerp ging vroeger uit van zoveel mogelijk geautomatiseerde processen. In normale gevallen lukt dat, maar bij een lichte verstoring was een handmatige correctie gebruikelijk. Tegenwoordig merken we dat toegang voor handmatig ingrijpen gebruikt wordt voor het aanvallen van een systeem. Eenmaal toegang gekregen heeft men vaak (te) grote bevoegdheden en is er lastig te traceren wat voor acties er zijn ondernomen. Een goed bedoelende specialist kan onbedoeld het systeem ondermijnen, die andere specialist, de hacker, doet het bewust. Soms is de ondermijning direct merkbaar, maar het kan ook sluimerend zijn eventueel ter voorbereiding op iets ergers.
+ Het ontwerp ging vroeger uit van zoveel mogelijk geautomatiseerde processen. In normale gevallen werkt dat, maar bij een lichte verstoring is een handmatige correctie gebruikelijk. Tegenwoordig merken we dat toegang voor handmatig ingrijpen gebruikt wordt voor het aanvallen van een systeem. Eenmaal toegang gekregen heeft men vaak (te) grote bevoegdheden en is er lastig te traceren wat voor acties er zijn ondernomen. Een goed bedoelende specialist kan onbedoeld het systeem ondermijnen, die andere specialist, de hacker, doet het bewust. Soms is de ondermijning direct merkbaar, maar het kan ook sluimerend aanwezig zijn, eventueel ter voorbereiding op iets ergers.
  
 ### Meerdere disciplines zijn verantwoordelijk
 
  Wat vroeger ook een rol speelde: er waren twee disciplines verantwoordelijk voor een IT systeem, de ene schreef de software en de andere rolde het uit. Dat resulteerde nogal eens in incomplete gegevens bij de overdracht, bij het over te dragen programma hoort ook extra informatie zoals de voorwaarde waaronder het moet draaien, parameters die afhankelijk zijn van de omgeving waarin het gaat draaien en nog meer. Een handleiding moest uitkomst bieden. Maar het is een kunst om die te maken.
- Het IT systeem werd ook niet in zijn geheel overgedragen maar het was een set onderdelen, ieder met zijn eigen instructies. Installatie gaat dan bijna nooit in één keer goed, met als gevolg handmatige correcties en (te)korte testen om de goede werking te controleren. Men is (te) snel tevreden met de werking waardoor er soms vervelende subtiele fouten onopgemerkt blijven.
+ Het IT systeem werd ook niet in zijn geheel overgedragen maar het was een set onderdelen, ieder met zijn eigen instructies. Installatie gaat dan bijna nooit in één keer goed, met als gevolg handmatige correcties en (te) korte testen om de goede werking te controleren. Men is (te) snel tevreden met de werking waardoor er soms vervelende subtiele fouten onopgemerkt blijven.
 
 ### Toegankelijk maken van de server voor andere systemen
 
- De systemen draaien nooit helemaal geïsoleerd, er zijn meestal gegevens van anderen systemen nodig. Bij zo'n overdracht is er meestal direct contact tussen de servers van beide systemen.
+ De systemen draaien nooit helemaal geïsoleerd, er zijn vaak gegevens van anderen systemen nodig. Bij zo'n overdracht is er meestal direct contact tussen de servers van beide systemen.
  Hiervoor wordt een poort open gezet, die goed beveiligd moet worden. Beveiligen betekent vooral dat je met de laatste security updates werkt. Dat gaat vaak mis. Veel bedrijven wachten te lang met het aanbrengen van die updates.   
 
 ### Waardevolle gegevens zijn zichtbaar aanwezig op de server van het systeem  
@@ -42,7 +42,7 @@ date: 2021-05-24
 ### De server van het systeem is moeilijk vervangbaar
 
  Doordat essentiële informatie, die nergens anders staat, op de server van het systeem blijft staan, kan je de server niet zo makkelijk door een ander vervangen.
- Een kapotte server, of gegijzelde server, vereist specialistisch werk en kost tijd.
+ Een kapotte of gegijzelde server, vereist specialistisch werk en kost tijd.
 
 ## Wat kan je er aan doen?
 
@@ -50,7 +50,7 @@ date: 2021-05-24
   
 ### _Het systeem opdelen in domeinen_
   
-  Ieder domein van het systeem staat op zijn eigen server en heeft zijn eigen Git repository. Het idee is dat iedere verandering terug te vinden is in de repository. Het onderhoud op de repository gebeurt door een team met als doel dat iedere wijziging door minstens 4 geautoriseerde ogen is gecontroleerd. Als er onderdelen zijn van het systeem waar het team geen verantwoordelijkheid voor heeft dan verhuist dat stuk naar een ander domein, en zal er een formele interface worden afgesproken. Verdere regels voor het opbreken kunnen van technische en organisatorische aard zijn. Ieder domein heeft zijn eigen beheer cyclus.
+  Ieder domein van het systeem staat op zijn eigen server en heeft zijn eigen Git repository. Het idee is dat iedere verandering terug te vinden is in de repository. Het onderhoud op de repository gebeurt door een team met als doel dat iedere wijziging door minstens 4 geautoriseerde ogen is gecontroleerd. Als er onderdelen zijn van het systeem waar het team geen verantwoordelijkheid voor heeft dan verhuist dat stuk naar een ander domein en zal er een formele interface worden afgesproken. Verdere regels voor het opbreken kunnen van technische en organisatorische aard zijn. Ieder domein heeft zijn eigen beheer cyclus.
   Een nieuwe domein beschrijving ontstaat alleen als deze getest en goed bevonden is.
   
   
@@ -66,7 +66,7 @@ date: 2021-05-24
   
 ### _Persistente gegevens buiten de server opslaan_ 
   
-  Als het je ook lukt om alle persistente gegevens buiten de server op te slaan, kan je makkelijker wisselen van server. Dat kan door gebruik te maken van een storage provider, veiligheid en beschikbaarheid is dan in orde, alleen de bestaande processen moeten daar nog mee omgaan. Dat wordt opgelost door _de service die het proces beheert_, die zorgt dat de gegevens _just in time_ beschikbaar zijn op het moment dat het proces wat de gegevens gaat verwerken kan starten. De gepersisteerde resultaten van het proces worden na afloop verplaatst naar de storage provider.  
+  Als het je ook lukt om alle persistente gegevens buiten de server op te slaan, kan je makkelijker wisselen van server. Dat kan door gebruik te maken van een storage provider, veiligheid en beschikbaarheid is dan in orde, alleen de bestaande processen moeten daar nog mee omgaan. Dat wordt opgelost door _de service die het proces beheert_, die zorgt dat de gegevens _just in time_ beschikbaar zijn op het moment dat het gegevens verwerkende proces kan starten. De gepersisteerde resultaten van het proces worden na afloop verplaatst naar de storage provider.  
 
 ### _Installatie procedure vereenvoudigen_
 
