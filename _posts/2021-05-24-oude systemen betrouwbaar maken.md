@@ -109,7 +109,7 @@ Het verwerken van data op de plek waar het afgeleverd wordt, wil nog wel eens le
 
 De service zorgt er ook voor dat de events serieel worden afgehandeld waardoor het proces niet per ongeluk parallel wordt gestart. Gewenst parallel verwerken van gegevens is echter wel mogelijk. De service is belangrijk en mist nog al eens in oude systemen.  
 
-Het IT systeem draait op een Operating System, Windows of een Unix variant en start het programma "RunITDomein \<domeinbeschrijvingvanhetdomein\>". Het image van het Operating System wordt beschreven met een dockerfile.
+Het IT systeem draait op een Operating System, Windows of een Unix variant en start het programma "RunITDomein \<domeinbeschrijving\>". Het image van het Operating System wordt beschreven met een dockerfile.
  
 ### **_Transformeer de bron beschrijving naar een export file_**
 
