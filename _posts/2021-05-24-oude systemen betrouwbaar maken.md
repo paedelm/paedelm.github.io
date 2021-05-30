@@ -168,7 +168,7 @@ Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken betekent ver
   De flow beschrijving is: UntilErrorFlow(Voorwaarde;UntilErrorFlow(Proces; Archivering)) 
   Als de Voorwaarde succesvol is uitgevoerd, wordt het Proces uitgevoerd.  
   Als het Proces succesvol is uitgevoerd wordt de Archivering uitgevoerd.  
-  De Service doet dit repeterend met een op te geven interval maar kan ook reageren op events, om sneller te reageren. 
+  De Service doet dit repeterend met een op te geven interval maar kan ook reageren op events, voor een snellere reactie. 
 
 - Test  
   De Test is een Flow bestaande uit 3 stappen: TestInit, Service, en TestOpruimen.  
