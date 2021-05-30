@@ -101,15 +101,15 @@ Wat is een IT domein concreet? Het bestaat uit processen die, als ze mogen en ku
 
 In de flow kan je spelen met die uitkomst. Je hebt flows die de stappen uitvoeren totdat er eentje fout gaat of flows die uitvoeren tot er eentje goed gaat of hij voert ze gewoon allemaal uit, serieel of parallel.  
 
-De programmataak beschrijft het programma, hoe het gestart wordt, de commandline, met welke parameters en welke omgevingsvariabelen. At runtime volstaat de commandline eventueel aangevuld met de inhoud van een directory tree. De directorytree wordt dan opgebouwd voordat het programma op basis van de commandline wordt opgestart. Het garandeert dat alles te starten is, van scripts, gecompileerde programma's met een framework tot standalone executables met eventuele shared libraries.  
+De programmataak beschrijft het programma: hoe het gestart wordt, de commandline, met welke parameters en welke omgevingsvariabelen. At runtime volstaat de commandline eventueel aangevuld met de inhoud van een directory tree. De directorytree wordt dan opgebouwd voordat het programma op basis van de commandline wordt opgestart. Het garandeert dat alles te starten is: van scripts, gecompileerde programma's met een framework tot standalone executables met eventuele shared libraries.  
 
-Het zijn dus de services die continue draaien en op de goede momenten, als alle resources aanwezig zijn en de tijd rijp is, hun proces starten. Nadat het proces gedraaid heeft, moet de start voorwaarde wel opgeheven worden. Meestal gebeurt dat in een archiveringsstap nadat het proces goed geëindigd is. De services voorkomen fouten en hebben een zelfcorrigerend karakter. Het proces doet zijn ding en geeft aan of het goed of fout is gegaan, en de service regelt de foutafhandeling, het eventuele opnieuw proberen. De services kunnen reageren op events, zoals timer events, watch events op het file systeem op queue's etc.... 
+Het zijn dus de services die continue draaien en op de goede momenten, als alle resources aanwezig zijn en de tijd rijp is, hun proces starten. Nadat het proces gedraaid heeft moet de startvoorwaarde wel opgeheven worden. Meestal gebeurt dat in een archiveringsstap nadat het proces goed geëindigd is. De services voorkomen fouten en hebben een zelfcorrigerend karakter. Het proces doet zijn ding en geeft aan of het goed of fout is gegaan, en de service regelt de foutafhandeling, het eventuele opnieuw proberen. De services kunnen reageren op events, zoals timer events, watch events op het file systeem en op queue's etc.... 
 
 Het verwerken van data op de plek waar het afgeleverd wordt, wil nog wel eens leiden tot het archiveren van nog niet verwerkte gegevens. De service kan hier een rol spelen door de te verwerken gegevens eerst naar de plaats van verwerking te brengen en dan het proces te starten.
 
 De service zorgt er ook voor dat de events serieel worden afgehandeld waardoor het proces niet per ongeluk parallel wordt gestart. Gewenst parallel verwerken van gegevens is echter wel mogelijk. De service is belangrijk en mist nog al eens in oude systemen.  
 
-Het IT systeem draait op een Operating System, Windows of een Unix variant en start het programma "RunITDomein <domeinbeschrijvingvanhetdomein>". Het image van het Operating System wordt beschreven met een dockerfile.
+Het IT systeem draait op een Operating System, Windows of een Unix variant en start het programma "RunITDomein \<domeinbeschrijvingvanhetdomein\>". Het image van het Operating System wordt beschreven met een dockerfile.
  
 ### **_Transformeer de bron beschrijving naar een export file_**
 
@@ -117,7 +117,7 @@ De beschrijving gaat dus volgens sterk getypeerde datastructuren. Door die forme
  
 De informatie die je oplevert gebeurt op basis van een parameter, de omgeving. Jij hebt de mogelijkheid iets anders op te leveren in de Ontwikkel omgeving dan in de Productie omgeving. Daarom vul je niet een datastructuur met een vaste waarde, maar maak je een functie die de waarde terug geeft op basis van zijn parameter. Vanwege dit mechanisme kan je ook eigen controles uitvoeren met als ultieme controle een praktijk test. Jouw IT domein wordt gecompileerd met gedeeltelijk eigen controles en eigen generatie logica.  
 
-De informatie haal je uit de gegevens van het bestaande systeem. Soms is die informatie nog niet geschikt om op te nemen: een Java of C# sourcefile is niet uitvoerbaar die moet eerst gecompileerd worden. Dat compileren kan je doen op het moment dat jouw functie wordt aangeroepen om de informatie aan te leveren voor de service waarin deze programmataak een rol speelt.
+De informatie haal je uit de gegevens van het bestaande systeem. Soms is die informatie nog niet geschikt om op te nemen: een Java of C# sourcefile is niet uitvoerbaar, die moet eerst gecompileerd worden. Dat compileren kan je doen op het moment dat jouw functie wordt aangeroepen om de informatie aan te leveren voor de service waarin deze programmataak een rol speelt.
 
 ### **_Beheer van aanpassingen_**
 
@@ -126,7 +126,7 @@ Als er vanwege de Change een service veranderd moet worden (nieuw, gewijzigd of 
 
 ### **_Verzamelen, rangschikken en vastleggen_**
 
-Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamelen van wat er al is, dat rangschikken en vastleggen. En wat je tijdens het ontwikkel proces met de hand deed, ga je nu geautomatiseerd doen. Daarmee leg je al die gefragmenteerde kennis gestructureerd op één plek vast. In Git natuurlijk, waardoor je alle wijzigingen kan traceren.   
+Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken betekent verzamelen van wat er al is, dat rangschikken en vastleggen. En wat je tijdens het ontwikkel proces met de hand deed ga je nu geautomatiseerd doen. Daarmee leg je al die gefragmenteerde kennis gestructureerd op één plek vast. In Git natuurlijk, waardoor je alle wijzigingen kan traceren.   
 
 ## De datastructuren van een IT domein op een rijtje
 
@@ -138,14 +138,14 @@ Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamel
   Een Stap is een Flow of Taak  
   Een Flow is een lijst van Stappen (list<Stap>)  
   Een Taak is een Programma met parameters  
-  een Stap geeft altijd een resultaat van "goed" of "fout"  
+  Een Stap geeft altijd een resultaat van "goed" of "fout"  
 
 - Flow  
   Een flow is een lijst van stappen. 
   De stappen worden in volgorde uitgevoerd behalve bij de Parallel Flow.  
   Bij de Unconditional Flow worden alle stappen uitgevoerd.  
-  Bij de UntilOk Flow stopt het uitvoering na de eerste Stap die goed gaat.  
-  Bij de UntilError Flow stopt de uitvoering na de eerste Stap die fout gaat.
+  Bij de UntilOk Flow stopt het uitvoeren na de eerste Stap die goed gaat.  
+  Bij de UntilError Flow stopt de uitvoering na de eerste Stap die fout gaat.  
   Bij de Parallel Flow worden alle Stappen tegelijk gestart.  
 
 - Taak  
@@ -166,7 +166,7 @@ Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamel
 - Service  
   Een Service verzorgt de uitvoering van een Proces op basis van de Voorwaarde 
   De flow beschrijving is: UntilErrorFlow(Voorwaarde;UntilErrorFlow(Proces; Archivering)) 
-  Als de Voorwaarde succesvol is uitgevoerd, wordt het Proces uitgevoerd.
+  Als de Voorwaarde succesvol is uitgevoerd, wordt het Proces uitgevoerd.  
   Als het Proces succesvol is uitgevoerd wordt de Archivering uitgevoerd.  
   De Service doet dit repeterend met een op te geven interval maar kan ook reageren op events, om sneller te reageren. 
 
@@ -186,16 +186,16 @@ Echt nieuwe dingen ga je niet doen. Een complete beschrijving maken, is verzamel
 
 Er zullen heel wat IT systemen zijn die hun werk naar behoren doen maar daarbij soms een handmatig zetje nodig hebben. Daarvoor is toegang nodig op de server. De oudere systemen zijn niet altijd bijgewerkt met de laatste software updates, dat maakt ze kwetsbaar. Men durft niet goed, bang dat het systeem omvalt. De mensen die het gemaakt hebben zijn weg, de documentatie is niet betrouwbaar en het is lastig te testen. Aanvallers hebben op de server vrij spel, soms zijn ze maanden actief voordat iemand iets in de gaten heeft.  
 
-Als je zonder angst verder wil met zo'n systeem dan zal je een keer alles wat nodig is om het systeem te ontwikkelen, te testen en te draaien, moeten verzamelen en gestructureerd vast leggen in een Git repository. Daarmee komt automatisch testen binnen bereik, kan je de processen beter beheersen en wordt het mogelijk om gebruik te maken van nieuwe technieken zonder het bestaande helemaal om te gooien. Als bonus heb je een fantastisch gedocumenteerd systeem, het nageslacht zal dankbaar zijn. 
+Als je zonder angst verder wil met zo'n systeem dan zal je alles wat nodig is om het systeem te ontwikkelen, te testen en te draaien, moeten verzamelen en gestructureerd vastleggen in een Git repository. Daarmee komt automatisch testen binnen bereik, kan je de processen beter beheersen en wordt het mogelijk om gebruik te maken van nieuwe technieken zonder het bestaande helemaal om te gooien. Als bonus heb je een fantastisch gedocumenteerd systeem, het nageslacht zal dankbaar zijn. 
 
 Het is logisch dat er tegenaan gehikt wordt. Het klinkt als veel werk. Toch kan dat meevallen. Natuurlijk zal je het systeem moeten doorgronden en de juiste versies van de software opzoeken. Dat kan je echter voor een groot gedeelte op de server terugvinden, alleen bij gecompileerde programma's zal je de juiste source ergens anders moeten vinden. En daarbij komt de angst dat veel van de scripts en programma's veranderd moeten worden. Dat kan erg meevallen als je het slim aanpakt.  
 
-Ik heb een methodiek ontwikkeld waarbij je gebruik maakt van de compiler in combinatie met de IDE om de gegevens foutvrij vast te leggen, tijdens het invoeren heb je hulp door intellisense en geeft het de fouten aan en je wordt gestopt als het niet door de compiler komt. Je kunt daar boven op ook je eigen fout detectie toevoegen voordat jouw service getest wordt.
+Ik heb een methodiek ontwikkeld waarbij je gebruik maakt van de compiler in combinatie met de IDE om de gegevens foutvrij vast te leggen. Intellisense helpt tijdens het invoeren en geeft de fouten aan. Je wordt gestopt als de broncode niet door de compiler komt. Je kunt daar boven op ook je eigen fout detectie toevoegen voordat jouw service getest wordt.
   
-Niet alleen fout detectie is mogelijk, je bent degene die de datastructuren vult. Dat betekent dat je bij veel voorkomende patronen eenvoudigere data structuren kan gebruiken en van daaruit de standaard structuren vult. De hoeveelheid gegevens die je vastlegt wordt daardoor minder, de fouten kans kleiner en het geheel wordt leesbaarder.  
+Niet alleen fout detectie is mogelijk, je bent degene die de datastructuren vult. Dat betekent dat je bij veel voorkomende patronen eenvoudiger data structuren kan gebruiken en van daaruit de standaard structuren vult. De hoeveelheid gegevens die je vastlegt wordt daardoor minder, de kans om fouten te maken kleiner en het geheel wordt leesbaarder.  
 
-De wijzigingen die je in het systeem wil maken zoals de versleuteling van scripts en data en het gebruik van storage containers, kan in de service geconfigureerd worden om zo de bestaande software te ontzien. 
+De wijzigingen die je in het systeem wil maken zoals de versleuteling van scripts en data en het gebruik van storage containers kan in de service geconfigureerd worden. Zo wordt de bestaande software ontzien. 
 
 De tools zijn dus zeer geavanceerd, gratis, worden goed onderhouden en veel gebruikt. Met mijn definities kan je ieder systeem vastleggen maar ik heb rekening gehouden met uitbreidingen op de definities als dat nodig zou zijn. Daarvoor hoef je niet al het eerdere werk aan te passen.  
 
-Doe het zelf, met een team uiteraard. Voor veiligheid en betrouwbaarheid is het vier ogen principe belangrijk, laat dus altijd iemand controleren. Ik kan je op weg helpen. Met mijn methodiek ben ik al door die valkuilen gegaan. Dat scheelt tijd en frustratie.
+Pak het zelf aan, met een team uiteraard. Voor veiligheid en betrouwbaarheid is het vier ogen principe belangrijk, laat dus altijd iemand controleren. Ik kan je op weg helpen!
