@@ -13,7 +13,7 @@ date: 2021-05-24
 ## Welke problemen geeft dat
 
   We zijn afhankelijk van onze computersystemen, bij uitval ligt vaak een groot gedeelte van de bedrijfsvoering stil. Als slachtoffer van ransomware ontstaat het dilemma van losgeld betalen. Bij gestolen gegevens maak je kans voor nalatigheid een boete te krijgen. Men kan ook de stiekum verkregen gegevens gebruiken voor een ander doel zonder dat jij het direct in de gaten hebt. De aandacht in de Media is geen goede reclame voor je bedrijf.  
-  Het kan ook maatschappij ontwrichtend zijn als bijvoorbeeld een nutsbedrijf geraakt wordt. Alle voorbeelden zijn de laatste tijd wel in het nieuws geweest.
+  Niet alleen bedrijven zijn afhankelijk en kwetsbaar, ook voor instellingen ten behoeve van onze maatschappij zijn goed functionerende en beveiligde computersystemen onontbeerlijk. Diverse voorbeelden zijn de laatste tijd in de Media geweest.
 
 ## Oorzaken vanuit het verleden
 
