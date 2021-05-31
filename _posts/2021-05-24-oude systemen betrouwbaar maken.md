@@ -3,7 +3,7 @@ layout: post
 title: "Hoe maken we onze oude IT systemen betrouwbaar en veilig?"
 date: 2021-05-24
 ---
->Meldingen van computer problemen zijn talrijk. Er draaien nog veel systemen die moeite hebben om storingen of hacken te voorkomen. Omdat we ze niet meer kunnen missen zullen we ze snel moeten verbeteren. Dat kan gelukkig vlug middels een snelle gestructureerde manier. De oude programma's worden dan van een nieuwe betrouwbare en veilige laag voorzien. De methode is geheel gebaseerd op moderne gratis technieken. Aan de slag dus.  
+>Meldingen van computer problemen zijn talrijk. Er draaien nog veel systemen die moeite hebben om storingen of hacken te voorkomen. Omdat we ze niet meer kunnen missen zullen we ze snel moeten verbeteren. Dat kan gelukkig middels een snelle gestructureerde manier. De oude programma's worden dan van een nieuwe betrouwbare en veilige laag voorzien. De methode is geheel gebaseerd op moderne gratis technieken. Aan de slag dus.  
 
 ## Wat is er aan de hand
  Er is de laatste tijd een toename van berichten in de Media over computer storingen, gelekte gegevens, en gevallen van ransomware. 
