@@ -3,7 +3,7 @@ layout: post
 title: "Hoe maken we onze oude IT systemen betrouwbaar en veilig?"
 date: 2021-05-24
 ---
->Meldingen van computer problemen zijn talrijk. Er draaien nog veel systemen die moeite hebben om storingen of hacken te voorkomen. Omdat we ze niet meer kunnen missen zullen we ze snel moeten verbeteren. Dat kan gelukkig middels een snelle gestructureerde manier. De oude programma's worden dan van een nieuwe betrouwbare en veilige laag voorzien. De methode is geheel gebaseerd op moderne gratis technieken. Aan de slag dus.  
+>Meldingen van computerproblemen zijn talrijk. Er draaien nog veel systemen die moeite hebben om storingen of hacken te voorkomen. Omdat we ze niet meer kunnen missen zullen we ze snel moeten verbeteren. Dat kan gelukkig middels mijn snelle gestructureerde methode gebaseerd op moderne vrij te gebruiken technieken. De oude programma's worden dan van een nieuwe betrouwbare en veilige laag voorzien. Aan de slag dus.  
 
 ## Wat is er aan de hand
  Er is de laatste tijd een toename van berichten in de Media over computer storingen, gelekte gegevens, en gevallen van ransomware. 
@@ -12,8 +12,7 @@ date: 2021-05-24
 
 ## Welke problemen geeft dat
 
-  We zijn afhankelijk van onze computersystemen, bij uitval ligt vaak een groot gedeelte van de bedrijfsvoering stil. Als je slachtoffer bent van ransomware ontstaat ook het dilemma of je losgeld gaat betalen. Bij gestolen gegevens maak je kans voor nalatigheid een boete te krijgen.
-  De aandacht in de Media is geen goede reclame voor je bedrijf.  
+  We zijn afhankelijk van onze computersystemen, bij uitval ligt vaak een groot gedeelte van de bedrijfsvoering stil. Als slachtoffer van ransomware ontstaat het dilemma van losgeld betalen. Bij gestolen gegevens maak je kans voor nalatigheid een boete te krijgen. Men kan ook de stiekum verkregen gegevens gebruiken voor een ander doel zonder dat jij het direct in de gaten hebt. De aandacht in de Media is geen goede reclame voor je bedrijf.  
   Het kan ook maatschappij ontwrichtend zijn als bijvoorbeeld een nutsbedrijf geraakt wordt. Alle voorbeelden zijn de laatste tijd wel in het nieuws geweest.
 
 ## Oorzaken vanuit het verleden
