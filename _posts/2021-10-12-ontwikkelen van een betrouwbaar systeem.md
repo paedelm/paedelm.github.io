@@ -32,7 +32,7 @@ Een veilig systeem om gegevens te verwerken lijkt op een tijdelijke werkplaats z
 ### De service
  Wanneer een proces wordt gestart en onder welke conditie, staat beschreven in de service-definitie. De service draait periodiek op basis van timer events eventueel gecombineerd met gegevens events en bepaalt op basis van de "GereedVoorVerwerking" stap of het proces gestart wordt.
 
-### Levens cyclus
+### Levenscyclus
  Systemen veranderen, die veranderingen worden ontwikkeld en getest, zo ontstaan versies en test-omgevingen, de nieuwe versie wordt getest terwijl de oude nog actief is.
  <br/>
  De aangepaste en nieuwe services die nodig zijn krijgen hun eigen versienummer die gekoppeld wordt aan de "Wijziging" die zelf gekoppeld is aan een omgeving. De oude versie blijft in tact. De "Wijziging" wordt getest, en kan na akkoord gezet worden op de volgende omgeving, uiteindelijk wordt hij in productie genomen. Door de koppeling met de "Wijziging" weet het systeem welke versie van de service in welke omgeving thuis hoort. Oude versies kunnen opgeruimd worden als ze niet meer in productie actief zijn, en de nieuwe versie zich bewezen heeft.
